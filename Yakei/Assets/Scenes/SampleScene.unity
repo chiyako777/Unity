@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 2039a0ad0a9d05549928b70362f54902, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: cede08c9fc471e64884909cd4bbeaf59, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -350,6 +350,30 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8667b037735742f4a93690b99eeb77d0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfc58d9ef01733c4cb61a131e3da6bfa, type: 3}
+--- !u!1 &139645777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bfc58d9ef01733c4cb61a131e3da6bfa,
+    type: 3}
+  m_PrefabInstance: {fileID: 139645776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &139645778
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139645777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +402,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.03203987, g: 0.3228464, b: 0.4528302, a: 1}
+  m_Color: {r: 0.17426129, g: 0.21176471, b: 0.4, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -537,7 +561,7 @@ GameObject:
   - component: {fileID: 1246952919}
   - component: {fileID: 1246952918}
   - component: {fileID: 1246952917}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
