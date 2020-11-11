@@ -1,5 +1,5 @@
-﻿//水面シェーダー
-Shader "Custom/water"
+﻿//水面シェーダー（uvスクロール)
+Shader "Custom/UVscroll"
 {
     Properties
     {

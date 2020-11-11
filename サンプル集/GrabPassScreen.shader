@@ -66,7 +66,8 @@ Shader "Unlit/GrabPassScreen"
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
-                //w 除算（何のためにしているんだろう）
+                //w 除算（⇒同次座標系を理解すること）
+				//（多分頂点座標とかはUnityObjectToClipPosの中とかでやってくれてるんだろうけど、screenPosの場合は自前でやってねという話だと思う）
 				half2 grabUV = (i.screenPos.xy / i.screenPos.w);
                 //今のピクセルのスクリーンポジション上の色を取得
                 //・・・つまり、このままだとこのシェーダーをアタッチしたオブジェクトは透明になる、ということなんだけど、、、

@@ -28,6 +28,7 @@ Shader "Unlit/GrabPass"
             //GrabPassで取得したテクスチャにアクセスする変数
 			sampler2D _GrabTexture;
 
+			//テクスチャアクセス変数（GrabTextureの方は、このテクスチャも貼り付けた後の最終的なレンダリング結果と考えると良い）
 			sampler2D _Texture;
 			float4 _Texture_ST;
 			
@@ -60,6 +61,7 @@ Shader "Unlit/GrabPass"
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
+				//レンダリング結果画面全体イメージが、このシェーダーを紐づけたオブジェクトに貼りつく
 				fixed4 tex = tex2D(_GrabTexture, i.uv);
 				return tex;
 			}
