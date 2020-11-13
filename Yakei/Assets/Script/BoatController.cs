@@ -27,7 +27,7 @@ public class BoatController : MonoBehaviour
         _moveVelocity.z = Input.GetAxis("Vertical") * moveSpeed;
 
         //Debug.Log("x = " + _moveVelocity.x + " z = " + _moveVelocity.z);
-        //ボートの向きを変える
+        //ボートの向きを変える(将来的にはもっと滑らかに向きが変わるようにしたい)
         transform.LookAt(_transform.position + new Vector3(_moveVelocity.x,0,_moveVelocity.z));
 
         //ボートを動かす

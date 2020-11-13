@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\BoatController.cs" />
+     <Compile Include="Assets\Script\BoatController2.cs" />
      <None Include="Assets\Shader\_Ship.shader" />
      <None Include="Assets\Shader\Water_Unlit.shader" />
      <None Include="Assets\Shader\ptboat\flag001.shader" />
@@ -581,6 +582,9 @@
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>C:/Users/a2sdf/Documents/Unity/Yakei/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+        <HintPath>C:/Users/a2sdf/Documents/Unity/Yakei/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>C:/Users/a2sdf/Documents/Unity/Yakei/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -598,6 +602,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
         <HintPath>C:/Users/a2sdf/Documents/Unity/Yakei/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+        <HintPath>C:/Users/a2sdf/Documents/Unity/Yakei/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
         <HintPath>C:/Users/a2sdf/Documents/Unity/Yakei/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
