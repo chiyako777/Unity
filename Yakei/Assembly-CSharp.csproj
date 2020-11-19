@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Script\BoatController.cs" />
-     <Compile Include="Assets\Script\BoatController2.cs" />
+     <Compile Include="Assets\Script\SearchLightController.cs" />
      <None Include="Assets\Shader\_Ship.shader" />
      <None Include="Assets\Shader\Water_Unlit.shader" />
      <None Include="Assets\Shader\ptboat\flag001.shader" />
