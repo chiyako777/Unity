@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: nagisa_tip
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 21300000, guid: 988c854ea402cb84e8174ac5aeb24cd9, type: 3}
+    - {fileID: 21300000, guid: c331b8dd4deecb64189e3fcc8ef02039, type: 3}
+    - {fileID: 21300000, guid: 910fd18966dc2f04b809d0527dc300ea, type: 3}
+    - {fileID: 21300000, guid: 72926c67b13637b48bae76af28d2b1e9, type: 3}
+    - {fileID: 21300000, guid: ba4226f6e0c7aea45835eb9b0887797d, type: 3}
+    - {fileID: 21300000, guid: 5943436a0b9576647837bff3bb6c550f, type: 3}
+    - {fileID: 21300000, guid: 5e57557b729ce174c909cc62d052c815, type: 3}
+    - {fileID: 21300000, guid: 6bc21d70891909d48b64ac82944abff5, type: 3}
+    - {fileID: 21300000, guid: b58660b71912a084e95bb1b941d70faa, type: 3}
+    - {fileID: 21300000, guid: 9803e215d51bd384d95c6c43e8b13474, type: 3}
+    - {fileID: 21300000, guid: 76489e44d37f5e44d90331e60faf6533, type: 3}
+    - {fileID: 21300000, guid: 56b0254a6a17c4540b10950ca89be665, type: 3}
+    totalSpriteSurfaceArea: 172800
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 6bc21d70891909d48b64ac82944abff5, type: 3}
+  - {fileID: 21300000, guid: 76489e44d37f5e44d90331e60faf6533, type: 3}
+  - {fileID: 21300000, guid: 9803e215d51bd384d95c6c43e8b13474, type: 3}
+  - {fileID: 21300000, guid: ba4226f6e0c7aea45835eb9b0887797d, type: 3}
+  - {fileID: 21300000, guid: 72926c67b13637b48bae76af28d2b1e9, type: 3}
+  - {fileID: 21300000, guid: b58660b71912a084e95bb1b941d70faa, type: 3}
+  - {fileID: 21300000, guid: 910fd18966dc2f04b809d0527dc300ea, type: 3}
+  - {fileID: 21300000, guid: 56b0254a6a17c4540b10950ca89be665, type: 3}
+  - {fileID: 21300000, guid: 5943436a0b9576647837bff3bb6c550f, type: 3}
+  - {fileID: 21300000, guid: 5e57557b729ce174c909cc62d052c815, type: 3}
+  - {fileID: 21300000, guid: c331b8dd4deecb64189e3fcc8ef02039, type: 3}
+  - {fileID: 21300000, guid: 988c854ea402cb84e8174ac5aeb24cd9, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - nagisa_left_walk3
+  - nagisa_right_walk3
+  - nagisa_right 1
+  - nagisa_front_walk1
+  - nagisa_front
+  - nagisa_left_walk4
+  - nagisa_back_walk4
+  - nagisa_right_walk4
+  - nagisa_front_walk2
+  - nagisa_left 1
+  - nagisa_back_walk3
+  - nagisa_back 1
+  m_Tag: nagisa_tip
+  m_IsVariant: 0

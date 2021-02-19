@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: map_walk
+    uniqueID: 2867957427
+    locked: 0
+  - name: map_collision
+    uniqueID: 3052807735
+    locked: 0
+  - name: map_chara
+    uniqueID: 1192608205
+    locked: 0
