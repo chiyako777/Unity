@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public abstract class MapObjectBase : MonoBehaviour
 {
     public Canvas window;
-    public Text target;
 
     //接触判定
     private bool isContacted = false;
@@ -30,7 +29,7 @@ public abstract class MapObjectBase : MonoBehaviour
     void FixedUpdate(){
         //オブジェクトに接触している状態でEnterを押したら、コルーチンを開始
         if (isContacted && coroutine == null && Input.GetButton("Submit") && Input.anyKeyDown) {
-            Debug.Log("start coroutine");
+            //Debug.Log("start coroutine");
             FlagManager.flagDictionary["coroutine"] = true;
             coroutine = CreateCoroutine();
             StartCoroutine(coroutine);
@@ -46,7 +45,6 @@ public abstract class MapObjectBase : MonoBehaviour
         yield return OnAction();
 
         //window終了
-        this.target.text = "";
         this.window.gameObject.SetActive(false);
 
         StopCoroutine(coroutine);
@@ -57,7 +55,7 @@ public abstract class MapObjectBase : MonoBehaviour
     protected abstract IEnumerator OnAction();
 
     //メッセージ設定
-    protected void setMessage(string message){
-        this.target.text = message;
-    }
+    // protected void setMessage(string message){
+    //     this.targetMessage.text = message;
+    // }
 }
