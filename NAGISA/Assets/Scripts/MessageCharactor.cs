@@ -10,6 +10,7 @@ public class MessageCharactor : MapObjectBase
     protected override IEnumerator OnAction(){
         for(int i=0; i<messages.Count; ++i){
             //1フレーム分処理を待機
+
             yield return null;
 
             //会話をwindowのtextに設定
