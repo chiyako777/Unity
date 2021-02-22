@@ -54,8 +54,4 @@ public abstract class MapObjectBase : MonoBehaviour
 
     protected abstract IEnumerator OnAction();
 
-    //メッセージ設定
-    // protected void setMessage(string message){
-    //     this.targetMessage.text = message;
-    // }
 }
