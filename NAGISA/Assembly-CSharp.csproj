@@ -39,9 +39,11 @@
      <Compile Include="Assets\Scripts\CharaTipAnimeController.cs" />
      <Compile Include="Assets\Scripts\CharaTipController.cs" />
      <Compile Include="Assets\Scripts\FlagManager.cs" />
+     <Compile Include="Assets\Scripts\ItemMenu.cs" />
+     <Compile Include="Assets\Scripts\MOConversation.cs" />
      <Compile Include="Assets\Scripts\MapObjectBase.cs" />
-     <Compile Include="Assets\Scripts\MessageCharactor.cs" />
-     <Compile Include="Assets\Scripts\UIWindowController.cs" />
+     <Compile Include="Assets\Scripts\MenuBase.cs" />
+     <Compile Include="Assets\Scripts\_____UIWindowController.cs" />
      <None Include="Assets\Shaders\PlaneTextrure.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

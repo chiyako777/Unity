@@ -24,15 +24,19 @@ public abstract class MapObjectBase : MonoBehaviour
     void Start(){
         //Debug.Log("coroutine false initial");
         FlagManager.flagDictionary["coroutine"] = false;
+        window.gameObject.SetActive(false);
     }
 
     void FixedUpdate(){
         //オブジェクトに接触している状態でEnterを押したら、コルーチンを開始
-        if (isContacted && coroutine == null && Input.GetButton("Submit") && Input.anyKeyDown) {
-            //Debug.Log("start coroutine");
-            FlagManager.flagDictionary["coroutine"] = true;
-            coroutine = CreateCoroutine();
-            StartCoroutine(coroutine);
+        //※他コルーチン中で無ければ
+        if(!(bool)FlagManager.flagDictionary["coroutine"]){
+            if (isContacted && coroutine == null && Input.GetButton("Submit") && Input.anyKeyDown) {
+                //Debug.Log("start coroutine");
+                FlagManager.flagDictionary["coroutine"] = true;
+                coroutine = CreateCoroutine();
+                StartCoroutine(coroutine);
+            }
         }
     }
 
