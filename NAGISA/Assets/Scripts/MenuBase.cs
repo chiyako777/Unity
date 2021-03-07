@@ -7,12 +7,12 @@ public class MenuBase : MonoBehaviour
 {
     private Canvas menuWindow;
     private List<Image> menuImage;
-
     private Canvas itemWindow;
+    private Canvas saveWindow;
 
     private IEnumerator menuCoroutine;
     private IEnumerator detailCoroutine;
-    private int selected;
+    private int selected;   //1start
     private Color defaultCol;
 
     void Start()
@@ -28,8 +28,11 @@ public class MenuBase : MonoBehaviour
                     //Debug.Log("menu_window初期化");
                     menuWindow = (Canvas)c;
                     break;
-                case "item_window":
+                case "itemList_window":
                     itemWindow = (Canvas)c;
+                    break;
+                case "saveList_window":
+                    saveWindow = (Canvas)c;
                     break;
                 default:
                     break;
@@ -49,6 +52,8 @@ public class MenuBase : MonoBehaviour
 
         menuWindow.gameObject.SetActive(false);
         itemWindow.gameObject.SetActive(false);
+        saveWindow.gameObject.SetActive(false);
+
     }
     
     void Update()
@@ -71,6 +76,7 @@ public class MenuBase : MonoBehaviour
 
         //アクション呼び出し
         yield return OnAction();
+        Debug.Log("OnAction抜ける");
 
         //選択していた項目の色を戻す
         menuImage[selected-1].color = defaultCol;
@@ -93,8 +99,10 @@ public class MenuBase : MonoBehaviour
         selected = 1;
         yield return null;
 
+        bool finishFlg = true;  //↓のwhile文を抜けて良いかどうか（項目詳細から戻ってきたときに再度他メニューを選択可能にするための制御）
         //** 選択
-        while(!Input.GetKeyDown(KeyCode.X)){
+        while(!finishFlg || !Input.GetKeyDown(KeyCode.X)){
+            
             if(Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical")>0.0f && detailCoroutine == null){
                 menuImage[selected-1].color = defaultCol;
                 selected = (int)Mathf.Clamp(selected - 1,1.0f,5.0f);
@@ -111,13 +119,16 @@ public class MenuBase : MonoBehaviour
                 Debug.Log("確定");
                 detailCoroutine = createDetailCoroutine();
                 StartCoroutine(detailCoroutine);
+                Debug.Log("createDetailCoroutine終了");
+                finishFlg = false;
             }
 
+            //Debug.Log("OnActionのwhile");   //detailコルーチン中でもこっちのwhileも回り続けている
+            if(!finishFlg && detailCoroutine == null){ finishFlg = true;}//詳細メニューから復帰したらフラグ戻す
             yield return null;
         }
 
-        //** メニュー詳細が終了されたら1フレーム待機
-        yield return null;
+        Debug.Log("OnAction終了直前");
 
         //** Xキー押下でメニュー操作終了
         yield return new WaitUntil( () => Input.GetKeyDown(KeyCode.X));
@@ -144,8 +155,9 @@ public class MenuBase : MonoBehaviour
                 itemWindow.gameObject.SetActive(true);
                 
                 yield return OnItemMenu();
+                //yield return null;
 
-                Debug.Log("アイテム画面閉じる");
+                //Debug.Log("アイテム画面閉じる");
                 //アイテム画面閉じる
                 itemWindow.gameObject.SetActive(false);
                 
@@ -154,6 +166,13 @@ public class MenuBase : MonoBehaviour
             case 2: //弾幕設定
                 break;
             case 3: //セーブ
+                //セーブ画面起動
+                saveWindow.gameObject.SetActive(true);
+
+                yield return OnSaveMenu();
+
+                //セーブ画面起動
+                saveWindow.gameObject.SetActive(false);
                 break;
             case 4: //各種設定
                 break;
@@ -173,6 +192,16 @@ public class MenuBase : MonoBehaviour
 
         //** Xキー押下でアイテム操作終了
         yield return new WaitUntil( () => Input.GetKeyDown(KeyCode.X));
+    }
+
+    //** セーブメニュー
+    private IEnumerator OnSaveMenu(){
+
+        SaveMenu saveMenu = new SaveMenu();
+        yield return saveMenu.disp();
+        //** Xキー押下でセーブ操作終了
+        yield return new WaitUntil( () => Input.GetKeyDown(KeyCode.X));
+
     }
 
 }

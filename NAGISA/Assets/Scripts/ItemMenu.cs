@@ -10,7 +10,7 @@ public class ItemMenu
 
     private List<string> itemList;
     private Dictionary<string,string> fravorDictionary;
-    private string selected;
+    private int selected;   //0start
 
     public ItemMenu(){
 
@@ -18,7 +18,7 @@ public class ItemMenu
 
         //** アイテムデータ取得
         itemList = new List<string>();
-        itemList.Add("* アイテム1");
+        itemList.Add("  アイテム1");
         itemList.Add("  アイテム2");
         itemList.Add("  アイテム3");
         fravorDictionary = new Dictionary<string,string>();
@@ -46,18 +46,44 @@ public class ItemMenu
         Debug.Log("disp");
 
         //** 初期表示
+        selected = 0;
+        updateSelectedMark();
         itemListText.text = dispString();
         fravorText.text = fravorDictionary[itemList[0].Substring(2)];
         yield return null;
 
         //** アイテム操作
         while(!Input.GetKeyDown(KeyCode.X)){
+
+            if(Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical")>0.0f){
+                selected = (int)Mathf.Clamp(selected - 2,0.0f,itemList.Count-1);
+                updateSelectedMark();
+                itemListText.text = dispString();
+                fravorText.text = fravorDictionary[itemList[selected].Substring(2)];
+            }
+            if(Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical")<0.0f){
+                selected = (int)Mathf.Clamp(selected + 2,0.0f,itemList.Count-1);
+                updateSelectedMark();
+                itemListText.text = dispString();
+                fravorText.text = fravorDictionary[itemList[selected].Substring(2)];
+            }
+            if(Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal")>0.0f){
+                selected = (int)Mathf.Clamp(selected + 1,0.0f,itemList.Count-1);
+                updateSelectedMark();
+                itemListText.text = dispString();
+                fravorText.text = fravorDictionary[itemList[selected].Substring(2)];
+            }
+            if(Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal")<0.0f){
+                selected = (int)Mathf.Clamp(selected - 1,0.0f,itemList.Count-1);
+                updateSelectedMark();
+                itemListText.text = dispString();
+                fravorText.text = fravorDictionary[itemList[selected].Substring(2)];
+            }
+
             yield return null;
-            
         }
 
-        //** Xキー押下でアイテム操作終了
-        yield return new WaitUntil( () => Input.GetKeyDown(KeyCode.X));
+        yield break;
     }
 
     private string dispString(){
@@ -70,6 +96,18 @@ public class ItemMenu
             }
         }
         return list;
+    }
+
+    private void updateSelectedMark(){
+
+        //Debug.Log("persistentDataPath = " + Application.persistentDataPath);
+        for(int i=0; i<itemList.Count; i++){
+            if(i==selected){
+                itemList[i] = itemList[i].Replace("  " , "* ");
+            }else{
+                itemList[i] = itemList[i].Replace("* " , "  ");
+            }
+        }        
     }
 
 }
