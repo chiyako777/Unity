@@ -43,6 +43,7 @@
      <Compile Include="Assets\Scripts\MOConversation.cs" />
      <Compile Include="Assets\Scripts\MapObjectBase.cs" />
      <Compile Include="Assets\Scripts\MenuBase.cs" />
+     <Compile Include="Assets\Scripts\SaveData.cs" />
      <Compile Include="Assets\Scripts\SaveMenu.cs" />
      <Compile Include="Assets\Scripts\_____UIWindowController.cs" />
      <None Include="Assets\Shaders\PlaneTextrure.shader" />

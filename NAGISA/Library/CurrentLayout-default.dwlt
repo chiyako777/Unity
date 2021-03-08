@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -211,16 +211,16 @@ MonoBehaviour:
     y: 0
     width: 828
     height: 455
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 13}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
   - {fileID: 13}
   - {fileID: 16}
   - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -448,9 +448,9 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 1
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -510,9 +510,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: de320000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 3cfbffff163500001c350000
+      m_SelectedIDs: 2cc6ffff
+      m_LastClickedID: -14804
+      m_ExpandedIDs: 2cc6ffffe2ebffff3cfbffff523400006a340000f234000016350000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -727,8 +727,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 65}
-    m_SelectedIDs: 16360000
-    m_LastClickedID: 13846
+    m_SelectedIDs: 08360000
+    m_LastClickedID: 13832
     m_ExpandedIDs: 00000000ea350000ec350000ee350000f035000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -782,8 +782,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: de320000
-    m_LastClickedInstanceID: 13022
+    m_SelectedInstanceIDs: 5e370000
+    m_LastClickedInstanceID: 14174
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300002c3600001c36000026360000243600002a36000022360000283600002036000030360000323600001e3600005e340000083f00002e360000324300007e430000964300009a4300008e43000094430000924300001835000000000000
     m_RenameOverlay:
