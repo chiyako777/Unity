@@ -39,8 +39,9 @@
      <Compile Include="Assets\Scripts\CharaTipAnimeController.cs" />
      <Compile Include="Assets\Scripts\CharaTipController.cs" />
      <Compile Include="Assets\Scripts\FlagManager.cs" />
-     <Compile Include="Assets\Scripts\MOConversation.cs" />
-     <Compile Include="Assets\Scripts\MapObjectBase.cs" />
+     <Compile Include="Assets\Scripts\MapObject\MOConversation.cs" />
+     <Compile Include="Assets\Scripts\MapObject\MOTransition.cs" />
+     <Compile Include="Assets\Scripts\MapObject\MapObjectBase.cs" />
      <Compile Include="Assets\Scripts\Menu\ItemMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuBase.cs" />
      <Compile Include="Assets\Scripts\Menu\SaveMenu.cs" />
