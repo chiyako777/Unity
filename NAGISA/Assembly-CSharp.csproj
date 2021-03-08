@@ -45,7 +45,10 @@
      <Compile Include="Assets\Scripts\Menu\ItemMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuBase.cs" />
      <Compile Include="Assets\Scripts\Menu\SaveMenu.cs" />
+     <Compile Include="Assets\Scripts\RoomData.cs" />
      <Compile Include="Assets\Scripts\SaveData.cs" />
+     <Compile Include="Assets\Scripts\SpellPracController.cs" />
+     <Compile Include="Assets\Scripts\Title\TitleMenu.cs" />
      <Compile Include="Assets\Scripts\_____UIWindowController.cs" />
      <None Include="Assets\Shaders\PlaneTextrure.shader" />
     <Reference Include="UnityEngine">
