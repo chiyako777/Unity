@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpellPracticeSetting.unity
     guid: d33bd919e6d1ba749805a654208c7b33
+  - enabled: 1
+    path: Assets/Scenes/Bullet.unity
+    guid: 9ff53ba29a6ffdf4aba7f30255020b03
   m_configObjects: {}

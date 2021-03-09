@@ -36,6 +36,11 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Bullet\BulletManager.cs" />
+     <Compile Include="Assets\Scripts\Bullet\BulletUtility.cs" />
+     <Compile Include="Assets\Scripts\Bullet\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Bullet\PlayerController.cs" />
      <Compile Include="Assets\Scripts\CharaTipAnimeController.cs" />
      <Compile Include="Assets\Scripts\CharaTipController.cs" />
      <Compile Include="Assets\Scripts\FlagManager.cs" />
