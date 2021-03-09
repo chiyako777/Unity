@@ -100,6 +100,7 @@ public class MenuBase : MonoBehaviour
         yield return null;
 
         bool finishFlg = true;  //↓のwhile文を抜けて良いかどうか（項目詳細から戻ってきたときに再度他メニューを選択可能にするための制御）
+                                //戻る操作が基本的にXキーなので、ちゃんと1段階ずつ戻すための制御
         //** 選択
         while(!finishFlg || !Input.GetKeyDown(KeyCode.X)){
             

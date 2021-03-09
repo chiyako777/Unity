@@ -39,6 +39,7 @@
      <Compile Include="Assets\Scripts\CharaTipAnimeController.cs" />
      <Compile Include="Assets\Scripts\CharaTipController.cs" />
      <Compile Include="Assets\Scripts\FlagManager.cs" />
+     <Compile Include="Assets\Scripts\Helper\JsonHelper.cs" />
      <Compile Include="Assets\Scripts\MapObject\MOConversation.cs" />
      <Compile Include="Assets\Scripts\MapObject\MOTransition.cs" />
      <Compile Include="Assets\Scripts\MapObject\MapObjectBase.cs" />

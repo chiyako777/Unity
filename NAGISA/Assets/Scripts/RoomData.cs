@@ -8,5 +8,4 @@ public class RoomData
 {
     public string name;
     public List<string> spell;
-
 }
