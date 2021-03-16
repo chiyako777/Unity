@@ -37,15 +37,21 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
-     <Compile Include="Assets\Scripts\Bullet\BulletManager.cs" />
      <Compile Include="Assets\Scripts\Bullet\BulletUtility.cs" />
+     <Compile Include="Assets\Scripts\Bullet\Command.cs" />
+     <Compile Include="Assets\Scripts\Bullet\CommandManager.cs" />
+     <Compile Include="Assets\Scripts\Bullet\Commands.cs" />
      <Compile Include="Assets\Scripts\Bullet\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Bullet\EnemyInfo.cs" />
+     <Compile Include="Assets\Scripts\Bullet\Enemys.cs" />
+     <Compile Include="Assets\Scripts\Bullet\MainManager.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerShot.cs" />
      <Compile Include="Assets\Scripts\CharaTipAnimeController.cs" />
      <Compile Include="Assets\Scripts\CharaTipController.cs" />
      <Compile Include="Assets\Scripts\FlagManager.cs" />
      <Compile Include="Assets\Scripts\Helper\JsonHelper.cs" />
+     <Compile Include="Assets\Scripts\Helper\ResourcesLoader.cs" />
      <Compile Include="Assets\Scripts\MapObject\MOConversation.cs" />
      <Compile Include="Assets\Scripts\MapObject\MOTransition.cs" />
      <Compile Include="Assets\Scripts\MapObject\MapObjectBase.cs" />

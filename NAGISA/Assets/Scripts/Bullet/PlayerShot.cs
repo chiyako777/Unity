@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerShot : MonoBehaviour
 {
     private float speed = 3.0f;
-    private int power = 1;
+    [HideInInspector]
+    public int power = 1;
 
     void Start()
     {

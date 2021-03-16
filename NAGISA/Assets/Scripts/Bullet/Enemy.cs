@@ -2,18 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//  ゆくゆくは敵個別に応じて派生を作る感じ
+//** 敵機基底クラス
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    protected EnemyInfo enemyInfo;
+    protected bool bulletDischarge = false;     //弾幕発射フラグ
+    
     void Start()
     {
-        
     }
 
-    // Update is called once per frame
     void Update()
-    {
+    {        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision){
         
+        if(collision.gameObject.tag == "Shot"){
+            Debug.Log("自機ショットに当たった " + "life:" + enemyInfo.life);
+            enemyInfo.life -= collision.GetComponent<PlayerShot>().power;
+            if(enemyInfo.life < 0){
+                Debug.Log("敵機デストロイ");
+                Destroy(gameObject);
+            }
+            Destroy(collision.gameObject);
+        }
     }
 }
