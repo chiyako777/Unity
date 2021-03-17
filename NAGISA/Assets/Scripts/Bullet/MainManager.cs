@@ -8,10 +8,6 @@ public class MainManager : MonoBehaviour
     public static ResourcesLoader<GameObject> resourcesLoader = new ResourcesLoader<GameObject>();
     public CommandManager commandManager = new CommandManager();
 
-    // public class BulletFactory{
-
-    // }
-
     void Start()
     {
         resourcesLoader.LoadAllObjects("Prefabs");

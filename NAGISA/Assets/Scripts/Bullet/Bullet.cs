@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private float speed = 3.0f;
-    private float angle = 0.0f;
+    private Vector3 velocity = new Vector3(0.0f,0.0f,0.0f);
+    private Vector3 gravity = new Vector3(0.0f,1.0f,0.0f);
 
     void Start()
     {        
     }
 
-    public void SetParam(float speed,float angle){
-        this.speed = speed;
-        this.angle = angle;
-    }
-
-
     void Update()
     {
-        //** 暫定で単純進行弾
-        transform.position += BulletUtility.GetDirection(angle) * speed;
-
+        transform.position += velocity + gravity;
     }
 }
