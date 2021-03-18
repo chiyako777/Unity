@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Bullet\BulletController.cs" />
      <Compile Include="Assets\Scripts\Bullet\BulletUtility.cs" />
      <Compile Include="Assets\Scripts\Bullet\Command.cs" />
      <Compile Include="Assets\Scripts\Bullet\CommandManager.cs" />

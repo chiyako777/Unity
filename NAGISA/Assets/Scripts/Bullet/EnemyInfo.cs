@@ -6,17 +6,22 @@ using UnityEngine;
 public struct EnemyInfo
 {
     public GameObject enemyObj;     //敵をInstantiateするときのコピー元として使われる意味合いが大きく、インスタンス化された後は特に使用しない？
-
     public GameObject lifeGage;
+    public bool bulletDischarge;
+    public int enemyStatus;
     public float x,y;
+    
     public int life,graphType,waitTime,bulletPattern;
     public int bulletInterval,bulletType,bulletColor,bulletScriptType;
 
-    public EnemyInfo(GameObject enemyObj,GameObject lifeGage,float x = 0.0f,float y = 0.0f,int life = 1,int graphType = 0,int waitTime = 180,
+    public EnemyInfo(GameObject enemyObj,GameObject lifeGage,bool bulletDischarge,int enemyStatus,
+                        float x = 0.0f,float y = 0.0f,int life = 1,int graphType = 0,int waitTime = 180,
                         int bulletPattern = 0,int bulletInterval = 60,int bulletType = 0,
                         int bulletColor = 0,int bulletScriptType = 0){
         this.enemyObj = enemyObj;
         this.lifeGage = lifeGage;
+        this.bulletDischarge = bulletDischarge;
+        this.enemyStatus = enemyStatus;
         this.x = x;
         this.y = y;
         this.life = life;

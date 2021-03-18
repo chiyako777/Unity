@@ -33,6 +33,8 @@ public class CommandManager
         EnemyInfo enemyInfo = new EnemyInfo();
         enemyInfo.enemyObj = MainManager.resourcesLoader.GetObjectHandle("tekitou");
         enemyInfo.lifeGage = MainManager.resourcesLoader.GetObjectHandle("enemy_lifegage");
+        enemyInfo.bulletDischarge = false;
+        enemyInfo.enemyStatus = 0;
         enemyInfo.x = 0.0f;
         enemyInfo.y = 50.0f;
         enemyInfo.life = 60;
