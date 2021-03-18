@@ -43,6 +43,7 @@
      <Compile Include="Assets\Scripts\Bullet\Commands.cs" />
      <Compile Include="Assets\Scripts\Bullet\Enemy.cs" />
      <Compile Include="Assets\Scripts\Bullet\EnemyInfo.cs" />
+     <Compile Include="Assets\Scripts\Bullet\EnemyLifeGage.cs" />
      <Compile Include="Assets\Scripts\Bullet\Enemys.cs" />
      <Compile Include="Assets\Scripts\Bullet\MainManager.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerController.cs" />

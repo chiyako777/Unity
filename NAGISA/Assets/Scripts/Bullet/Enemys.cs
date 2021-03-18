@@ -18,17 +18,23 @@ public class EnemyWhite : Enemy
 
     public static void New(EnemyInfo enemyInfo){
         //Debug.Log("EnemyWhite.New");
+        //** 敵オブジェクト
         GameObject enemyObj = Instantiate(enemyInfo.enemyObj,new Vector3(enemyInfo.x,enemyInfo.y,0.0f),Quaternion.identity);
-        //GameObject lifeGage = Instantiate(enemyInfo.lifeGage,new Vector3(enemyInfo.x,enemyInfo.y,0.0f),Quaternion.identity);
         enemyObj.AddComponent<EnemyWhite>().enemyInfo = enemyInfo;
-        //enemyObj.GetComponent<EnemyWhite>().enemyInfo.lifeGage = lifeGage;
 
-        //GameObject lifeGage = Instantiate(enemyInfo.lifeGage,new Vector3(enemyInfo.x,enemyInfo.y,0.0f),Quaternion.identity);
-        //Debug.Log("lifeGage : " + lifeGage);
-        //enemyObj.GetComponent<EnemyWhite>().enemyInfo.lifeGage = lifeGage;
-        //Debug.Log("enemyInfo.lifeGage : " + enemyObj.GetComponent<EnemyWhite>().enemyInfo.lifeGage);
-        //Destroy(lifeGage);
-        //⇒ここのタイミングで、Enemy.Start Enemy.Updateを呼ぶ
+        //** 敵体力ゲージ
+        GameObject lifeGage = Instantiate(enemyInfo.lifeGage,new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
+        
+        GameObject enemyUIController = GameObject.Find("enemy_UI_controller");      //親Canvas設定
+        lifeGage.transform.SetParent(enemyUIController.transform,false);
+
+        var gagePos = RectTransformUtility.WorldToScreenPoint(Camera.main,enemyObj.transform.position);     //位置合わせ
+        lifeGage.GetComponent<RectTransform>().anchoredPosition = new Vector2(gagePos.x,gagePos.y);
+        
+        enemyObj.AddComponent<EnemyLifeGage>();     //紐づけ
+        enemyObj.GetComponent<EnemyWhite>().enemyInfo.lifeGage = lifeGage;
+        
+        //⇒ここのタイミングで、Enemy.Start Enemy.Update呼ばれる
     }
 }
 
