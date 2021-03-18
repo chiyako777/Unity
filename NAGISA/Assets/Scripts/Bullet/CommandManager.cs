@@ -33,10 +33,9 @@ public class CommandManager
         EnemyInfo enemyInfo = new EnemyInfo();
         enemyInfo.enemyObj = MainManager.resourcesLoader.GetObjectHandle("tekitou");
         enemyInfo.lifeGage = MainManager.resourcesLoader.GetObjectHandle("enemy_lifegage");
-        enemyInfo.bulletDischarge = false;
+        enemyInfo.bulletController = MainManager.resourcesLoader.GetObjectHandle("bullet_controller");
         enemyInfo.enemyStatus = 0;
-        enemyInfo.x = 0.0f;
-        enemyInfo.y = 50.0f;
+        enemyInfo.enemyLocation = new Vector3(0.0f,50.0f,0.0f);
         enemyInfo.life = 60;
         enemyInfo.graphType = 0;
         enemyInfo.waitTime = 180;
@@ -47,21 +46,6 @@ public class CommandManager
         enemyInfo.bulletScriptType = 0;
 
         command.Add(new EnemyCreateCommand(enemyFunc[0],enemyInfo));
-
-        //敵二個目
-        // EnemyInfo enemyInfo2 = new EnemyInfo();
-        // enemyInfo2.enemyObj = MainManager.resourcesLoader.GetObjectHandle("tekitou");
-        // enemyInfo2.x = 50.0f;
-        // enemyInfo2.y = 50.0f;
-        // enemyInfo2.life = 60;
-        // enemyInfo2.graphType = 0;
-        // enemyInfo2.waitTime = 180;
-        // enemyInfo2.bulletPattern = 0;
-        // enemyInfo2.bulletInterval = 60;
-        // enemyInfo2.bulletType = 0;
-        // enemyInfo2.bulletColor = 0;
-        // enemyInfo2.bulletScriptType = 0;
-        // command.Add(new EnemyCreateCommand(enemyFunc[0],enemyInfo2));
 
         return true;
     }

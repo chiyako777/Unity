@@ -19,7 +19,7 @@ public class EnemyWhite : Enemy
     public static void New(EnemyInfo enemyInfo){
         //Debug.Log("EnemyWhite.New");
         //** 敵オブジェクト
-        GameObject enemyObj = Instantiate(enemyInfo.enemyObj,new Vector3(enemyInfo.x,enemyInfo.y,0.0f),Quaternion.identity);
+        GameObject enemyObj = Instantiate(enemyInfo.enemyObj, enemyInfo.enemyLocation, Quaternion.identity);
         enemyObj.AddComponent<EnemyWhite>().enemyInfo = enemyInfo;
 
         //** 敵体力ゲージ
@@ -33,6 +33,10 @@ public class EnemyWhite : Enemy
         
         enemyObj.AddComponent<EnemyLifeGage>();     //紐づけ
         enemyObj.GetComponent<EnemyWhite>().enemyInfo.lifeGage = lifeGage;
+
+        //** 弾幕コントローラー
+        GameObject bulletController = Instantiate(enemyInfo.bulletController,new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
+        enemyObj.GetComponent<EnemyWhite>().enemyInfo.bulletController = bulletController;
         
         //⇒ここのタイミングで、Enemy.Start Enemy.Update呼ばれる
     }

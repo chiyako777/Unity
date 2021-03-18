@@ -73,8 +73,13 @@ public class PlayerController : MonoBehaviour
                 InputArray[str[i]] = 0;
             }
         }
-
-        
-
     }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.gameObject.tag == "Bullet"){
+            Debug.Log("当たった");
+        }
+    }
+    
+
 }
