@@ -15,6 +15,20 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.position += velocity + gravity;
+
+        //** 画面Outによる弾消し
+        if(BulletUtility.IsOut(transform.position)){
+            //Debug.Log("画面outによる弾消し");
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        //** ボムによる弾消し
+        if(collision.gameObject.tag == "Bomb_Shot"){
+            //Debug.Log("ボムによる弾消し");
+            Destroy(gameObject);
+        }
     }
 }
 

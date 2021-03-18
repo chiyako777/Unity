@@ -47,8 +47,10 @@
      <Compile Include="Assets\Scripts\Bullet\EnemyLifeGage.cs" />
      <Compile Include="Assets\Scripts\Bullet\Enemys.cs" />
      <Compile Include="Assets\Scripts\Bullet\MainManager.cs" />
+     <Compile Include="Assets\Scripts\Bullet\PlayerBombShot.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerShot.cs" />
+     <Compile Include="Assets\Scripts\Bullet\Spells\TestSpell.cs" />
      <Compile Include="Assets\Scripts\CharaTipAnimeController.cs" />
      <Compile Include="Assets\Scripts\CharaTipController.cs" />
      <Compile Include="Assets\Scripts\FlagManager.cs" />

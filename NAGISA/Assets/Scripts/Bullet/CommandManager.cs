@@ -33,7 +33,7 @@ public class CommandManager
         EnemyInfo enemyInfo = new EnemyInfo();
         enemyInfo.enemyObj = MainManager.resourcesLoader.GetObjectHandle("tekitou");
         enemyInfo.lifeGage = MainManager.resourcesLoader.GetObjectHandle("enemy_lifegage");
-        enemyInfo.bulletController = MainManager.resourcesLoader.GetObjectHandle("bullet_controller");
+        enemyInfo.bulletController = MainManager.resourcesLoader.GetObjectHandle("TestSpell");
         enemyInfo.enemyStatus = 0;
         enemyInfo.enemyLocation = new Vector3(0.0f,50.0f,0.0f);
         enemyInfo.life = 60;

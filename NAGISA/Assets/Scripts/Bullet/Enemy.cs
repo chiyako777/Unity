@@ -14,7 +14,8 @@ public class Enemy : MonoBehaviour
 
     //** caches
     protected Image lifeGageImage;  //敵体力ゲージ
-    protected BulletController bulletController;    //弾幕コントローラー
+    [HideInInspector]
+    public BulletController bulletController;    //弾幕コントローラー
 
     //** const
     protected const int lifeDispCnt = 60; //敵体力ゲージ表示演出時のフレームカウント
@@ -67,7 +68,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         
-        if(collision.gameObject.tag == "Shot" && bulletController.activeFlg){
+        if((collision.gameObject.tag == "Shot" || collision.gameObject.tag == "Bomb_Shot") && bulletController.activeFlg){
             //Debug.Log("自機ショットに当たった " + "life:" + enemyInfo.life);
             enemyInfo.life -= collision.GetComponent<PlayerShot>().power;
             lifeGageImage.fillAmount = 1.0f/(float)maxLife * (float)enemyInfo.life;
@@ -75,6 +76,7 @@ public class Enemy : MonoBehaviour
                 //Debug.Log("敵機デストロイ");
                 Destroy(gameObject);
                 Destroy(enemyInfo.lifeGage);
+                bulletController.DeleteBullet();
                 Destroy(enemyInfo.bulletController);
 
             }

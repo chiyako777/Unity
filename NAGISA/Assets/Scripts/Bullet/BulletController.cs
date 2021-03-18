@@ -17,29 +17,27 @@ public class BulletController : MonoBehaviour
     [HideInInspector]
     public bool activeFlg = false;
 
-    private int frameCount = 0;
+    protected int frameCount = 0;
 
-    void Start()
+    protected void Start()
     {
         //Debug.Log("BulletController.Start");
         GameObject obj = MainManager.resourcesLoader.GetObjectHandle("test_bullet");
         prefabs.Add(obj);
     }
 
-    void Update()
+    protected void Update()
     {
         if(!activeFlg){ return; }
-        //Debug.Log("BulletController.Update");
+        bulletList.RemoveAll(item => item == null);     //ボムなどによる弾消しが起きているとリストが歯抜けになっているので、null要素削除
+    }
 
-        if(frameCount % 150 == 0){
-            //Debug.Log("弾幕生成");
-            bulletList.Add(Instantiate(prefabs[0],enemyLocation,Quaternion.identity));
-            bulletList[bulletList.Count-1].AddComponent<Bullet>();
-            Bullet b = bulletList[bulletList.Count-1].GetComponent<Bullet>();
-            b.velocity = new Vector3(0.1f,-0.1f,0.0f);
-            b.gravity = new Vector3(0.0f,0.0f,0.0f);
+    //** 弾幕消滅
+    public void DeleteBullet(){
+        foreach(GameObject bullet in bulletList){
+            Destroy(bullet);
         }
-        frameCount++;
+        bulletList.Clear();
     }
 
 }

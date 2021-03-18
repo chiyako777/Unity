@@ -7,8 +7,9 @@ public static class BulletUtility
 {
 
     [HideInInspector]
-    public static Vector2 screenTopLeft = new Vector2(-230.0f,180.0f);       //弾幕画面範囲
-    public static Vector2 screenBottomRight = new Vector2(135.0f,-180.0f);   //弾幕画面範囲
+    //弾幕画面範囲(実際の見た目より広め)
+    public static Vector2 screenTopLeft = new Vector2(-235.0f,185.0f);
+    public static Vector2 screenBottomRight = new Vector2(140.0f,-185.0f);
 
     //** angleの方向に進む単位ベクトル
     public static Vector3 GetDirection(float angle){

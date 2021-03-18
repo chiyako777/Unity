@@ -8,12 +8,12 @@ public class PlayerShot : MonoBehaviour
     [HideInInspector]
     public int power = 1;
 
-    void Start()
+    protected void Start()
     {
         
     }
 
-    void Update()
+    protected void Update()
     {
         //** ショットの移動
         float angle = 90.0f;

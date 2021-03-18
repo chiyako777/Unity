@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 962149087}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -564,6 +564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotObjs:
   - {fileID: 7635735729274898858, guid: 6951b74de956715459d88114d195b289, type: 3}
+  - {fileID: 9110606744570004286, guid: 3617ddb33493d254e8d5ae3ecee26fff, type: 3}
 --- !u!50 &962149086
 Rigidbody2D:
   serializedVersion: 4
