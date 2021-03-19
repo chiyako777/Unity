@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Enemy_Bullet
   - Bomb_Shot
+  - Reflec_Shot
   layers:
   - Default
   - TransparentFX

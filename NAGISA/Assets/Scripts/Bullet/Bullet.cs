@@ -24,8 +24,8 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        //** ボムによる弾消し
-        if(collision.gameObject.tag == "Bomb_Shot"){
+        //** ボム・リフレクによる弾消し
+        if(collision.gameObject.tag == "Bomb_Shot" || collision.gameObject.tag == "Reflec_Shot"){
             //Debug.Log("ボムによる弾消し");
             Destroy(gameObject);
         }

@@ -6,10 +6,13 @@ public class PlayerHomingShot : PlayerShot
 {
 
     [HideInInspector]
-    public Vector3 enemyPos = new Vector3(0.0f,0.0f,0.0f);
+    public bool lr;    //true:Left false:Right
 
     //** caches
     private GameObject enemy;
+
+    //** const
+    private const float turnValue = 5.0f;
 
     void Start()
     {
@@ -25,20 +28,35 @@ public class PlayerHomingShot : PlayerShot
 
         //** 自機と敵機の距離計算
         Vector3 dist = CalcDistance();
+        //Debug.Log("敵機-自機距離：" + dist.magnitude);
         float angle = Mathf.Atan2(dist.y,dist.x);
+        float turnAngle = dist.magnitude / turnValue * Mathf.Deg2Rad;
 
         //** 軌道算出
-        transform.position += BulletUtility.GetDirection(angle * Mathf.Rad2Deg) * speed;
+        if(lr){
+            transform.position += BulletUtility.GetDirection( (angle + turnAngle) * Mathf.Rad2Deg) * speed; //左旋回
+        }else{
+            transform.position += BulletUtility.GetDirection( (angle - turnAngle) * Mathf.Rad2Deg) * speed; //右旋回
+        }
 
-        //** (仮)削除
-        Destroy(gameObject,2);
+        //** 画面外に出た場合削除
+        if(BulletUtility.IsOut(transform.position)){
+          Destroy(gameObject);  
+        }
 
     }
 
     private Vector3 CalcDistance(){
-        float x = enemy.transform.position.x - transform.position.x;
-        float y = enemy.transform.position.y - transform.position.y;
-        return new Vector3(x,y,0.0f);
+        if(enemy != null){
+            float x = enemy.transform.position.x - transform.position.x;
+            float y = enemy.transform.position.y - transform.position.y;
+            return new Vector3(x,y,0.0f);
+        }else{
+            //敵がいなくなってたら、決め打ちで画面左上に向けて打っとく
+            float x = -235.0f - transform.position.x;
+            float y = 185 - transform.position.y;
+            return new Vector3(x,y,0.0f);
+        }
     }
 
     void LoadEnemy(){

@@ -10,17 +10,20 @@ public class PlayerController : MonoBehaviour
     private Vector2 velocity;   //自機の移動量
     private float recepSqrt2;    // 1 / √2  (ナナメ移動時速度調整)
     private int mutekiTime = 0;     //被弾後無敵時間
-    private int bombTime = 0;       //ボム時間    
+    private int bombTime = 0;       //ボム時間
+    private int reflecTime = 0;     //リフレク時間 
 
     private Dictionary<string,int> InputArray;  //各種入力制御
     public GameObject[] shotObjs;   //自機ショット用オブジェクト（Inspectorでプレハブを指定）
 
     //** caches
     private GameObject enemy;
+    private GameObject reflec;
 
     //** const
     private const int maxMutekiTime = 60;
     private const int maxBombTime = 180;
+    private const int maxReflecTime = 1000;
 
     void Start()
     {
@@ -31,6 +34,7 @@ public class PlayerController : MonoBehaviour
         InputArray["Shot"] = 0;
         InputArray["Bomb"] = 0;
         InputArray["Fire3"] = 0;
+        InputArray["Fire1"] = 0;
 
     }
     
@@ -63,9 +67,11 @@ public class PlayerController : MonoBehaviour
             if(optionType.Equals("Homing",StringComparison.CurrentCulture)){
                 //ホーミング2Way
                 Vector3 leftPos = new Vector3(transform.position.x-5.0f,transform.position.y-7.0f,0.0f);
-                Instantiate(shotObjs[2],leftPos,Quaternion.identity);    
+                GameObject lh = Instantiate(shotObjs[2],leftPos,Quaternion.identity);
+                lh.GetComponent<PlayerHomingShot>().lr = true;
                 Vector3 rightPos = new Vector3(transform.position.x+5.0f,transform.position.y-7.0f,0.0f);
-                Instantiate(shotObjs[2],rightPos,Quaternion.identity);
+                GameObject rh = Instantiate(shotObjs[2],rightPos,Quaternion.identity);
+                rh.GetComponent<PlayerHomingShot>().lr = false;
             }
         }
 
@@ -79,6 +85,24 @@ public class PlayerController : MonoBehaviour
             Instantiate(shotObjs[1],transform.position,Quaternion.identity);
         }
 
+        //** リフレク
+        if(optionType == "Reflec"){
+            if(InputArray["Fire1"] > 0 && reflecTime < maxReflecTime){
+                if(reflecTime == 0){
+                    //リフレクモード開始(リフレクオブジェクト生成)
+                    Vector3 initialPos = new Vector3(transform.position.x,transform.position.y + 15.0f,0.0f);
+                    reflec = Instantiate(shotObjs[3],initialPos,Quaternion.identity);
+                }
+                reflecTime++;
+            }else{
+                reflecTime = 0;
+                if(reflec != null){
+                    //Debug.Log("Reflec Destroy");
+                    Destroy(reflec);
+                }
+            }
+        }
+
         //** 無敵時間カウント
         mutekiTime = (mutekiTime > 0) ? ++mutekiTime : 0;
         if(mutekiTime >= maxMutekiTime){ mutekiTime = 0; }
@@ -86,8 +110,10 @@ public class PlayerController : MonoBehaviour
 
     void CalcInput(){
         //Shot:Zキー:ショット
+        //Bomb:xキー:ボム
         //Fire3:左シフト:低速移動
-        string[] str = { "Shot", "Bomb", "Fire3" };
+        //Fire1:左Ctr:リフレク
+        string[] str = { "Shot", "Bomb", "Fire3", "Fire1" };
         for(int i = 0; i < str.Length; ++i)
         {
             if (Input.GetButton(str[i]))
@@ -124,6 +150,11 @@ public class PlayerController : MonoBehaviour
             //ボム時は自機移動速度低下
             velocity.x = 0.5f;
             velocity.y = 0.5f;
+        }
+        if(reflecTime > 0){
+            //リフレク中は動けない
+            velocity.x = 0.0f;
+            velocity.y = 0.0f;
         }
     }
 
