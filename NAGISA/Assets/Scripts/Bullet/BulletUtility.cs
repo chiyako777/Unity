@@ -12,6 +12,7 @@ public static class BulletUtility
     public static Vector2 screenBottomRight = new Vector2(140.0f,-185.0f);
 
     //** angleの方向に進む単位ベクトル
+    // angle ⇒ degree (-180 ~ 180)
     public static Vector3 GetDirection(float angle){
         float rad = angle * Mathf.Deg2Rad;
         return new Vector3(

@@ -36,7 +36,7 @@ public class CommandManager
         enemyInfo.bulletController = MainManager.resourcesLoader.GetObjectHandle("TestSpell");
         enemyInfo.enemyStatus = 0;
         enemyInfo.enemyLocation = new Vector3(0.0f,50.0f,0.0f);
-        enemyInfo.life = 60;
+        enemyInfo.life = 150;
         enemyInfo.graphType = 0;
         enemyInfo.waitTime = 180;
         enemyInfo.bulletPattern = 0;

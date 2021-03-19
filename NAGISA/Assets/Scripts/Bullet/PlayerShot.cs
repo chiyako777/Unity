@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerShot : MonoBehaviour
 {
-    private float speed = 3.0f;
+    
+    protected float speed = 3.0f;
     [HideInInspector]
-    public int power = 1;
+    public int power = 2;
 
     protected void Start()
     {

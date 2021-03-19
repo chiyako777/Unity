@@ -562,9 +562,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d46e09b46cfb8241899431d3cb716ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionType: Homing
   shotObjs:
   - {fileID: 7635735729274898858, guid: 6951b74de956715459d88114d195b289, type: 3}
   - {fileID: 9110606744570004286, guid: 3617ddb33493d254e8d5ae3ecee26fff, type: 3}
+  - {fileID: 6308149246240031286, guid: 7b721b4ca1889b94eb8963339eea3f2b, type: 3}
 --- !u!50 &962149086
 Rigidbody2D:
   serializedVersion: 4

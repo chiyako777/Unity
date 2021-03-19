@@ -9,7 +9,7 @@ public class PlayerBombShot : PlayerShot
     void Start()
     {
         base.Start();  
-        power = 2;      
+        power = 4;      
     }
 
     void Update()

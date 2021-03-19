@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
+    public string optionType;   //デバッグ用にインスペクタで自機オプションタイプ設定(Homing,Reflec,Warp&Power)
+
     private Vector2 velocity;   //自機の移動量
     private float recepSqrt2;    // 1 / √2  (ナナメ移動時速度調整)
     private int mutekiTime = 0;     //被弾後無敵時間
@@ -57,7 +59,14 @@ public class PlayerController : MonoBehaviour
         if(InputArray["Shot"] > 0 && InputArray["Shot"] % 10 == 0
             && mutekiTime == 0 && bombTime == 0){
             //Debug.Log("ショットを打つ");
-            Instantiate(shotObjs[0],transform.position,Quaternion.identity);
+            Instantiate(shotObjs[0],transform.position,Quaternion.identity);    //通常ショット
+            if(optionType.Equals("Homing",StringComparison.CurrentCulture)){
+                //ホーミング2Way
+                Vector3 leftPos = new Vector3(transform.position.x-5.0f,transform.position.y-7.0f,0.0f);
+                Instantiate(shotObjs[2],leftPos,Quaternion.identity);    
+                Vector3 rightPos = new Vector3(transform.position.x+5.0f,transform.position.y-7.0f,0.0f);
+                Instantiate(shotObjs[2],rightPos,Quaternion.identity);
+            }
         }
 
         //** ボムを打つ
