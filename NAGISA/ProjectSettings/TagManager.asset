@@ -43,6 +43,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 2962152519
+    locked: 0
+  - name: bullet_enemy
+    uniqueID: 2863022001
+    locked: 0
+  - name: bullet_player
+    uniqueID: 4201994871
+    locked: 0
+  - name: bullet
+    uniqueID: 1141574873
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
