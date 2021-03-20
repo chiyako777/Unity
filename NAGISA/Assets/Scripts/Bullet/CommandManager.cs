@@ -34,6 +34,7 @@ public class CommandManager
         enemyInfo.enemyObj = MainManager.resourcesLoader.GetObjectHandle("tekitou");
         enemyInfo.lifeGage = MainManager.resourcesLoader.GetObjectHandle("enemy_lifegage");
         enemyInfo.bulletController = MainManager.resourcesLoader.GetObjectHandle("TestSpell");
+        enemyInfo.defeatEffect = MainManager.resourcesLoader.GetObjectHandle("enemy_defeat_effect");
         enemyInfo.enemyStatus = 0;
         enemyInfo.enemyLocation = new Vector3(0.0f,50.0f,0.0f);
         enemyInfo.life = 150;

@@ -19,6 +19,9 @@ public class BulletController : MonoBehaviour
 
     protected int frameCount = 0;
 
+    //** const
+    protected const int vanishMotionCnt = 100; //消滅演出長さ
+
     protected void Start()
     {
         //Debug.Log("BulletController.Start");
@@ -32,12 +35,32 @@ public class BulletController : MonoBehaviour
         bulletList.RemoveAll(item => item == null);     //ボムなどによる弾消しが起きているとリストが歯抜けになっているので、null要素削除
     }
 
-    //** 弾幕消滅
+    //** 弾幕オブジェクト削除
     public void DeleteBullet(){
         foreach(GameObject bullet in bulletList){
             Destroy(bullet);
         }
         bulletList.Clear();
+    }
+
+    //** 弾幕消滅演出
+    public int Vanish(float motionFrame){
+        if(motionFrame < vanishMotionCnt){
+            //Debug.Log("Bullet Vanish 1");
+            float alpha = 1.0f - (1.0f * motionFrame/(float)vanishMotionCnt);
+            foreach(GameObject bullet in bulletList){
+                if(bullet != null){
+                    bullet.GetComponent<Bullet>().spriteRenderer.color = new Color(1.0f,1.0f,1.0f,alpha);
+                }
+            }
+            return 1;
+        }else if(motionFrame == vanishMotionCnt){
+            //Debug.Log("Bullet Vanish 0");
+            return 0;
+        }else{
+            //Debug.Log("Bullet Vanish -1");
+            return -1;
+        }
     }
 
 }

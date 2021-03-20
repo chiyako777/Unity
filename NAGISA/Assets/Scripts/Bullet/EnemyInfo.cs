@@ -8,19 +8,23 @@ public struct EnemyInfo
     public GameObject enemyObj;     //敵をInstantiateするときのコピー元として使われる意味合いが大きく、インスタンス化された後は特に使用しない？
     public GameObject lifeGage;
     public GameObject bulletController;
+    public GameObject defeatEffect;
     public int enemyStatus;
     public Vector3 enemyLocation;
-    
-    public int life,graphType,waitTime,bulletPattern;
+    public int life;
+
+    //↓ 以下は現状不使用
+    public int graphType,waitTime,bulletPattern;
     public int bulletInterval,bulletType,bulletColor,bulletScriptType;
 
-    public EnemyInfo(GameObject enemyObj,GameObject lifeGage,GameObject bulletController,int enemyStatus,
+    public EnemyInfo(GameObject enemyObj,GameObject lifeGage,GameObject bulletController,GameObject defeatEffect,int enemyStatus,
                         Vector3 enemyLocation,int life = 1,int graphType = 0,int waitTime = 180,
                         int bulletPattern = 0,int bulletInterval = 60,int bulletType = 0,
                         int bulletColor = 0,int bulletScriptType = 0){
         this.enemyObj = enemyObj;
         this.lifeGage = lifeGage;
         this.bulletController = bulletController;
+        this.defeatEffect = defeatEffect;
         this.enemyStatus = enemyStatus;
         this.enemyLocation = enemyLocation;
         this.life = life;

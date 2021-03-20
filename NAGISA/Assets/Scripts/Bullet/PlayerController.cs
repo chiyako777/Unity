@@ -179,7 +179,7 @@ public class PlayerController : MonoBehaviour
     //** 被弾処理
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.tag == "Bullet" && mutekiTime==0 && bombTime == 0){
-            Debug.Log("自機被弾");
+            //Debug.Log("自機被弾");
             //無敵時間カウント開始
             mutekiTime = 1;
             //弾幕消去

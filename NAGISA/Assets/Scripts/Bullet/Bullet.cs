@@ -6,10 +6,16 @@ public class Bullet : MonoBehaviour
 {
     [HideInInspector]
     public Vector3 velocity = new Vector3(0.0f,0.0f,0.0f);
+    [HideInInspector]
     public Vector3 gravity = new Vector3(0.0f,1.0f,0.0f);
+
+    //** cache
+    [HideInInspector]
+    public SpriteRenderer spriteRenderer;
 
     void Start()
     {        
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
