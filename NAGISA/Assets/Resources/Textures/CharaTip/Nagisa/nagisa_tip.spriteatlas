@@ -30,46 +30,46 @@ SpriteAtlas:
       enableTightPacking: 0
     variantMultiplier: 1
     packables:
-    - {fileID: 21300000, guid: 988c854ea402cb84e8174ac5aeb24cd9, type: 3}
-    - {fileID: 21300000, guid: c331b8dd4deecb64189e3fcc8ef02039, type: 3}
-    - {fileID: 21300000, guid: 910fd18966dc2f04b809d0527dc300ea, type: 3}
+    - {fileID: 21300000, guid: 542375cb6a651b741920fedb32f83cf7, type: 3}
+    - {fileID: 21300000, guid: efbeb63b9c3dceb468483a67addfa73c, type: 3}
+    - {fileID: 21300000, guid: 934fdafc11928694db9fdebbce61ecc0, type: 3}
     - {fileID: 21300000, guid: 72926c67b13637b48bae76af28d2b1e9, type: 3}
     - {fileID: 21300000, guid: ba4226f6e0c7aea45835eb9b0887797d, type: 3}
     - {fileID: 21300000, guid: 5943436a0b9576647837bff3bb6c550f, type: 3}
-    - {fileID: 21300000, guid: 5e57557b729ce174c909cc62d052c815, type: 3}
-    - {fileID: 21300000, guid: 6bc21d70891909d48b64ac82944abff5, type: 3}
-    - {fileID: 21300000, guid: b58660b71912a084e95bb1b941d70faa, type: 3}
-    - {fileID: 21300000, guid: 9803e215d51bd384d95c6c43e8b13474, type: 3}
-    - {fileID: 21300000, guid: 76489e44d37f5e44d90331e60faf6533, type: 3}
-    - {fileID: 21300000, guid: 56b0254a6a17c4540b10950ca89be665, type: 3}
-    totalSpriteSurfaceArea: 172800
+    - {fileID: 21300000, guid: 7cfac29271711964fbe4bca16e288881, type: 3}
+    - {fileID: 21300000, guid: b6ab05869d5c52641a9a1dfd7ada3aad, type: 3}
+    - {fileID: 21300000, guid: 9eae51e6b3840084f8e8606aeeb7e4f7, type: 3}
+    - {fileID: 21300000, guid: f2fbd8a3e359c9441863b52a514f27aa, type: 3}
+    - {fileID: 21300000, guid: a94e999096e2816499b17efad6f19064, type: 3}
+    - {fileID: 21300000, guid: 974ba70507df0954c8fd6b27695c896b, type: 3}
+    totalSpriteSurfaceArea: 184704
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 6bc21d70891909d48b64ac82944abff5, type: 3}
-  - {fileID: 21300000, guid: 76489e44d37f5e44d90331e60faf6533, type: 3}
-  - {fileID: 21300000, guid: 9803e215d51bd384d95c6c43e8b13474, type: 3}
+  - {fileID: 21300000, guid: a94e999096e2816499b17efad6f19064, type: 3}
+  - {fileID: 21300000, guid: 7cfac29271711964fbe4bca16e288881, type: 3}
+  - {fileID: 21300000, guid: f2fbd8a3e359c9441863b52a514f27aa, type: 3}
+  - {fileID: 21300000, guid: 974ba70507df0954c8fd6b27695c896b, type: 3}
+  - {fileID: 21300000, guid: b6ab05869d5c52641a9a1dfd7ada3aad, type: 3}
+  - {fileID: 21300000, guid: 9eae51e6b3840084f8e8606aeeb7e4f7, type: 3}
   - {fileID: 21300000, guid: ba4226f6e0c7aea45835eb9b0887797d, type: 3}
   - {fileID: 21300000, guid: 72926c67b13637b48bae76af28d2b1e9, type: 3}
-  - {fileID: 21300000, guid: b58660b71912a084e95bb1b941d70faa, type: 3}
-  - {fileID: 21300000, guid: 910fd18966dc2f04b809d0527dc300ea, type: 3}
-  - {fileID: 21300000, guid: 56b0254a6a17c4540b10950ca89be665, type: 3}
   - {fileID: 21300000, guid: 5943436a0b9576647837bff3bb6c550f, type: 3}
-  - {fileID: 21300000, guid: 5e57557b729ce174c909cc62d052c815, type: 3}
-  - {fileID: 21300000, guid: c331b8dd4deecb64189e3fcc8ef02039, type: 3}
-  - {fileID: 21300000, guid: 988c854ea402cb84e8174ac5aeb24cd9, type: 3}
+  - {fileID: 21300000, guid: efbeb63b9c3dceb468483a67addfa73c, type: 3}
+  - {fileID: 21300000, guid: 542375cb6a651b741920fedb32f83cf7, type: 3}
+  - {fileID: 21300000, guid: 934fdafc11928694db9fdebbce61ecc0, type: 3}
   m_PackedSpriteNamesToIndex:
-  - nagisa_left_walk3
-  - nagisa_right_walk3
-  - nagisa_right 1
+  - nagisa_right_walk1
+  - nagisa_left
+  - nagisa_right
+  - nagisa_right_walk2
+  - nagisa_left_walk1
+  - nagisa_left_walk2
   - nagisa_front_walk1
   - nagisa_front
-  - nagisa_left_walk4
-  - nagisa_back_walk4
-  - nagisa_right_walk4
   - nagisa_front_walk2
-  - nagisa_left 1
-  - nagisa_back_walk3
-  - nagisa_back 1
+  - nagisa_back_walk1
+  - nagisa_back
+  - nagisa_back_walk2
   m_Tag: nagisa_tip
   m_IsVariant: 0

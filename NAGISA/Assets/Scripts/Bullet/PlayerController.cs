@@ -19,10 +19,12 @@ public class PlayerController : MonoBehaviour
     //** caches
     private GameObject enemy;
     private GameObject reflec;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     //** const
-    private const int maxMutekiTime = 60;
-    private const int maxBombTime = 180;
+    private const int maxMutekiTime = 150;
+    private const int maxBombTime = 300;
     private const int maxReflecTime = 1000;
 
     void Start()
@@ -36,6 +38,8 @@ public class PlayerController : MonoBehaviour
         InputArray["Fire3"] = 0;
         InputArray["Fire1"] = 0;
 
+        this.animator = GetComponent<Animator>();
+        this.spriteRenderer = GetComponent<SpriteRenderer>();
     }
     
     void Update()
@@ -50,7 +54,15 @@ public class PlayerController : MonoBehaviour
         //** 自機を動かす
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
-        if(x < 0.0f) velocity.x *= -1.0f; else if(x == 0.0f) velocity.x = 0.0f;
+        if(x < 0.0f){ 
+            velocity.x *= -1.0f;
+            this.animator.SetInteger("XAxis",-1);
+        }else if(x > 0.0f){
+            this.animator.SetInteger("XAxis",1);
+        }else if(x == 0.0f){
+            velocity.x = 0.0f;
+            this.animator.SetInteger("XAxis",0);
+        }
         if(y < 0.0f) velocity.y *= -1.0f; else if(y == 0.0f) velocity.y = 0.0f;
         if(velocity.x != 0.0f && velocity.y != 0.0f){
             //ナナメ移動速度調整
@@ -105,7 +117,13 @@ public class PlayerController : MonoBehaviour
 
         //** 無敵時間カウント
         mutekiTime = (mutekiTime > 0) ? ++mutekiTime : 0;
-        if(mutekiTime >= maxMutekiTime){ mutekiTime = 0; }
+        if(mutekiTime >= maxMutekiTime){ 
+            mutekiTime = 0;
+            spriteRenderer.color = new Color(1.0f,1.0f,1.0f,1.0f);
+        }
+        if(mutekiTime > 0){
+            Blink();
+        }
     }
 
     void CalcInput(){
@@ -169,5 +187,9 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-
+    //** 無敵時間中自機点滅
+    private void Blink(){
+        float alpha = (Mathf.Sin(mutekiTime * 0.1f) + 1) / 2;   //正弦波を0~1に正規化
+        spriteRenderer.color = new Color(1.0f,1.0f,1.0f,alpha);
+    }
 }
