@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using UnityEngine.SceneManagement;
+
 
 public class SpellPracController : MonoBehaviour
 {
@@ -253,6 +255,10 @@ public class SpellPracController : MonoBehaviour
             if(Input.GetButtonDown("Submit") && isYes){
                 //** スタート
                 //★★★★★★★★★★★★★★★
+                //Debug.Log("Bullet Sceneへ");
+                SceneManager.sceneLoaded += OnBulletLoaded;
+                SceneManager.LoadScene("Bullet");
+
             }else if(Input.GetButtonDown("Submit") && !isYes){
                 yield break;
             }
@@ -312,6 +318,37 @@ public class SpellPracController : MonoBehaviour
         }else{
             confirmText.text += "     はい   *いいえ";
         }
+    }
+
+    //** Bulletシーン遷移前に呼ばれる
+    private void OnBulletLoaded(Scene nextScene,LoadSceneMode mode){
+        //Debug.Log("OnSceneLoaded:scene.name =  " + nextScene.name);
+        //Debug.Log("OnSceneLoaded:mode =  " + mode);
+
+        //MainManagerに、ロードするデータファイル名を渡す
+        GameObject mainController = GameObject.Find("bullet_main_controller");
+        var mainManager = mainController.GetComponent<MainManager>();
+        mainManager.loadFileName = Application.persistentDataPath + "/bullet/" + "Room_Test.txt";
+
+        //PlayerControllerに、自機タイプを渡す
+        GameObject player = GameObject.Find("bullet_player");
+        var playerController = player.GetComponent<PlayerController>();
+        switch(typeSelected){
+            case 1:
+                playerController.optionType = "Homing";
+                break;
+            case 2:
+                playerController.optionType = "Reflec";
+                break;
+            case 3:
+                //warp:未実装
+                playerController.optionType = "Reflec";
+                break;
+            default:
+                break;
+        }
+
+        SceneManager.sceneLoaded -= OnBulletLoaded;
     }
 
 }

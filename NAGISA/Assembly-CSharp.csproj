@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Bullet\PlayerReflection.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerShot.cs" />
      <Compile Include="Assets\Scripts\Bullet\Spells\TestSpell.cs" />
+     <Compile Include="Assets\Scripts\Bullet\Spells\TestSpell2.cs" />
      <Compile Include="Assets\Scripts\CharaTipAnimeController.cs" />
      <Compile Include="Assets\Scripts\CharaTipController.cs" />
      <Compile Include="Assets\Scripts\FlagManager.cs" />

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWhite : Enemy
+public class EnemyTest : Enemy
 {
     void Start()
     {
@@ -17,10 +17,10 @@ public class EnemyWhite : Enemy
     }
 
     public static void New(EnemyInfo enemyInfo){
-        //Debug.Log("EnemyWhite.New");
+        //Debug.Log("EnemyTest.New");
         //** 敵オブジェクト
         GameObject enemyObj = Instantiate(enemyInfo.enemyObj, enemyInfo.enemyLocation, Quaternion.identity);
-        enemyObj.AddComponent<EnemyWhite>().enemyInfo = enemyInfo;
+        enemyObj.AddComponent<EnemyTest>().enemyInfo = enemyInfo;
 
         //** 敵体力ゲージ
         GameObject lifeGage = Instantiate(enemyInfo.lifeGage,new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
@@ -32,11 +32,11 @@ public class EnemyWhite : Enemy
         lifeGage.GetComponent<RectTransform>().anchoredPosition = new Vector2(gagePos.x,gagePos.y);
         
         enemyObj.AddComponent<EnemyLifeGage>();     //紐づけ
-        enemyObj.GetComponent<EnemyWhite>().enemyInfo.lifeGage = lifeGage;
+        enemyObj.GetComponent<EnemyTest>().enemyInfo.lifeGage = lifeGage;
 
         //** 弾幕コントローラー
         GameObject bulletController = Instantiate(enemyInfo.bulletController,new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
-        enemyObj.GetComponent<EnemyWhite>().enemyInfo.bulletController = bulletController;
+        enemyObj.GetComponent<EnemyTest>().enemyInfo.bulletController = bulletController;
         
         //⇒ここのタイミングで、Enemy.Start Enemy.Update呼ばれる
     }

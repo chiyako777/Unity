@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using UnityEngine;
 
 public delegate void CREATE_ENEMY_FUNC(EnemyInfo enemyInfo);
@@ -11,7 +13,7 @@ public class CommandManager
 
     private CREATE_ENEMY_FUNC[] enemyFunc = 
     {
-        EnemyWhite.New
+        EnemyTest.New
     };
 
     public void Initialize(){
@@ -28,16 +30,33 @@ public class CommandManager
     }
 
     public bool LoadScript(string fileName){
-        //** 暫定べた書き
-        //敵一個目
+
+        //** あとで複数データ対応
+        if(!File.Exists(fileName)){
+            Debug.Log("CommandManager.LoadScript ファイル存在しない");
+            return false;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        using(StreamReader sr = File.OpenText(fileName)){    
+            string s = "";
+            while((s = sr.ReadLine()) != null){
+                //Debug.Log("LoadScript : " + s);
+                sb.Append(s);
+            }
+            //Debug.Log("LoadScript終了");
+        }
+
+        string[] data = sb.ToString().Split(',');
+
         EnemyInfo enemyInfo = new EnemyInfo();
-        enemyInfo.enemyObj = MainManager.resourcesLoader.GetObjectHandle("tekitou");
+        enemyInfo.enemyObj = MainManager.resourcesLoader.GetObjectHandle(data[1]);
         enemyInfo.lifeGage = MainManager.resourcesLoader.GetObjectHandle("enemy_lifegage");
-        enemyInfo.bulletController = MainManager.resourcesLoader.GetObjectHandle("TestSpell");
-        enemyInfo.defeatEffect = MainManager.resourcesLoader.GetObjectHandle("enemy_defeat_effect");
+        enemyInfo.bulletController = MainManager.resourcesLoader.GetObjectHandle(data[2]);
+        enemyInfo.defeatEffect = MainManager.resourcesLoader.GetObjectHandle(data[3]);
         enemyInfo.enemyStatus = 0;
-        enemyInfo.enemyLocation = new Vector3(0.0f,50.0f,0.0f);
-        enemyInfo.life = 150;
+        enemyInfo.enemyLocation = new Vector3(float.Parse(data[4]),float.Parse(data[5]),0.0f);
+        enemyInfo.life = int.Parse(data[6]);
         enemyInfo.graphType = 0;
         enemyInfo.waitTime = 180;
         enemyInfo.bulletPattern = 0;

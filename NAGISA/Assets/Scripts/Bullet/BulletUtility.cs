@@ -25,9 +25,11 @@ public static class BulletUtility
     //** 画面外に出たかの判定
     public static bool IsOut(Vector3 position){
         if(position.x < screenTopLeft.x || position.x > screenBottomRight.x){
+            //Debug.Log("X Out");
             return true;
         }
         if(position.y < screenBottomRight.y || position.y > screenTopLeft.y){
+            //Debug.Log("Y Out");
             return true;
         }
         return false;
