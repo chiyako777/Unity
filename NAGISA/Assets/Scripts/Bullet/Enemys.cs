@@ -39,6 +39,7 @@ public class EnemyTest : Enemy
         enemyObj.GetComponent<EnemyTest>().enemyInfo.bulletController = bulletController;
         
         //⇒ここのタイミングで、Enemy.Start Enemy.Update呼ばれる
+        CommandManager.nextCommandFlg = false;
     }
 
     //** 撃破時ボーナス

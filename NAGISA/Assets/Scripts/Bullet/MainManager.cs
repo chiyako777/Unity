@@ -11,6 +11,8 @@ public class MainManager : MonoBehaviour
     public CommandManager commandManager = new CommandManager();
     [HideInInspector]
     public string loadFileName;
+    [HideInInspector]
+    public static string beforeScene;
 
     void Start()
     {

@@ -3117,6 +3117,7 @@ MonoBehaviour:
   room: 
   life: 1
   bomb: 5
+  power: 0
 --- !u!1 &1964656033
 GameObject:
   m_ObjectHideFlags: 0

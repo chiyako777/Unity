@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -200,16 +201,23 @@ public class PlayerController : MonoBehaviour
 
     //** 被弾処理
     private void OnTriggerEnter2D(Collider2D collision){
+        //Debug.Log("collision.gameObject.tag = " + collision.gameObject.tag + " mutekiTime = " + mutekiTime + " bombTime = " + bombTime);
         if(collision.gameObject.tag == "Bullet" && mutekiTime==0 && bombTime == 0){
             //Debug.Log("自機被弾");
-            //残機マイナス
-            life = (life == 0) ? 0 : life - 1;
-            //ボム数リセット
-            bomb = 2;
-            //無敵時間カウント開始
-            mutekiTime = 1;
-            //弾幕消去
-            enemy.GetComponent<Enemy>().bulletController.DeleteBullet();
+            if(life > 0){
+                //残機マイナス
+                //life = (life == 0) ? 0 : life - 1;
+                life--;
+                //ボム数リセット
+                bomb = 2;
+                //無敵時間カウント開始
+                mutekiTime = 1;
+                //弾幕消去
+                enemy.GetComponent<Enemy>().bulletController.DeleteBullet();
+            }else{
+                //** ゲームオーバー(取り急ぎ前シーンへ遷移のみ)
+                SceneManager.LoadScene(MainManager.beforeScene);                
+            }
         }
     }
     

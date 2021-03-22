@@ -96,6 +96,7 @@ public class Enemy : MonoBehaviour
             case 5:
                 //Debug.Log("終末");
                 Destroy(gameObject);
+                CommandManager.nextCommandFlg = true;
                 break;
             default:
                 break;
