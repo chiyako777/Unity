@@ -55,14 +55,13 @@ public class SaveMenu
     }
 
     public IEnumerator disp(){
-        Debug.Log("Application.persistentDataPath = " + Application.persistentDataPath);
 
         //** 初期表示
         bool execFlg = false;
         selected = 1;
         string s = "";
         for(int i=1; i<=slotNum; i++){
-            string f = Application.persistentDataPath + "/save/" + "save" + i + ".json";
+            string f = Application.dataPath + "/StaticData" + "/save/" + "save" + i + ".json";
             if(File.Exists(f)){
                 Debug.Log("セーブファイルあり");
                 //** セーブ時間を画面表示
@@ -174,7 +173,7 @@ public class SaveMenu
         string json = JsonUtility.ToJson(data);
 
         //** ファイル書き込み(存在しなければ新規作成)
-        string f = Application.persistentDataPath + "/save/" + "save" + selected + ".json";
+        string f = Application.dataPath + "/StaticData" + "/save/" + "save" + selected + ".json";
         File.WriteAllText(f,json);
 
     }

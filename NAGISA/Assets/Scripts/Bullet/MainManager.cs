@@ -18,8 +18,6 @@ public class MainManager : MonoBehaviour
     {
         resourcesLoader.LoadAllObjects("Prefabs");
         commandManager.Initialize();
-        //loadFileName = Application.persistentDataPath + "/bullet/" + "Room_Test.txta";
-        //loadFileName = "dummy";
         commandManager.LoadScript(loadFileName);
     }
 

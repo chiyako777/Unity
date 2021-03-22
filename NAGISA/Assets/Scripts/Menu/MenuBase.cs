@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuBase : MonoBehaviour
 {
@@ -178,6 +179,7 @@ public class MenuBase : MonoBehaviour
             case 4: //各種設定
                 break;
             case 5: //ゲーム終了
+                SceneManager.LoadScene("Title");
                 break;
             default:
                 break;
@@ -204,5 +206,6 @@ public class MenuBase : MonoBehaviour
         yield return new WaitUntil( () => Input.GetKeyDown(KeyCode.X));
 
     }
+
 
 }

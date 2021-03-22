@@ -19,12 +19,14 @@ public class TitleMenu : MonoBehaviour
                 menuText = t;
             }
         }
-        menuText.text = "  *ニューゲーム   コンティニュー   弾幕プラクティス   ゲーム終了";
+        menuText.text = "  *ニューゲーム   コンティニュー(選択不可)   弾幕プラクティス   ゲーム終了";
 
     }
 
     void Update()
     {
+        //Debug.Log("Time.deltaTime = " + Time.deltaTime);
+        Debug.Log("Time.timeScale = " + Time.timeScale);
         //** タイトルメニュー選択
         if(Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal")>0.0f){
             menuText.text = menuText.text.Replace("*"," ");
@@ -41,6 +43,7 @@ public class TitleMenu : MonoBehaviour
         if(Input.GetButtonDown("Submit")){
             switch(selected){
                 case 1:     //ニューゲーム
+                    SceneManager.LoadScene("Room_White");
                     break;
                 case 2:     //コンティニュー
                     break;

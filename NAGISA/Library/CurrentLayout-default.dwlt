@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 679, y: 342}
-  m_MaxSize: {x: 12004, y: 8042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 140
+  controlID: 130
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,8 +137,8 @@ MonoBehaviour:
     y: 0
     width: 1100
     height: 731
-  m_MinSize: {x: 403, y: 342}
-  m_MaxSize: {x: 8003, y: 8042}
+  m_MinSize: {x: 403, y: 492}
+  m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
   controlID: 69
 --- !u!114 &7
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -240,14 +240,14 @@ MonoBehaviour:
     y: 453
     width: 1100
     height: 278
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
   - {fileID: 18}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -395,9 +395,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 5e4b0000
+      m_SelectedIDs: 32380000
       m_LastClickedID: 0
-      m_ExpandedIDs: 0edffdffe6e0fdff9c04fefffe06feff5836feff1ea0feff824bffff3cfbffff5c5c0000
+      m_ExpandedIDs: ae56ffff9857ffffb457ffff6458ffff6e58ffff7658ffff8858ffff9258ffff5459ffffa659ffff105affff665affff985effffb45effff665fffff6c5fffff705fffff7e5fffff825fffffb29dffffce9dffff849effff8e9effff969effffa89effffb09effff4aa9ffff66a9ffff1caaffff26aaffff2eaaffff36aaffff48aaffffbcfaffff3cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -733,20 +733,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Resources/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Resources/Prefabs
   m_LastFoldersGridSize: 71
   m_LastProjectPath: C:\Users\a2sdf\Documents\Unity\NAGISA
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 159}
-    m_SelectedIDs: ca350000
-    m_LastClickedID: 13770
-    m_ExpandedIDs: 0000000096350000983500009a3500009c3500009e350000a035000000ca9a3b
+    scrollPos: {x: 0, y: 113}
+    m_SelectedIDs: b0350000
+    m_LastClickedID: 13744
+    m_ExpandedIDs: 0000000096350000983500009a3500009c3500009e350000a03500004653000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -799,8 +799,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 5e4b0000
-    m_LastClickedInstanceID: 19294
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300002c3600001c36000026360000243600002a36000022360000283600002036000030360000323600001e3600005e340000083f00002e360000324300007e430000964300009a4300008e43000094430000924300001835000000000000d24700007e3500006e350000e0380000ac350000bc390000c23500001e4000002240000044480000ec750000f0750000
     m_RenameOverlay:

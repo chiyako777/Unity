@@ -6,7 +6,7 @@ public class ItemController : MonoBehaviour
 {
 
     private float angle = -90.0f;
-    private float speed = 0.1f;
+    private float speed = 0.2f;
 
     //** caches
     private GameObject player;
@@ -31,7 +31,7 @@ public class ItemController : MonoBehaviour
         if(dist <= 50.0f){
             Vector3 vec = player.transform.position - transform.position;
             angle = Mathf.Atan2(vec.y , vec.x);
-            speed = 0.7f;
+            speed = 2.5f;
         }
 
         //** アイテムゲット

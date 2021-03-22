@@ -17,7 +17,7 @@ public class PlayerHomingShot : PlayerShot
     void Start()
     {
         base.Start();
-        speed = 2.0f;
+        speed = 4.0f;
         power = 1;
     }
 

@@ -31,7 +31,7 @@ public class MOTransition : MapObjectBase
         //MainManagerに、ロードするデータファイル名、シーン名を渡す
         GameObject mainController = GameObject.Find("bullet_main_controller");
         var mainManager = mainController.GetComponent<MainManager>();
-        mainManager.loadFileName = Application.persistentDataPath + "/bullet/" + "Room_Test.txt";
+        mainManager.loadFileName = Application.dataPath + "/StaticData" + "/bullet/" + "Room_Test.txt";
         MainManager.beforeScene = "Room_White";
 
         //自機タイプ
@@ -58,6 +58,7 @@ public class MOTransition : MapObjectBase
 
         playerController.life = 5;      //※残機・ボム⇒暫定で決め打ち（実際はユーザー情報から渡す）
         playerController.bomb = 5;
+        playerController.power = 1.0f;
 
         //InfoControllerに、自機タイプ、ルーム名を渡す
         GameObject bulletInfo = GameObject.Find("bulletinfo_controller");

@@ -105,7 +105,10 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(defeatedFlg){ return; }
+        if(defeatedFlg){ 
+            Destroy(collision.gameObject);
+            return; 
+        }
 
         if((collision.gameObject.tag == "Shot" || collision.gameObject.tag == "Bomb_Shot") && bulletController.activeFlg){
             //Debug.Log("自機ショットに当たった " + "life:" + enemyInfo.life);
@@ -122,8 +125,8 @@ public class Enemy : MonoBehaviour
                 Destroy(enemyInfo.lifeGage);
                 CreateDefeatedBonus();
             }
-            Destroy(collision.gameObject);
         }
+        Destroy(collision.gameObject);
 
     }
 

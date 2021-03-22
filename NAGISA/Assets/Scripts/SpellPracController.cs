@@ -49,7 +49,7 @@ public class SpellPracController : MonoBehaviour
         }
 
         //** ルームデータ読み込み
-        string f = Application.persistentDataPath + "/data/" + "room.json";
+        string f = Application.dataPath + "/StaticData" + "/data/" + "room.json";
         roomData = JsonHelper.FromJson<RoomData>(File.ReadAllText(f));
 
         //** 初期化
@@ -89,7 +89,12 @@ public class SpellPracController : MonoBehaviour
                 && spellSelectCoroutine == null && typeSelectCoroutine == null && confirmCoroutine == null){
             spellSelectCoroutine = CreateSpellCoroutine();
             StartCoroutine(spellSelectCoroutine);
-        }        
+        }
+        //** タイトルへ戻る
+        if(Input.GetKeyDown(KeyCode.X) 
+                && spellSelectCoroutine == null && typeSelectCoroutine == null && confirmCoroutine == null){
+            SceneManager.LoadScene("Title");
+        }
     }
 
     //** スペル選択コルーチン生成
@@ -328,7 +333,7 @@ public class SpellPracController : MonoBehaviour
         //MainManagerに、ロードするデータファイル名、シーン名を渡す
         GameObject mainController = GameObject.Find("bullet_main_controller");
         var mainManager = mainController.GetComponent<MainManager>();
-        mainManager.loadFileName = Application.persistentDataPath + "/bullet/" + "Room_Test.txt";
+        mainManager.loadFileName = Application.dataPath + "/StaticData" + "/bullet/" + "Room_Test.txt";
         MainManager.beforeScene = "SpellPracticeSetting";
 
         //自機タイプ
@@ -354,7 +359,7 @@ public class SpellPracController : MonoBehaviour
         playerController.optionType = type;
         playerController.life = 5;      //※残機・ボム⇒暫定で決め打ち いずれは選べるようにする
         playerController.bomb = 5;
-        playerController.power = 5.0f;  //パワーはmax
+        playerController.power = 1.0f;  //パワーはmax
 
         //InfoControllerに、自機タイプ、ルーム名を渡す
         GameObject bulletInfo = GameObject.Find("bulletinfo_controller");

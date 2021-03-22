@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class TestSpell2 : BulletController
 {
+    private float speed1 = 1.0f;    //全方位弾のスピード
+    private float speed2 = 0.8f;    //交差弾のスピード
+
     void Start()
     {
         base.Start();        
@@ -23,7 +26,7 @@ public class TestSpell2 : BulletController
                 bulletList.Add(Instantiate(prefabs[1],enemyLocation,Quaternion.identity));
                 bulletList[bulletList.Count-1].AddComponent<Bullet>();
                 Bullet b = bulletList[bulletList.Count-1].GetComponent<Bullet>();
-                b.velocity = BulletUtility.GetDirection(360.0f/12.0f * i + Random.Range(0.0f,15.0f)) * 0.7f;
+                b.velocity = BulletUtility.GetDirection(360.0f/12.0f * i + Random.Range(0.0f,15.0f)) * speed1;
                 b.gravity = new Vector3(0.0f,0.1f,0.0f);
             }
         }
@@ -38,13 +41,13 @@ public class TestSpell2 : BulletController
                 bulletList.Add(Instantiate(prefabs[1],new Vector3(-234.0f,Mathf.Clamp(-60.0f + (y*i),-184.0f,184.0f),0.0f),Quaternion.identity));
                 bulletList[bulletList.Count-1].AddComponent<Bullet>();
                 Bullet bleft = bulletList[bulletList.Count-1].GetComponent<Bullet>();
-                bleft.velocity = BulletUtility.GetDirection(-45.0f + (Random.Range(0.0f,15.0f) * val)) * 0.4f;
+                bleft.velocity = BulletUtility.GetDirection(-45.0f + (Random.Range(0.0f,15.0f) * val)) * speed2;
                 bleft.gravity = new Vector3(0.0f,0.0f,0.0f);
                 //右から来る弾
                 bulletList.Add(Instantiate(prefabs[1],new Vector3(139.0f,Mathf.Clamp(-60.0f + (y*i),-184.0f,184.0f),0.0f),Quaternion.identity));
                 bulletList[bulletList.Count-1].AddComponent<Bullet>();
                 Bullet bright = bulletList[bulletList.Count-1].GetComponent<Bullet>();
-                bright.velocity = BulletUtility.GetDirection(-135.0f + (Random.Range(0.0f,15.0f) * val)) * 0.4f;
+                bright.velocity = BulletUtility.GetDirection(-135.0f + (Random.Range(0.0f,15.0f) * val)) * speed2;
                 bright.gravity = new Vector3(0.0f,0.0f,0.0f);
             }
         }

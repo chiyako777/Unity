@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(transform.position.x + velocity.x,transform.position.y + velocity.y , 0.0f);
 
         //** ショットを打つ
-        if(InputArray["Shot"] > 0 && InputArray["Shot"] % 10 == 0
+        if(InputArray["Shot"] > 0 && InputArray["Shot"] % 5 == 0
             && mutekiTime == 0 && bombTime == 0){
             //Debug.Log("ショットを打つ");
             //通常ショット

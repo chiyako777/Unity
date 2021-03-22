@@ -1,0 +1,6 @@
+wait,200.0
+enemy,0,tekitou,TestSpell2,テストスペル1,enemy_defeat_effect,0.0,50.0,150.0
+wait,200.0
+enemy,0,tekitou,TestSpell2,テストスペル2,enemy_defeat_effect,0.0,50.0,150.0
+wait,300.0
+clear

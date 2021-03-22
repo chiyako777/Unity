@@ -100,7 +100,6 @@ public class ItemMenu
 
     private void updateSelectedMark(){
 
-        //Debug.Log("persistentDataPath = " + Application.persistentDataPath);
         for(int i=0; i<itemList.Count; i++){
             if(i==selected){
                 itemList[i] = itemList[i].Replace("  " , "* ");
