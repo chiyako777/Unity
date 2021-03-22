@@ -8,18 +8,20 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
 
-    protected EnemyInfo enemyInfo;
+    [HideInInspector]
+    public EnemyInfo enemyInfo;
 
-    protected int maxLife;      //敵総体力
+    protected float maxLife;      //敵総体力
     protected float motionFrame = 0.0f;
     protected int bulletVanishFlg = 1;
+    protected bool defeatedFlg = false;     //敵機撃破済みフラグ
 
     //** caches
     protected Image lifeGageImage;  //敵体力ゲージ
     protected SpriteRenderer spriteRenderer;
+    protected PlayerController playerController;
     [HideInInspector]
     public BulletController bulletController;    //弾幕コントローラー
-
 
     //** const
     protected const int lifeDispCnt = 60; //敵体力ゲージ表示演出長さ
@@ -36,6 +38,7 @@ public class Enemy : MonoBehaviour
         //Debug.Log("Start : 敵生成");
         maxLife = enemyInfo.life;
         lifeGageImage = enemyInfo.lifeGage.GetComponent<Image>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         bulletController = enemyInfo.bulletController.GetComponent<BulletController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -101,18 +104,22 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        
+        if(defeatedFlg){ return; }
+
         if((collision.gameObject.tag == "Shot" || collision.gameObject.tag == "Bomb_Shot") && bulletController.activeFlg){
             //Debug.Log("自機ショットに当たった " + "life:" + enemyInfo.life);
-            enemyInfo.life -= collision.GetComponent<PlayerShot>().power;
+            enemyInfo.life -= collision.GetComponent<PlayerShot>().power + playerController.power;
             lifeGageImage.fillAmount = 1.0f/(float)maxLife * (float)enemyInfo.life;
             if(enemyInfo.life < 0){
+                //※敵機撃破時に一度だけ呼ばれるパス
                 //Debug.Log("敵機撃破");
+                defeatedFlg = true;
                 enemyInfo.enemyStatus = 4;      //撃破時演出開始
                 Instantiate(enemyInfo.defeatEffect,
                             new Vector3(enemyInfo.enemyLocation.x,enemyInfo.enemyLocation.y,0.0f),
                             Quaternion.identity);
                 Destroy(enemyInfo.lifeGage);
+                CreateDefeatedBonus();
             }
             Destroy(collision.gameObject);
         }
@@ -124,4 +131,10 @@ public class Enemy : MonoBehaviour
         float alpha = 1.0f - (1.0f * motionFrame/(float)defeatMotionCnt);
         spriteRenderer.color = new Color(1.0f,1.0f,1.0f,alpha);
     }
+
+    //** 撃破時アイテム発生
+    protected virtual void CreateDefeatedBonus(){
+        //none
+    }
+
 }

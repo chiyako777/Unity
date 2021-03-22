@@ -46,6 +46,8 @@
      <Compile Include="Assets\Scripts\Bullet\EnemyInfo.cs" />
      <Compile Include="Assets\Scripts\Bullet\EnemyLifeGage.cs" />
      <Compile Include="Assets\Scripts\Bullet\Enemys.cs" />
+     <Compile Include="Assets\Scripts\Bullet\InfoController.cs" />
+     <Compile Include="Assets\Scripts\Bullet\ItemController.cs" />
      <Compile Include="Assets\Scripts\Bullet\MainManager.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerBombShot.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerController.cs" />

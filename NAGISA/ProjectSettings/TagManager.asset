@@ -9,6 +9,9 @@ TagManager:
   - Enemy_Bullet
   - Bomb_Shot
   - Reflec_Shot
+  - Life_Item
+  - Bomb_Item
+  - Power_Item
   layers:
   - Default
   - TransparentFX
@@ -45,6 +48,9 @@ TagManager:
   m_SortingLayers:
   - name: background
     uniqueID: 2962152519
+    locked: 0
+  - name: bullet_item
+    uniqueID: 2105921201
     locked: 0
   - name: bullet_enemy
     uniqueID: 2863022001

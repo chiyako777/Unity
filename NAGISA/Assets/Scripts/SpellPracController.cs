@@ -330,23 +330,36 @@ public class SpellPracController : MonoBehaviour
         var mainManager = mainController.GetComponent<MainManager>();
         mainManager.loadFileName = Application.persistentDataPath + "/bullet/" + "Room_Test.txt";
 
-        //PlayerControllerに、自機タイプを渡す
-        GameObject player = GameObject.Find("bullet_player");
-        var playerController = player.GetComponent<PlayerController>();
+        //自機タイプ
+        string type = "";
         switch(typeSelected){
             case 1:
-                playerController.optionType = "Homing";
+                type = "Homing";
                 break;
             case 2:
-                playerController.optionType = "Reflec";
+                type = "Reflec";
                 break;
             case 3:
                 //warp:未実装
-                playerController.optionType = "Reflec";
+                type = "Reflec";
                 break;
             default:
                 break;
         }
+
+        //PlayerControllerに、自機タイプ、残機数、ボム数を渡す
+        GameObject player = GameObject.Find("bullet_player");
+        var playerController = player.GetComponent<PlayerController>();
+        playerController.optionType = type;
+        playerController.life = 5;      //※残機・ボム⇒暫定で決め打ち いずれは選べるようにする
+        playerController.bomb = 5;
+        playerController.power = 5.0f;  //パワーはmax
+
+        //InfoControllerに、自機タイプ、ルーム名を渡す
+        GameObject bulletInfo = GameObject.Find("bulletinfo_controller");
+        var infoController = bulletInfo.GetComponent<InfoController>();
+        infoController.option = type;
+        infoController.room = roomData[roomSelected-1].name;
 
         SceneManager.sceneLoaded -= OnBulletLoaded;
     }

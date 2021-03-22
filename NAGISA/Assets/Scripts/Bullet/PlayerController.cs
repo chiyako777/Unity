@@ -8,6 +8,13 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public string optionType;   //デバッグ用にインスペクタで自機オプションタイプ設定(Homing,Reflec,Warp&Power)
 
+    [HideInInspector]
+    public int life = 3;    //残機
+    [HideInInspector]
+    public int bomb = 4;    //ボム数
+    [HideInInspector]
+    public float power = 1.0f;  //パワー(max:5)
+
     private Vector2 velocity;   //自機の移動量
     private float recepSqrt2;    // 1 / √2  (ナナメ移動時速度調整)
     private int mutekiTime = 0;     //被弾後無敵時間
@@ -20,6 +27,7 @@ public class PlayerController : MonoBehaviour
     //** caches
     private GameObject enemy;
     private GameObject reflec;
+    private InfoController infoController;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
@@ -41,12 +49,15 @@ public class PlayerController : MonoBehaviour
 
         this.animator = GetComponent<Animator>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
+        this.infoController = GameObject.Find("bulletinfo_controller").GetComponent<InfoController>();
     }
     
     void Update()
     {
         //** 敵機をキャッシュ
         LoadEnemy();
+        //** 情報表示
+        InfoUpdate();
         //** 入力情報
         CalcInput();
         //** 速度設定
@@ -76,7 +87,14 @@ public class PlayerController : MonoBehaviour
         if(InputArray["Shot"] > 0 && InputArray["Shot"] % 10 == 0
             && mutekiTime == 0 && bombTime == 0){
             //Debug.Log("ショットを打つ");
-            Instantiate(shotObjs[0],transform.position,Quaternion.identity);    //通常ショット
+            //通常ショット
+            if(power < 3.0f){
+                Instantiate(shotObjs[0],new Vector3(transform.position.x,transform.position.y + 5.0f,0.0f),Quaternion.identity);
+            }else{
+                Instantiate(shotObjs[0],new Vector3(transform.position.x - 3.0f,transform.position.y + 5.0f,0.0f),Quaternion.identity);
+                Instantiate(shotObjs[0],new Vector3(transform.position.x + 3.0f,transform.position.y + 5.0f,0.0f),Quaternion.identity);
+            }
+
             if(optionType.Equals("Homing",StringComparison.CurrentCulture)){
                 //ホーミング2Way
                 Vector3 leftPos = new Vector3(transform.position.x-5.0f,transform.position.y-7.0f,0.0f);
@@ -89,8 +107,10 @@ public class PlayerController : MonoBehaviour
         }
 
         //** ボムを打つ
-        if(InputArray["Bomb"] > 0 && mutekiTime == 0 && bombTime == 0){
+        if(InputArray["Bomb"] > 0 && mutekiTime == 0 && bombTime == 0 && bomb >= 1){
+            Debug.Log("Bomb");
             bombTime = 1;
+            bomb -= 1;
         }
         bombTime = (bombTime > 0) ? ++bombTime : 0;
         if(bombTime >= maxBombTime){ bombTime = 0; }
@@ -125,6 +145,7 @@ public class PlayerController : MonoBehaviour
         if(mutekiTime > 0){
             Blink();
         }
+
     }
 
     void CalcInput(){
@@ -181,6 +202,10 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.tag == "Bullet" && mutekiTime==0 && bombTime == 0){
             //Debug.Log("自機被弾");
+            //残機マイナス
+            life = (life == 0) ? 0 : life - 1;
+            //ボム数リセット
+            bomb = 2;
             //無敵時間カウント開始
             mutekiTime = 1;
             //弾幕消去
@@ -193,4 +218,12 @@ public class PlayerController : MonoBehaviour
         float alpha = (Mathf.Sin(mutekiTime * 0.1f) + 1) / 2;   //正弦波を0~1に正規化
         spriteRenderer.color = new Color(1.0f,1.0f,1.0f,alpha);
     }
+
+    //** 弾幕情報画面に受け渡し
+    private void InfoUpdate(){
+        infoController.life = life;
+        infoController.bomb = bomb;
+        infoController.power = power;
+    }
+
 }

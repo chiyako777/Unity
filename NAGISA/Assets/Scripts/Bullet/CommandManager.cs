@@ -53,10 +53,11 @@ public class CommandManager
         enemyInfo.enemyObj = MainManager.resourcesLoader.GetObjectHandle(data[1]);
         enemyInfo.lifeGage = MainManager.resourcesLoader.GetObjectHandle("enemy_lifegage");
         enemyInfo.bulletController = MainManager.resourcesLoader.GetObjectHandle(data[2]);
-        enemyInfo.defeatEffect = MainManager.resourcesLoader.GetObjectHandle(data[3]);
+        enemyInfo.spellName = data[3];
+        enemyInfo.defeatEffect = MainManager.resourcesLoader.GetObjectHandle(data[4]);
         enemyInfo.enemyStatus = 0;
-        enemyInfo.enemyLocation = new Vector3(float.Parse(data[4]),float.Parse(data[5]),0.0f);
-        enemyInfo.life = int.Parse(data[6]);
+        enemyInfo.enemyLocation = new Vector3(float.Parse(data[5]),float.Parse(data[6]),0.0f);
+        enemyInfo.life = float.Parse(data[7]);
         enemyInfo.graphType = 0;
         enemyInfo.waitTime = 180;
         enemyInfo.bulletPattern = 0;

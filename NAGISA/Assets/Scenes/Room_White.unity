@@ -346,6 +346,7 @@ MonoBehaviour:
   window: {fileID: 679049593}
   dist: Bullet
   typeSelected: 1
+  roomName: "\u30C6\u30B9\u30C8\u30EB\u30FC\u30E0"
 --- !u!1 &280737214
 GameObject:
   m_ObjectHideFlags: 0
