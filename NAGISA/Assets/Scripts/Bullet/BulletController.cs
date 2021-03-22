@@ -25,10 +25,9 @@ public class BulletController : MonoBehaviour
     protected void Start()
     {
         //Debug.Log("BulletController.Start");
-        //GameObject obj = MainManager.resourcesLoader.GetObjectHandle("test_bullet");
-        //GameObject obj = MainManager.resourcesLoader.GetObjectHandle("test_bullet2");
-        prefabs.Add(MainManager.resourcesLoader.GetObjectHandle("test_bullet"));
-        prefabs.Add(MainManager.resourcesLoader.GetObjectHandle("test_bullet2"));
+        prefabs.Add(MainManager.resourcesLoader.GetObjectHandle("glossy_bubbles_marine"));
+        prefabs.Add(MainManager.resourcesLoader.GetObjectHandle("glossy_bubbles_pink"));
+
     }
 
     protected void Update()

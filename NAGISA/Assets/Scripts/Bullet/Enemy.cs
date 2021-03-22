@@ -105,28 +105,33 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        if(defeatedFlg){ 
-            Destroy(collision.gameObject);
+        if(defeatedFlg){
+            if(collision.gameObject.tag == "Shot" || collision.gameObject.tag == "Bomb_Shot"){
+                Destroy(collision.gameObject);
+            }
             return; 
         }
 
-        if((collision.gameObject.tag == "Shot" || collision.gameObject.tag == "Bomb_Shot") && bulletController.activeFlg){
+        if(collision.gameObject.tag == "Shot" || collision.gameObject.tag == "Bomb_Shot"){
             //Debug.Log("自機ショットに当たった " + "life:" + enemyInfo.life);
-            enemyInfo.life -= collision.GetComponent<PlayerShot>().power + playerController.power;
-            lifeGageImage.fillAmount = 1.0f/(float)maxLife * (float)enemyInfo.life;
-            if(enemyInfo.life < 0){
-                //※敵機撃破時に一度だけ呼ばれるパス
-                //Debug.Log("敵機撃破");
-                defeatedFlg = true;
-                enemyInfo.enemyStatus = 4;      //撃破時演出開始
-                Instantiate(enemyInfo.defeatEffect,
-                            new Vector3(enemyInfo.enemyLocation.x,enemyInfo.enemyLocation.y,0.0f),
-                            Quaternion.identity);
-                Destroy(enemyInfo.lifeGage);
-                CreateDefeatedBonus();
+            if(bulletController.activeFlg){
+                enemyInfo.life -= collision.GetComponent<PlayerShot>().power + playerController.power;
+                lifeGageImage.fillAmount = 1.0f/(float)maxLife * (float)enemyInfo.life;
+                if(enemyInfo.life < 0){
+                    //※敵機撃破時に一度だけ呼ばれるパス
+                    //Debug.Log("敵機撃破");
+                    defeatedFlg = true;
+                    enemyInfo.enemyStatus = 4;      //撃破時演出開始
+                    Instantiate(enemyInfo.defeatEffect,
+                                new Vector3(enemyInfo.enemyLocation.x,enemyInfo.enemyLocation.y,0.0f),
+                                Quaternion.identity);
+                    Destroy(enemyInfo.lifeGage);
+                    CreateDefeatedBonus();
+                }
             }
+            Destroy(collision.gameObject);
         }
-        Destroy(collision.gameObject);
+        
 
     }
 

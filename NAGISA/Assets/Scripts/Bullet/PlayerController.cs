@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
     private Dictionary<string,int> InputArray;  //各種入力制御
     public GameObject[] shotObjs;   //自機ショット用オブジェクト（Inspectorでプレハブを指定）
 
+    private Vector2 topLeft = new Vector2(-227.0f,167.0f);
+    private Vector2 bottomRight = new Vector2(127.0f,-171.0f);
+
     //** caches
     private GameObject enemy;
     private GameObject reflec;
@@ -82,7 +85,9 @@ public class PlayerController : MonoBehaviour
             velocity.x *= recepSqrt2;
             velocity.y *= recepSqrt2;
         }
-        transform.position = new Vector3(transform.position.x + velocity.x,transform.position.y + velocity.y , 0.0f);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x + velocity.x,topLeft.x,bottomRight.x),
+                                        Mathf.Clamp(transform.position.y + velocity.y,bottomRight.y,topLeft.y),
+                                        0.0f);
 
         //** ショットを打つ
         if(InputArray["Shot"] > 0 && InputArray["Shot"] % 5 == 0
