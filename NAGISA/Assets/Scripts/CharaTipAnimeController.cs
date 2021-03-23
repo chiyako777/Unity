@@ -20,6 +20,10 @@ public class CharaTipAnimeController : MonoBehaviour
             return;
         }
 
+        if(!(bool)FlagManager.flagDictionary["coroutine"]){
+            this.animator.SetBool("isCoroutine",false);
+        }
+
         //方向キー入力があったら向き変更
         if(Input.anyKeyDown){
             Vector2? action = this.ActionKeyDown();

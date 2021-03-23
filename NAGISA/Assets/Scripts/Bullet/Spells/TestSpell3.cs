@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//** 要：敵機、自機の状態制御（無敵時間の兼ね合いで超ヌルゲーになったりしがち）
 public class TestSpell3 : BulletController
 {
 
@@ -10,15 +9,23 @@ public class TestSpell3 : BulletController
     private float speed = 0.0f;
     private int heartCount = 0;
     private int transTime = 0;
-    
+
+    //** cache
+    private PlayerController playerController;
+
     void Start()
     {
         base.Start();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     void Update()
     {
         base.Update(); 
+        if(playerController.mutekiTime > 0) {
+            status = 1;
+            return;
+        }
         switch(status){
             case 1:
                 speed = 0.1f;
@@ -44,8 +51,10 @@ public class TestSpell3 : BulletController
                 break;
             case 2:
                 foreach(GameObject obj in bulletList){
-                    Bullet b = obj.GetComponent<Bullet>();
-                    b.velocity = new Vector3(0.0f,0.0f,0.0f);
+                    if(obj != null){
+                        Bullet b = obj.GetComponent<Bullet>();
+                        b.velocity = new Vector3(0.0f,0.0f,0.0f);
+                    }
                 }
                 transTime++;
                 if(transTime > 120){
@@ -54,7 +63,7 @@ public class TestSpell3 : BulletController
                 }
                 break;
             case 3:
-                speed = 0.6f;
+                speed = 0.45f;
                 //Random.InitState(frameCount);
                 if(transTime == 0){
                     for(int i=0; i<bulletList.Count; i++){

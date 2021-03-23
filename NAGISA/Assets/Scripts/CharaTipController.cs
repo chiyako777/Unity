@@ -5,10 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharaTipController : MonoBehaviour
 {
-    [SerializeField]
-    float speed = 1.0f;
+    private float speed = 1.0f;
     private Rigidbody2D rb;
     private Vector2 inputAxis;
+
+    private Vector2 topLeft = new Vector2(-4.72f,1.96f);
+    private Vector2 bottomRight = new Vector2(4.82f,-2.09f);
 
     void Start()
     {
@@ -19,7 +21,7 @@ public class CharaTipController : MonoBehaviour
     {
         if(!(bool)FlagManager.flagDictionary["coroutine"]){
             inputAxis.x = Input.GetAxis("Horizontal");
-            inputAxis.y = Input.GetAxis("Vertical");
+            inputAxis.y = Input.GetAxis("Vertical");            
         }else{
             //Debug.Log("会話イベント中なので移動不可");
         }
@@ -28,6 +30,9 @@ public class CharaTipController : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = inputAxis.normalized * speed;
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x,topLeft.x,bottomRight.x),
+                                            Mathf.Clamp(transform.position.y,bottomRight.y,topLeft.y),
+                                            0.0f);
     }
 
 }

@@ -64,8 +64,8 @@ public class SpellPracController : MonoBehaviour
         startConfirmWindow.gameObject.SetActive(false);
         
         typeList = new List<string>(){"ホーミング","リフレク","ワープ"};
-        typeDescList = new List<string>(){"敵を常に追尾して攻撃してくれるオプションがつきます。そんなにパワーはないけど。回避に専念できるので万人向け",
-                                            "一定時間動けなくなる代わりに、結界を張って敵弾を跳ね返せます。結界は４方向に移動可能。うまく使えばボム節約できます。再使用にはチャージが必要",
+        typeDescList = new List<string>(){"敵を常に追尾して攻撃してくれるオプションがつきます。ホーミングショットのパワーは控えめ。回避に専念できるので万人向け",
+                                            "使用中動けなくなる代わりに、結界を張って敵弾を跳ね返せます。結界は４方向に移動可能。うまく使えばボム節約できます。再使用にはチャージが必要",
                                             "画面の反対側の端へワープできます。変なパターンを打ってくる敵はこれで対抗すると良いかも。"};
     }
 
@@ -359,7 +359,11 @@ public class SpellPracController : MonoBehaviour
         playerController.optionType = type;
         playerController.life = 5;      //※残機・ボム⇒暫定で決め打ち いずれは選べるようにする
         playerController.bomb = 5;
-        playerController.power = 1.0f;  //パワーはmax
+        if(typeSelected == 2){
+            playerController.power = 2.5f;
+        }else{
+            playerController.power = 1.0f;
+        }
 
         //InfoControllerに、自機タイプ、ルーム名を渡す
         GameObject bulletInfo = GameObject.Find("bulletinfo_controller");

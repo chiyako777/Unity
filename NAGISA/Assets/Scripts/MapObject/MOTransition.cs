@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MOTransition : MapObjectBase
 {
     public string dist;
-    public int typeSelected;    //仮：本実装はユーザー情報から引き渡し
+    public int typeSelected = 1;    //仮：本実装はユーザー情報から引き渡し
     public string roomName;     //仮：本実装はユーザー情報から引き渡し
     protected override IEnumerator OnAction(){
 

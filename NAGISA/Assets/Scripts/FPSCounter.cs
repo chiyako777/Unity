@@ -13,7 +13,7 @@ public class FPSCounter : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 60; //エディタ実行だと早すぎたので、60FPSに設定(ビルド前にコメントアウト & Quality設定のVSyncを垂直同期に戻すこと)
+        //Application.targetFrameRate = 60; //エディタ実行だと早すぎたので、60FPSに設定(ビルド前にコメントアウト & Quality設定のVSyncを垂直同期に戻すこと)
     }
 
     private void Update()

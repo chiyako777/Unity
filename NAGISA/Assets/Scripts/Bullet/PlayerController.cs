@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 velocity;   //自機の移動量
     private float recepSqrt2;    // 1 / √2  (ナナメ移動時速度調整)
-    private int mutekiTime = 0;     //被弾後無敵時間
+    [HideInInspector]
+    public int mutekiTime = 0;     //被弾後無敵時間
     private int bombTime = 0;       //ボム時間
     private int reflecTime = 0;     //リフレク時間 
 
@@ -121,7 +122,14 @@ public class PlayerController : MonoBehaviour
         bombTime = (bombTime > 0) ? ++bombTime : 0;
         if(bombTime >= maxBombTime){ bombTime = 0; }
         if(bombTime > 0 && bombTime % 10 == 0){
-            Instantiate(shotObjs[1],transform.position,Quaternion.identity);
+            GameObject b1 = Instantiate(shotObjs[1],new Vector3(transform.position.x - 3.0f,transform.position.y + 5.0f,0.0f),Quaternion.identity);
+            b1.GetComponent<PlayerBombShot>().type = "center";
+            GameObject b2 = Instantiate(shotObjs[1],new Vector3(transform.position.x + 3.0f,transform.position.y + 5.0f,0.0f),Quaternion.identity);
+            b2.GetComponent<PlayerBombShot>().type = "center";
+            GameObject b3 = Instantiate(shotObjs[1],new Vector3(transform.position.x - 3.0f,transform.position.y + 5.0f,0.0f),Quaternion.identity);
+            b3.GetComponent<PlayerBombShot>().type = "left";
+            GameObject b4 = Instantiate(shotObjs[1],new Vector3(transform.position.x + 3.0f,transform.position.y + 5.0f,0.0f),Quaternion.identity);
+            b4.GetComponent<PlayerBombShot>().type = "right";
         }
 
         //** リフレク

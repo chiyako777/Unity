@@ -19,8 +19,10 @@ ScriptsOnlyBuild:
     - SpellPracController
     - TestSpell
     - TestSpell2
+    - TestSpell3
     - TitleMenu
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
@@ -31,8 +33,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -86,25 +90,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11288}
     - Class: 114
-      Script: {instanceID: 11422}
+      Script: {instanceID: 11424}
     - Class: 114
-      Script: {instanceID: 11614}
+      Script: {instanceID: 11616}
     - Class: 114
-      Script: {instanceID: 11794}
+      Script: {instanceID: 11796}
     - Class: 114
-      Script: {instanceID: 11880}
+      Script: {instanceID: 11882}
     - Class: 114
-      Script: {instanceID: 12244}
+      Script: {instanceID: 12246}
     - Class: 114
-      Script: {instanceID: 12570}
+      Script: {instanceID: 12572}
     - Class: 114
-      Script: {instanceID: 12698}
+      Script: {instanceID: 12700}
     - Class: 114
-      Script: {instanceID: 12812}
+      Script: {instanceID: 12814}
     - Class: 114
-      Script: {instanceID: 13194}
+      Script: {instanceID: 13140}
     - Class: 114
-      Script: {instanceID: 24344}
+      Script: {instanceID: 13198}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -122,8 +126,6 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
-      Script: {instanceID: 0}
-    - Class: 687078895
       Script: {instanceID: 0}
     Assets/Scenes/Room_Test.unity:
     - Class: 1
@@ -184,25 +186,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11250}
     - Class: 114
-      Script: {instanceID: 11422}
+      Script: {instanceID: 11424}
     - Class: 114
-      Script: {instanceID: 11744}
+      Script: {instanceID: 11746}
     - Class: 114
-      Script: {instanceID: 11880}
+      Script: {instanceID: 11882}
     - Class: 114
-      Script: {instanceID: 11922}
+      Script: {instanceID: 11924}
     - Class: 114
-      Script: {instanceID: 12142}
+      Script: {instanceID: 12144}
     - Class: 114
-      Script: {instanceID: 12220}
+      Script: {instanceID: 12222}
     - Class: 114
-      Script: {instanceID: 12812}
+      Script: {instanceID: 12814}
     - Class: 114
       Script: {instanceID: 13140}
     - Class: 114
-      Script: {instanceID: 13194}
+      Script: {instanceID: 13144}
     - Class: 114
-      Script: {instanceID: 24344}
+      Script: {instanceID: 13198}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -255,17 +257,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11250}
     - Class: 114
-      Script: {instanceID: 11422}
+      Script: {instanceID: 11424}
     - Class: 114
-      Script: {instanceID: 11880}
+      Script: {instanceID: 11882}
     - Class: 114
-      Script: {instanceID: 12104}
+      Script: {instanceID: 12106}
     - Class: 114
-      Script: {instanceID: 12812}
+      Script: {instanceID: 12814}
     - Class: 114
-      Script: {instanceID: 13194}
+      Script: {instanceID: 13140}
     - Class: 114
-      Script: {instanceID: 24344}
+      Script: {instanceID: 13198}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -324,31 +326,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11288}
     - Class: 114
-      Script: {instanceID: 11422}
+      Script: {instanceID: 11392}
     - Class: 114
-      Script: {instanceID: 11614}
+      Script: {instanceID: 11424}
     - Class: 114
-      Script: {instanceID: 11786}
+      Script: {instanceID: 11616}
     - Class: 114
-      Script: {instanceID: 11794}
+      Script: {instanceID: 11788}
     - Class: 114
-      Script: {instanceID: 11860}
+      Script: {instanceID: 11796}
     - Class: 114
-      Script: {instanceID: 11880}
+      Script: {instanceID: 11862}
     - Class: 114
-      Script: {instanceID: 12006}
+      Script: {instanceID: 11882}
     - Class: 114
-      Script: {instanceID: 12240}
+      Script: {instanceID: 12008}
     - Class: 114
-      Script: {instanceID: 12570}
+      Script: {instanceID: 12242}
     - Class: 114
-      Script: {instanceID: 12800}
+      Script: {instanceID: 12572}
     - Class: 114
-      Script: {instanceID: 12812}
+      Script: {instanceID: 12802}
     - Class: 114
-      Script: {instanceID: 13194}
+      Script: {instanceID: 12814}
     - Class: 114
-      Script: {instanceID: 24344}
+      Script: {instanceID: 13140}
+    - Class: 114
+      Script: {instanceID: 13198}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -442,6 +446,12 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
+      Hash: 4a7fb49cd811c15e39234021673aa4e4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TestSpell3
+  - hash:
+      serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -514,7 +524,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 569391c7b1275b6e9f79cf9924ecc797
+      Hash: dccf6ad4c8345dbc6876eff2d6c63ebf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerBombShot
@@ -664,7 +674,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
-      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CharaTipController
@@ -772,7 +782,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: fd13f032fd26dc8df2686dfe5b83ae66
+      Hash: 45c3abbdc1b86df8264103f8aa976fba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -859,6 +869,12 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
+    className: FPSCounter
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
     className: MenuBase
   - hash:
       serializedVersion: 2
@@ -926,12 +942,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FPSCounter
   platform: 19
   scenePathNames:
   - Assets/Scenes/Title.unity

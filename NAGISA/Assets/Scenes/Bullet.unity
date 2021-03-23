@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1703,9 +1703,10 @@ MonoBehaviour:
   life: 3
   bomb: 4
   power: 1
+  mutekiTime: 0
   shotObjs:
   - {fileID: 7635735729274898858, guid: 6951b74de956715459d88114d195b289, type: 3}
-  - {fileID: 9110606744570004286, guid: 3617ddb33493d254e8d5ae3ecee26fff, type: 3}
+  - {fileID: 5644828598207343639, guid: 3eda12595deef7841bfb8bc1bf340a96, type: 3}
   - {fileID: 6308149246240031286, guid: 7b721b4ca1889b94eb8963339eea3f2b, type: 3}
   - {fileID: 6558033527213025915, guid: dcedc135721b41b4b9d7dbf13479aefe, type: 3}
 --- !u!50 &962149086
@@ -2679,7 +2680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
