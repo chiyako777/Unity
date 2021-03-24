@@ -347,7 +347,7 @@ public class SpellPracController : MonoBehaviour
                 break;
             case 3:
                 //warp:未実装
-                type = "Reflec";
+                type = "Warp";
                 break;
             default:
                 break;

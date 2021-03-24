@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [HideInInspector]
-    public string optionType;   //デバッグ用にインスペクタで自機オプションタイプ設定(Homing,Reflec,Warp&Power)
+    public string optionType;   //デバッグ用にインスペクタで自機オプションタイプ設定(Homing,Reflec,Warp)
 
     [HideInInspector]
     public int life = 3;    //残機
@@ -22,12 +22,14 @@ public class PlayerController : MonoBehaviour
     public int mutekiTime = 0;     //被弾後無敵時間
     private int bombTime = 0;       //ボム時間
     private int reflecTime = 0;     //リフレク時間 
+    
 
     private Dictionary<string,int> InputArray;  //各種入力制御
     public GameObject[] shotObjs;   //自機ショット用オブジェクト（Inspectorでプレハブを指定）
 
-    private Vector2 topLeft = new Vector2(-227.0f,167.0f);
-    private Vector2 bottomRight = new Vector2(127.0f,-171.0f);
+    private Vector2 topLeft = new Vector2(-229.0f,175.0f);
+    private Vector2 bottomRight = new Vector2(129.0f,-168.0f);
+    private Vector3 centerPos = new Vector3(-50.0f,3.5f,0.0f);
 
     //** caches
     private GameObject enemy;
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private InfoController infoController;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private GameObject warpArea;
 
     //** const
     private const int maxMutekiTime = 150;
@@ -50,15 +53,21 @@ public class PlayerController : MonoBehaviour
         InputArray["Shot"] = 0;
         InputArray["Bomb"] = 0;
         InputArray["Fire3"] = 0;
-        InputArray["Fire1"] = 0;
+        InputArray["Fire2"] = 0;
+        InputArray["WarpH"] = 0;
+        InputArray["WarpV"] = 0;
 
         this.animator = GetComponent<Animator>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.infoController = GameObject.Find("bulletinfo_controller").GetComponent<InfoController>();
+
+        //test
+        //shotObjs[0].tag = "Bullet";
     }
     
     void Update()
     {
+        spriteRenderer.color = new Color(1.0f,1.0f,1.0f,1.0f);
         //** 敵機をキャッシュ
         LoadEnemy();
         //** 情報表示
@@ -96,13 +105,17 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("ショットを打つ");
             //通常ショット
             if(power < 3.0f){
-                Instantiate(shotObjs[0],new Vector3(transform.position.x,transform.position.y + 5.0f,0.0f),Quaternion.identity);
+                GameObject b = Instantiate(shotObjs[0],new Vector3(transform.position.x,transform.position.y + 5.0f,0.0f),Quaternion.identity);
+                b.GetComponent<PlayerShot>().optionType = optionType;
             }else{
-                Instantiate(shotObjs[0],new Vector3(transform.position.x - 3.0f,transform.position.y + 5.0f,0.0f),Quaternion.identity);
-                Instantiate(shotObjs[0],new Vector3(transform.position.x + 3.0f,transform.position.y + 5.0f,0.0f),Quaternion.identity);
+                GameObject b1 = Instantiate(shotObjs[0],new Vector3(transform.position.x - 3.0f,transform.position.y + 5.0f,0.0f),Quaternion.identity);
+                b1.GetComponent<PlayerShot>().optionType = optionType;
+                GameObject b2 = Instantiate(shotObjs[0],new Vector3(transform.position.x + 3.0f,transform.position.y + 5.0f,0.0f),Quaternion.identity);
+                b2.GetComponent<PlayerShot>().optionType = optionType;
             }
 
-            if(optionType.Equals("Homing",StringComparison.CurrentCulture)){
+            //if(optionType.Equals("Homing",StringComparison.CurrentCulture)){
+            if(optionType == "Homing"){    
                 //ホーミング2Way
                 Vector3 leftPos = new Vector3(transform.position.x-5.0f,transform.position.y-7.0f,0.0f);
                 GameObject lh = Instantiate(shotObjs[2],leftPos,Quaternion.identity);
@@ -110,6 +123,14 @@ public class PlayerController : MonoBehaviour
                 Vector3 rightPos = new Vector3(transform.position.x+5.0f,transform.position.y-7.0f,0.0f);
                 GameObject rh = Instantiate(shotObjs[2],rightPos,Quaternion.identity);
                 rh.GetComponent<PlayerHomingShot>().lr = false;
+            }
+
+            if(optionType == "Warp"){
+                //拡散ショット
+                for(float i=-36.0f; i<=36.0f; i+=6.0f){
+                    GameObject b = Instantiate(shotObjs[0],new Vector3(transform.position.x,transform.position.y + 5.0f,0.0f),Quaternion.AngleAxis(i,Vector3.forward));
+                    b.GetComponent<PlayerShot>().optionType = optionType;
+                }
             }
         }
 
@@ -134,7 +155,7 @@ public class PlayerController : MonoBehaviour
 
         //** リフレク
         if(optionType == "Reflec"){
-            if(InputArray["Fire1"] > 0 && reflecTime < maxReflecTime){
+            if(InputArray["Fire2"] > 0 && reflecTime < maxReflecTime){
                 if(reflecTime == 0){
                     //リフレクモード開始(リフレクオブジェクト生成)
                     Vector3 initialPos = new Vector3(transform.position.x,transform.position.y + 15.0f,0.0f);
@@ -148,6 +169,29 @@ public class PlayerController : MonoBehaviour
                     Destroy(reflec);
                 }
             }
+        }
+
+        //** ワープ
+        if(optionType == "Warp"){
+
+            if(InputArray["WarpH"] > 0){
+                spriteRenderer.color = new Color(0.166f,0.376f,0.858f,1.0f);
+                if(warpArea == null){                
+                    warpArea = Instantiate(MainManager.resourcesLoader.GetObjectHandle("test_warpArea"),CalcWarpArea(1),Quaternion.identity);
+                }
+                Vector3 nowScale = warpArea.transform.localScale;
+                if(nowScale.x <= 60.0f){
+                    warpArea.transform.localScale = new Vector3(nowScale.x + 1.5f,nowScale.y + 1.5f,1.0f);
+                }
+
+            }
+
+
+            // if(InputArray["WarpV"] > 0){
+            //     spriteRenderer.color = new Color(0.166f,0.376f,0.858f,1.0f);
+            //     warpArea = Instantiate(MainManager.resourcesLoader.GetObjectHandle("test_warpArea"),CalcWarpArea(2),Quaternion.identity);
+            // }
+
         }
 
         //** 無敵時間カウント
@@ -166,8 +210,8 @@ public class PlayerController : MonoBehaviour
         //Shot:Zキー:ショット
         //Bomb:xキー:ボム
         //Fire3:左シフト:低速移動
-        //Fire1:左Ctr:リフレク
-        string[] str = { "Shot", "Bomb", "Fire3", "Fire1" };
+        //Fire2:左Alt:リフレク
+        string[] str = { "Shot", "Bomb", "Fire3", "Fire2" ,"WarpH" , "WarpV" };
         for(int i = 0; i < str.Length; ++i)
         {
             if (Input.GetButton(str[i]))
@@ -239,6 +283,30 @@ public class PlayerController : MonoBehaviour
         float alpha = (Mathf.Sin(mutekiTime * 0.1f) + 1) / 2;   //正弦波を0~1に正規化
         spriteRenderer.color = new Color(1.0f,1.0f,1.0f,alpha);
     }
+
+    //** ワープ可能区域計算(中心点返却？)
+    private Vector3 CalcWarpArea(int vh){
+        Vector3 centerArea = new Vector3(0.0f,0.0f,0.0f);
+        float x = transform.position.x;
+        float y = transform.position.y;
+        if(vh == 1){
+            //Horizon
+            if(x == centerPos.x){return centerArea;}
+            centerArea.x = (x < centerPos.x)
+                                        ? centerPos.x + Mathf.Abs(centerPos.x - x)
+                                        : centerPos.x - Mathf.Abs(centerPos.x - x);
+            centerArea.y = y;
+        }else if(vh == 2){
+            //Vertical
+            if(y == centerPos.y){return centerArea;}
+            centerArea.x = x;
+            centerArea.y = (y < centerPos.y)
+                                        ? centerPos.y + Mathf.Abs(centerPos.y - y)
+                                        : centerPos.y - Mathf.Abs(centerPos.x - y);
+        }
+        return centerArea;
+    }
+
 
     //** 弾幕情報画面に受け渡し
     private void InfoUpdate(){

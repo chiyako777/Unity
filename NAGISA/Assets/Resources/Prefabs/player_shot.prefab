@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 1
+  optionType: 
 --- !u!61 &7635735729274898854
 BoxCollider2D:
   m_ObjectHideFlags: 0
