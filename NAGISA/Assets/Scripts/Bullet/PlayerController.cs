@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public int mutekiTime = 0;     //被弾後無敵時間
     private int bombTime = 0;       //ボム時間
-    private int reflecTime = 0;     //リフレク時間 
+    private int reflecTime = 0;     //リフレク時間
+    private int warpStatus = 0;     //ワープステータス(1:ワープ可能範囲計算中、2:ワープ地点選択中)
+    private int warpVH = 0;         //ワープ方向フラグ(1:Horizontal 2:Vertical)
     
 
     private Dictionary<string,int> InputArray;  //各種入力制御
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 topLeft = new Vector2(-229.0f,175.0f);
     private Vector2 bottomRight = new Vector2(129.0f,-168.0f);
     private Vector3 centerPos = new Vector3(-50.0f,3.5f,0.0f);
+    private float warpLength = 37.0f;   //ワープ可能領域の大きさ(正方形の辺の半分)
 
     //** caches
     private GameObject enemy;
@@ -67,7 +70,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        spriteRenderer.color = new Color(1.0f,1.0f,1.0f,1.0f);
+        //spriteRenderer.color = new Color(1.0f,1.0f,1.0f,1.0f);
         //** 敵機をキャッシュ
         LoadEnemy();
         //** 情報表示
@@ -95,13 +98,35 @@ public class PlayerController : MonoBehaviour
             velocity.x *= recepSqrt2;
             velocity.y *= recepSqrt2;
         }
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x + velocity.x,topLeft.x,bottomRight.x),
-                                        Mathf.Clamp(transform.position.y + velocity.y,bottomRight.y,topLeft.y),
-                                        0.0f);
+        if(warpStatus != 2){
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x + velocity.x,topLeft.x,bottomRight.x),
+                                            Mathf.Clamp(transform.position.y + velocity.y,bottomRight.y,topLeft.y),
+                                            0.0f);
+        }else{
+            //ワープ地点選択中
+            float warpX = warpArea.transform.position.x;
+            float warpY = warpArea.transform.position.y;
+            float limitXLeft = (topLeft.x < (warpX - warpLength)) 
+                                    ? warpX - warpLength
+                                    : topLeft.x;
+            float limitXRight = (bottomRight.x > (warpX + warpLength))
+                                    ? warpX + warpLength
+                                    : bottomRight.x;
+            float limitYTop = (topLeft.y > (warpY + warpLength))
+                                    ? warpY + warpLength
+                                    : topLeft.y;
+            float limitYBottom = (bottomRight.y < (warpY - warpLength))
+                                    ? warpY - warpLength
+                                    : bottomRight.y;
+
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x + velocity.x , limitXLeft , limitXRight),
+                                            Mathf.Clamp(transform.position.y + velocity.y , limitYBottom , limitYTop),
+                                            0.0f);
+        }
 
         //** ショットを打つ
         if(InputArray["Shot"] > 0 && InputArray["Shot"] % 5 == 0
-            && mutekiTime == 0 && bombTime == 0){
+            && mutekiTime == 0 && bombTime == 0 && warpStatus == 0){
             //Debug.Log("ショットを打つ");
             //通常ショット
             if(power < 3.0f){
@@ -135,7 +160,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //** ボムを打つ
-        if(InputArray["Bomb"] > 0 && mutekiTime == 0 && bombTime == 0 && bomb >= 1){
+        if(InputArray["Bomb"] > 0 && mutekiTime == 0 && bombTime == 0 && bomb >= 1 && warpStatus == 0){
             Debug.Log("Bomb");
             bombTime = 1;
             bomb -= 1;
@@ -174,24 +199,60 @@ public class PlayerController : MonoBehaviour
         //** ワープ
         if(optionType == "Warp"){
 
-            if(InputArray["WarpH"] > 0){
-                spriteRenderer.color = new Color(0.166f,0.376f,0.858f,1.0f);
-                if(warpArea == null){                
-                    warpArea = Instantiate(MainManager.resourcesLoader.GetObjectHandle("test_warpArea"),CalcWarpArea(1),Quaternion.identity);
-                }
-                Vector3 nowScale = warpArea.transform.localScale;
-                if(nowScale.x <= 60.0f){
-                    warpArea.transform.localScale = new Vector3(nowScale.x + 1.5f,nowScale.y + 1.5f,1.0f);
+            if(InputArray["WarpH"] > 0 || InputArray["WarpV"] > 0){
+
+                if(InputArray["WarpV"] > 0){warpVH = 2;}
+                if(InputArray["WarpH"] > 0){warpVH = 1;}        //もし同時にA,S同時に押されていたらHorizontalを優先
+                
+                if(warpStatus == 0){
+                    spriteRenderer.color = new Color(0.166f,0.376f,0.858f,1.0f);
+                    enemy.GetComponent<Enemy>().bulletController.StopAll();
+                    warpStatus = 1;     
+                    
                 }
 
             }
 
+            switch(warpStatus){
+                case 1 :    //ワープ範囲計算
+                    //途中でA,S離したら終了
+                    if( (warpVH == 1 && InputArray["WarpH"] == 0) || (warpVH == 2 && InputArray["WarpV"] == 0)){
+                        Destroy(warpArea);
+                        spriteRenderer.color = new Color(1.0f,1.0f,1.0f,1.0f);
+                        enemy.GetComponent<Enemy>().bulletController.RestartAll();
+                        warpStatus = 0;
+                        warpVH = 0;
+                    }
 
-            // if(InputArray["WarpV"] > 0){
-            //     spriteRenderer.color = new Color(0.166f,0.376f,0.858f,1.0f);
-            //     warpArea = Instantiate(MainManager.resourcesLoader.GetObjectHandle("test_warpArea"),CalcWarpArea(2),Quaternion.identity);
-            // }
+                    if(warpArea == null){                
+                        //最初にワープ範囲矩形を生成
+                        warpArea = Instantiate(MainManager.resourcesLoader.GetObjectHandle("test_warpArea"),CalcWarpArea(warpVH),Quaternion.identity);
+                    }
+                    //ワープ範囲を大きくしていく
+                    Vector3 nowScale = warpArea.transform.localScale;
+                    if(nowScale.x <= 60.0f){
+                        warpArea.transform.localScale = new Vector3(nowScale.x + 1.5f,nowScale.y + 1.5f,1.0f);
+                    }else{
+                        //ワープ範囲が所定の大きさに達したら、地点選択へ
+                        warpStatus = 2;
+                        warpArea.GetComponent<SpriteRenderer>().color = new Color(0.116f,0.915f,0.883f,1.0f);
+                        transform.position = new Vector3(warpArea.transform.position.x,warpArea.transform.position.y,0.0f);
+                    }
+                    break;
 
+                case 2 :    //ワープ地点選択
+                    //A,Sを離したらワープ実行
+                    if( (warpVH == 1 && InputArray["WarpH"] == 0) || (warpVH == 2 && InputArray["WarpV"] == 0)){
+                        Destroy(warpArea);
+                        spriteRenderer.color = new Color(1.0f,1.0f,1.0f,1.0f);
+                        enemy.GetComponent<Enemy>().bulletController.RestartAll();
+                        warpStatus = 0;
+                        warpVH = 0;
+                    }
+                    break;
+                default : 
+                    break;
+            }
         }
 
         //** 無敵時間カウント
@@ -259,7 +320,7 @@ public class PlayerController : MonoBehaviour
     //** 被弾処理
     private void OnTriggerEnter2D(Collider2D collision){
         //Debug.Log("collision.gameObject.tag = " + collision.gameObject.tag + " mutekiTime = " + mutekiTime + " bombTime = " + bombTime);
-        if(collision.gameObject.tag == "Bullet" && mutekiTime==0 && bombTime == 0){
+        if(collision.gameObject.tag == "Bullet" && mutekiTime==0 && bombTime == 0 && warpStatus == 0){
             //Debug.Log("自機被弾");
             if(life > 0){
                 //残機マイナス

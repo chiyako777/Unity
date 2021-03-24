@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     public Vector3 velocity = new Vector3(0.0f,0.0f,0.0f);
     [HideInInspector]
     public Vector3 gravity = new Vector3(0.0f,1.0f,0.0f);
+    [HideInInspector]
+    public bool stopFlg = false;
 
     //** cache
     [HideInInspector]
@@ -20,6 +22,8 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
+        if(stopFlg){return;}
+
         transform.position += velocity + gravity;
 
         //** 画面Outによる弾消し

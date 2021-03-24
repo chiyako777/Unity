@@ -18,6 +18,7 @@ public class BulletController : MonoBehaviour
     public bool activeFlg = false;
 
     protected int frameCount = 0;
+    protected bool stopFlg = false;     //弾幕全停止フラグ
 
     //** const
     protected const int vanishMotionCnt = 100; //消滅演出長さ
@@ -33,6 +34,7 @@ public class BulletController : MonoBehaviour
     protected void Update()
     {
         if(!activeFlg){ return; }
+
         bulletList.RemoveAll(item => item == null);     //ボムなどによる弾消しが起きているとリストが歯抜けになっているので、null要素削除
     }
 
@@ -61,6 +63,30 @@ public class BulletController : MonoBehaviour
         }else{
             //Debug.Log("Bullet Vanish -1");
             return -1;
+        }
+    }
+
+    //** 弾幕全停止
+    public void StopAll(){
+        //Debug.Log("BulletController : StopAll");
+        this.stopFlg = true;
+        foreach(GameObject bullet in bulletList){
+            if(bullet != null){
+                Bullet b = bullet.GetComponent<Bullet>();
+                b.stopFlg = true;
+            }
+        }
+    }
+
+    //** 弾幕全停止解除
+    public void RestartAll(){
+        //Debug.Log("BulletController : StopAll");
+        this.stopFlg = false;
+        foreach(GameObject bullet in bulletList){
+            if(bullet != null){
+                Bullet b = bullet.GetComponent<Bullet>();
+                b.stopFlg = false;
+            }
         }
     }
 

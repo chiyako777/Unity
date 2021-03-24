@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//** スペカ実装指針
+//   BulletController継承必須
+
+//** ハート型弾幕
 public class TestSpell3 : BulletController
 {
 
@@ -22,6 +26,9 @@ public class TestSpell3 : BulletController
     void Update()
     {
         base.Update(); 
+        if(!activeFlg){ return; }
+        if(stopFlg){return;}
+
         if(playerController.mutekiTime > 0) {
             status = 1;
             return;
