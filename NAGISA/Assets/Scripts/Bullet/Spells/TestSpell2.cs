@@ -39,25 +39,25 @@ public class TestSpell2 : BulletController
         }
 
 
-        // if(frameCount % 100 == 0){
-        //     //Debug.Log("交差弾生成");
-        //     float y = Random.Range(30.0f,40.0f);
-        //     float val = ((frameCount/100)%2 == 0) ? 1.0f : -1.0f;
-        //     for(float i=0.0f; i<9.0f;i++){
-        //         //左から来る弾
-        //         bulletList.Add(Instantiate(prefabs[0],new Vector3(-234.0f,Mathf.Clamp(-60.0f + (y*i),-184.0f,184.0f),0.0f),Quaternion.identity));
-        //         bulletList[bulletList.Count-1].AddComponent<Bullet>();
-        //         Bullet bleft = bulletList[bulletList.Count-1].GetComponent<Bullet>();
-        //         bleft.velocity = BulletUtility.GetDirection(-45.0f + (Random.Range(0.0f,15.0f) * val)) * speed2;
-        //         bleft.gravity = new Vector3(0.0f,0.0f,0.0f);
-        //         //右から来る弾
-        //         bulletList.Add(Instantiate(prefabs[0],new Vector3(139.0f,Mathf.Clamp(-60.0f + (y*i),-184.0f,184.0f),0.0f),Quaternion.identity));
-        //         bulletList[bulletList.Count-1].AddComponent<Bullet>();
-        //         Bullet bright = bulletList[bulletList.Count-1].GetComponent<Bullet>();
-        //         bright.velocity = BulletUtility.GetDirection(-135.0f + (Random.Range(0.0f,15.0f) * val)) * speed2;
-        //         bright.gravity = new Vector3(0.0f,0.0f,0.0f);
-        //     }
-        // }
+        if(frameCount % 100 == 0){
+            //Debug.Log("交差弾生成");
+            float y = Random.Range(30.0f,40.0f);
+            float val = ((frameCount/100)%2 == 0) ? 1.0f : -1.0f;
+            for(float i=0.0f; i<9.0f;i++){
+                //左から来る弾
+                bulletList.Add(Instantiate(prefabs[0],new Vector3(-234.0f,Mathf.Clamp(-60.0f + (y*i),-184.0f,184.0f),0.0f),Quaternion.identity));
+                bulletList[bulletList.Count-1].AddComponent<Bullet>();
+                Bullet bleft = bulletList[bulletList.Count-1].GetComponent<Bullet>();
+                bleft.velocity = BulletUtility.GetDirection(-45.0f + (Random.Range(0.0f,15.0f) * val)) * speed2;
+                bleft.gravity = new Vector3(0.0f,0.0f,0.0f);
+                //右から来る弾
+                bulletList.Add(Instantiate(prefabs[0],new Vector3(139.0f,Mathf.Clamp(-60.0f + (y*i),-184.0f,184.0f),0.0f),Quaternion.identity));
+                bulletList[bulletList.Count-1].AddComponent<Bullet>();
+                Bullet bright = bulletList[bulletList.Count-1].GetComponent<Bullet>();
+                bright.velocity = BulletUtility.GetDirection(-135.0f + (Random.Range(0.0f,15.0f) * val)) * speed2;
+                bright.gravity = new Vector3(0.0f,0.0f,0.0f);
+            }
+        }
 
         frameCount++;
 

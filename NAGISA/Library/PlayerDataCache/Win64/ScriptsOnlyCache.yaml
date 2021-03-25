@@ -22,7 +22,6 @@ ScriptsOnlyBuild:
     - TestSpell3
     - TitleMenu
     Unity.2D.Tilemap.Editor.dll:
-    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
@@ -33,10 +32,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -410,7 +407,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: 569391c7b1275b6e9f79cf9924ecc797
+      Hash: 34b898fd3d6e5aa456064eebf1a91bd3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerShot
@@ -524,7 +521,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: dccf6ad4c8345dbc6876eff2d6c63ebf
+      Hash: 500b1a584a5bc06f4b4877af4fb3e318
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerBombShot
@@ -578,7 +575,7 @@ ScriptsOnlyBuild:
     className: TestSpell2
   - hash:
       serializedVersion: 2
-      Hash: 0d18ebf66dc5baa3c94d3896fd26ab70
+      Hash: 0e8a86ec96f17c59e9e30bdd567de43d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerHomingShot
@@ -770,7 +767,7 @@ ScriptsOnlyBuild:
     className: PlayerReflection
   - hash:
       serializedVersion: 2
-      Hash: c3387f0fa4d2fd26434f444d945110c1
+      Hash: 11179eddc787cac3e58331185e66c0ec
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bullet

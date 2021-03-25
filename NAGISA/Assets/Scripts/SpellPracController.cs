@@ -15,6 +15,7 @@ public class SpellPracController : MonoBehaviour
     private Text stageSelectText;
     private Text typeListText;
     private Text typeDescText;
+    private Image typeDescImage;
     private Text confirmText;
 
     private RoomData[] roomData;
@@ -28,6 +29,7 @@ public class SpellPracController : MonoBehaviour
 
     private List<string> typeList;
     private List<string> typeDescList;
+    private List<Sprite> typeDescImageList;
 
     void Start()
     {
@@ -45,6 +47,12 @@ public class SpellPracController : MonoBehaviour
             }
             if(c.name == "practiceStartConfirm_window"){
                 startConfirmWindow = c;
+            }
+        }
+        Image[] image = GameObject.FindObjectsOfType<Image>();
+        foreach(Image i in image){
+            if(i.name == "typedesc_image"){
+                typeDescImage = i;
             }
         }
 
@@ -66,7 +74,12 @@ public class SpellPracController : MonoBehaviour
         typeList = new List<string>(){"ホーミング","リフレク","ワープ"};
         typeDescList = new List<string>(){"敵を常に追尾して攻撃してくれるオプションがつきます。ホーミングショットのパワーは控えめ。回避に専念できるので万人向け",
                                             "使用中動けなくなる代わりに、結界を張って敵弾を跳ね返せます。結界は４方向に移動可能。うまく使えばボム節約できます。再使用にはチャージが必要",
-                                            "画面の反対側の端へワープできます。変なパターンを打ってくる敵はこれで対抗すると良いかも。"};
+                                            "画面の反対側へワープできます。変なパターンを打ってくる敵はこれで対抗すると良いかも。再使用にはチャージが必要"};
+        typeDescImageList = new List<Sprite>(){ 
+                        Resources.Load<Sprite>("Textures/homing_desc"),
+                        Resources.Load<Sprite>("Textures/reflec_desc"),
+                        Resources.Load<Sprite>("Textures/warp_desc")
+                        };
     }
 
     void Update()
@@ -77,12 +90,14 @@ public class SpellPracController : MonoBehaviour
             stageSelectText.text = stageSelectText.text.Replace("*"," ");
             roomSelected = (int)Mathf.Clamp(roomSelected - 1,1.0f,(float)roomData.Length);
             stageSelectText.text = stageSelectText.text.Replace("    " + roomData[roomSelected-1].name,"   *" + roomData[roomSelected-1].name);
+            MusicManager.PlaySelectSE();
         }
         if(Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical")<0.0f 
                 && spellSelectCoroutine == null && typeSelectCoroutine == null && confirmCoroutine == null){
             stageSelectText.text = stageSelectText.text.Replace("*"," ");
             roomSelected = (int)Mathf.Clamp(roomSelected + 1,1.0f,(float)roomData.Length);
             stageSelectText.text = stageSelectText.text.Replace("    " + roomData[roomSelected-1].name,"   *" + roomData[roomSelected-1].name);
+            MusicManager.PlaySelectSE();
         }
         //** 確定
         if(Input.GetButtonDown("Submit") 
@@ -125,6 +140,7 @@ public class SpellPracController : MonoBehaviour
                 stageSelectText.text = stageSelectText.text.Replace(
                                             "    " + roomData[roomSelected-1].spell[spellSelected-1],
                                             "   *" + roomData[roomSelected-1].spell[spellSelected-1]);
+                MusicManager.PlaySelectSE();
             }
             if(Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical")<0.0f 
                     && typeSelectCoroutine == null && confirmCoroutine == null){
@@ -133,6 +149,7 @@ public class SpellPracController : MonoBehaviour
                 stageSelectText.text = stageSelectText.text.Replace(
                                             "    " + roomData[roomSelected-1].spell[spellSelected-1],
                                             "   *" + roomData[roomSelected-1].spell[spellSelected-1]);
+                MusicManager.PlaySelectSE();
             }
             if(Input.GetButtonDown("Submit") && typeSelectCoroutine == null && confirmCoroutine == null){
                 typeSelectCoroutine = CreateTypeCoroutine();
@@ -194,12 +211,16 @@ public class SpellPracController : MonoBehaviour
                 typeSelected = (int)Mathf.Clamp(typeSelected - 1,1.0f,(float)typeList.Count);
                 typeListText.text = typeListText.text.Replace("    " + typeList[typeSelected-1],"   *" + typeList[typeSelected-1]);
                 typeDescText.text = typeDescList[typeSelected-1];
+                typeDescImage.sprite = typeDescImageList[typeSelected-1];
+                MusicManager.PlaySelectSE();
             }
             if(Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical")<0.0f && confirmCoroutine == null){
                 typeListText.text = typeListText.text.Replace("*"," ");
                 typeSelected = (int)Mathf.Clamp(typeSelected + 1,1.0f,(float)typeList.Count);
                 typeListText.text = typeListText.text.Replace("    " + typeList[typeSelected-1],"   *" + typeList[typeSelected-1]);
                 typeDescText.text = typeDescList[typeSelected-1];
+                typeDescImage.sprite = typeDescImageList[typeSelected-1];
+                MusicManager.PlaySelectSE();
             }
             //** 確定
             if(confirmFlg && Input.GetButtonDown("Submit") && confirmCoroutine == null){
@@ -256,6 +277,7 @@ public class SpellPracController : MonoBehaviour
             if(Input.GetButtonDown("Horizontal")){
                 isYes = (!isYes) ? true : false;
                 confirmDisp(isYes);
+                MusicManager.PlaySelectSE();
             }
             if(Input.GetButtonDown("Submit") && isYes){
                 //** スタート
@@ -304,6 +326,7 @@ public class SpellPracController : MonoBehaviour
             if(i == typeSelected-1){
                 typeListText.text += "   *" + typeList[i] + "\n";
                 typeDescText.text = typeDescList[i];
+                typeDescImage.sprite = typeDescImageList[i];
             }else{
                 typeListText.text += "    " + typeList[i] + "\n";
             }
@@ -330,11 +353,11 @@ public class SpellPracController : MonoBehaviour
         //Debug.Log("OnSceneLoaded:scene.name =  " + nextScene.name);
         //Debug.Log("OnSceneLoaded:mode =  " + mode);
 
-        //MainManagerに、ロードするデータファイル名、シーン名を渡す
+        //BulletMainManagerに、ロードするデータファイル名、シーン名を渡す
         GameObject mainController = GameObject.Find("bullet_main_controller");
-        var mainManager = mainController.GetComponent<MainManager>();
-        mainManager.loadFileName = Application.dataPath + "/StaticData" + "/bullet/" + "Room_Test.txt";
-        MainManager.beforeScene = "SpellPracticeSetting";
+        var bulletMainManager = mainController.GetComponent<BulletMainManager>();
+        bulletMainManager.loadFileName = Application.dataPath + "/StaticData" + "/bullet/" + "Room_Test.txt";
+        BulletMainManager.beforeScene = "SpellPracticeSetting";
 
         //自機タイプ
         string type = "";

@@ -160,7 +160,9 @@ public class PlayerController : MonoBehaviour
         }
 
         //** ボムを打つ
-        if(InputArray["Bomb"] > 0 && mutekiTime == 0 && bombTime == 0 && bomb >= 1 && warpStatus == 0){
+        if(InputArray["Bomb"] > 0 && mutekiTime == 0 && bombTime == 0 && bomb >= 1 && warpStatus == 0
+            && enemy != null
+            && enemy.GetComponent<Enemy>().bulletController.activeFlg){
             Debug.Log("Bomb");
             bombTime = 1;
             bomb -= 1;
@@ -181,7 +183,7 @@ public class PlayerController : MonoBehaviour
         //** リフレク
         if(optionType == "Reflec"){
             if(InputArray["Fire2"] > 0 && reflecTime < maxReflecTime){
-                if(reflecTime == 0){
+                if(reflecTime == 0 && enemy != null && enemy.GetComponent<Enemy>().bulletController.activeFlg){
                     //リフレクモード開始(リフレクオブジェクト生成)
                     Vector3 initialPos = new Vector3(transform.position.x,transform.position.y + 15.0f,0.0f);
                     reflec = Instantiate(shotObjs[3],initialPos,Quaternion.identity);
@@ -199,34 +201,42 @@ public class PlayerController : MonoBehaviour
         //** ワープ
         if(optionType == "Warp"){
 
-            if(InputArray["WarpH"] > 0 || InputArray["WarpV"] > 0){
+            //ワープモード開始
+            if((InputArray["WarpH"] > 0 || InputArray["WarpV"] > 0) && warpStatus == 0 && enemy != null && 
+                    enemy.GetComponent<Enemy>().bulletController.activeFlg){
 
                 if(InputArray["WarpV"] > 0){warpVH = 2;}
-                if(InputArray["WarpH"] > 0){warpVH = 1;}        //もし同時にA,S同時に押されていたらHorizontalを優先
+                if(InputArray["WarpH"] > 0){warpVH = 1;}        //もし同時にWarpH,WarpV同時に押されていたらHorizontalを優先
                 
-                if(warpStatus == 0){
-                    spriteRenderer.color = new Color(0.166f,0.376f,0.858f,1.0f);
-                    enemy.GetComponent<Enemy>().bulletController.StopAll();
-                    warpStatus = 1;     
-                    
-                }
+                spriteRenderer.color = new Color(0.166f,0.376f,0.858f,1.0f);
+                enemy.GetComponent<Enemy>().bulletController.StopAll();
+                warpStatus = 1;
 
             }
 
             switch(warpStatus){
-                case 1 :    //ワープ範囲計算
-                    //途中でA,S離したら終了
+                //ワープ範囲計算
+                case 1 :    
+                    //途中でWarpH,WarpV離したら終了
                     if( (warpVH == 1 && InputArray["WarpH"] == 0) || (warpVH == 2 && InputArray["WarpV"] == 0)){
-                        Destroy(warpArea);
+                        if(warpArea != null){Destroy(warpArea);}
                         spriteRenderer.color = new Color(1.0f,1.0f,1.0f,1.0f);
                         enemy.GetComponent<Enemy>().bulletController.RestartAll();
                         warpStatus = 0;
                         warpVH = 0;
                     }
 
+                    //計算中に敵が死んだら終了
+                    if(enemy == null){
+                        if(warpArea != null){Destroy(warpArea);}
+                        spriteRenderer.color = new Color(1.0f,1.0f,1.0f,1.0f);
+                        warpStatus = 0;
+                        warpVH = 0;
+                    }
+
                     if(warpArea == null){                
                         //最初にワープ範囲矩形を生成
-                        warpArea = Instantiate(MainManager.resourcesLoader.GetObjectHandle("test_warpArea"),CalcWarpArea(warpVH),Quaternion.identity);
+                        warpArea = Instantiate(BulletMainManager.resourcesLoader.GetObjectHandle("test_warpArea"),CalcWarpArea(warpVH),Quaternion.identity);
                     }
                     //ワープ範囲を大きくしていく
                     Vector3 nowScale = warpArea.transform.localScale;
@@ -239,16 +249,26 @@ public class PlayerController : MonoBehaviour
                         transform.position = new Vector3(warpArea.transform.position.x,warpArea.transform.position.y,0.0f);
                     }
                     break;
-
-                case 2 :    //ワープ地点選択
-                    //A,Sを離したらワープ実行
+                    
+                //ワープ地点選択
+                case 2 :    
+                    //WarpH,WarpVを離したらワープ実行
                     if( (warpVH == 1 && InputArray["WarpH"] == 0) || (warpVH == 2 && InputArray["WarpV"] == 0)){
-                        Destroy(warpArea);
+                        if(warpArea != null){Destroy(warpArea);}
                         spriteRenderer.color = new Color(1.0f,1.0f,1.0f,1.0f);
                         enemy.GetComponent<Enemy>().bulletController.RestartAll();
                         warpStatus = 0;
                         warpVH = 0;
                     }
+
+                    //地点選択中に敵が死んだら終了
+                    if(enemy == null){
+                        if(warpArea != null){Destroy(warpArea);}
+                        spriteRenderer.color = new Color(1.0f,1.0f,1.0f,1.0f);
+                        warpStatus = 0;
+                        warpVH = 0;
+                    }
+
                     break;
                 default : 
                     break;
@@ -334,7 +354,7 @@ public class PlayerController : MonoBehaviour
                 enemy.GetComponent<Enemy>().bulletController.DeleteBullet();
             }else{
                 //** ゲームオーバー(取り急ぎ前シーンへ遷移のみ)
-                SceneManager.LoadScene(MainManager.beforeScene);                
+                SceneManager.LoadScene(BulletMainManager.beforeScene);                
             }
         }
     }

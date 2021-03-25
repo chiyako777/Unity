@@ -26,17 +26,19 @@ public class TitleMenu : MonoBehaviour
     void Update()
     {
         //Debug.Log("Time.deltaTime = " + Time.deltaTime);
-        Debug.Log("Time.timeScale = " + Time.timeScale);
+        //Debug.Log("Time.timeScale = " + Time.timeScale);
         //** タイトルメニュー選択
         if(Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal")>0.0f){
             menuText.text = menuText.text.Replace("*"," ");
             selected = (int)Mathf.Clamp(selected + 1,0.0f,4.0f);
             updateSelectedMark();
+            MusicManager.PlaySelectSE();
         }
         if(Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal")<0.0f){
             menuText.text = menuText.text.Replace("*"," ");
             selected = (int)Mathf.Clamp(selected - 1,0.0f,4.0f);
             updateSelectedMark();
+            MusicManager.PlaySelectSE();
         }
 
         //** 確定

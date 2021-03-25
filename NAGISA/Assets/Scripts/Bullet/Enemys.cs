@@ -50,7 +50,7 @@ public class EnemyTest : Enemy
         //Debug.Log("CreateDefeatedBonus");
         for(int i=0; i<25; i++){
             Random.InitState((int)(Time.deltaTime * 100 * i));
-            Instantiate(MainManager.resourcesLoader.GetObjectHandle("power_item"),
+            Instantiate(BulletMainManager.resourcesLoader.GetObjectHandle("power_item"),
                         new Vector3(enemyInfo.enemyLocation.x + Random.Range(-15.0f,15.0f),
                                     enemyInfo.enemyLocation.y + Random.Range(-30.0f,30.0f),
                                     0.0f),

@@ -26,8 +26,8 @@ public class BulletController : MonoBehaviour
     protected void Start()
     {
         //Debug.Log("BulletController.Start");
-        prefabs.Add(MainManager.resourcesLoader.GetObjectHandle("glossy_bubbles_marine"));
-        prefabs.Add(MainManager.resourcesLoader.GetObjectHandle("glossy_bubbles_pink"));
+        prefabs.Add(BulletMainManager.resourcesLoader.GetObjectHandle("glossy_bubbles_marine"));
+        prefabs.Add(BulletMainManager.resourcesLoader.GetObjectHandle("glossy_bubbles_pink"));
 
     }
 

@@ -44,7 +44,7 @@ public class ClearCommand : ICommand{
     }
 
     public void Run(){
-        SceneManager.LoadScene(MainManager.beforeScene);
+        SceneManager.LoadScene(BulletMainManager.beforeScene);
     }
 
 }

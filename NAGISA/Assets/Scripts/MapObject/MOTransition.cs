@@ -28,11 +28,11 @@ public class MOTransition : MapObjectBase
         //Debug.Log("OnSceneLoaded:scene.name =  " + nextScene.name);
         //Debug.Log("OnSceneLoaded:mode =  " + mode);
 
-        //MainManagerに、ロードするデータファイル名、シーン名を渡す
+        //BulletMainManagerに、ロードするデータファイル名、シーン名を渡す
         GameObject mainController = GameObject.Find("bullet_main_controller");
-        var mainManager = mainController.GetComponent<MainManager>();
-        mainManager.loadFileName = Application.dataPath + "/StaticData" + "/bullet/" + "Room_Test.txt";
-        MainManager.beforeScene = "Room_White";
+        var bulletMainManager = mainController.GetComponent<BulletMainManager>();
+        bulletMainManager.loadFileName = Application.dataPath + "/StaticData" + "/bullet/" + "Room_Test.txt";
+        BulletMainManager.beforeScene = "Room_White";
 
         //自機タイプ
         string type = "";

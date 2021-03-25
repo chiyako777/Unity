@@ -60,24 +60,28 @@ public class ItemMenu
                 updateSelectedMark();
                 itemListText.text = dispString();
                 fravorText.text = fravorDictionary[itemList[selected].Substring(2)];
+                MusicManager.PlaySelectSE();
             }
             if(Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical")<0.0f){
                 selected = (int)Mathf.Clamp(selected + 2,0.0f,itemList.Count-1);
                 updateSelectedMark();
                 itemListText.text = dispString();
                 fravorText.text = fravorDictionary[itemList[selected].Substring(2)];
+                MusicManager.PlaySelectSE();
             }
             if(Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal")>0.0f){
                 selected = (int)Mathf.Clamp(selected + 1,0.0f,itemList.Count-1);
                 updateSelectedMark();
                 itemListText.text = dispString();
                 fravorText.text = fravorDictionary[itemList[selected].Substring(2)];
+                MusicManager.PlaySelectSE();
             }
             if(Input.GetButtonDown("Horizontal") && Input.GetAxis("Horizontal")<0.0f){
                 selected = (int)Mathf.Clamp(selected - 1,0.0f,itemList.Count-1);
                 updateSelectedMark();
                 itemListText.text = dispString();
                 fravorText.text = fravorDictionary[itemList[selected].Substring(2)];
+                MusicManager.PlaySelectSE();
             }
 
             yield return null;

@@ -77,7 +77,7 @@ public class MenuBase : MonoBehaviour
 
         //アクション呼び出し
         yield return OnAction();
-        Debug.Log("OnAction抜ける");
+        //Debug.Log("OnAction抜ける");
 
         //選択していた項目の色を戻す
         menuImage[selected-1].color = defaultCol;
@@ -109,11 +109,13 @@ public class MenuBase : MonoBehaviour
                 menuImage[selected-1].color = defaultCol;
                 selected = (int)Mathf.Clamp(selected - 1,1.0f,5.0f);
                 menuImage[selected-1].color = Color.blue;
+                MusicManager.PlaySelectSE();
             }
             if(Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical")<0.0f && detailCoroutine == null){
                 menuImage[selected-1].color = defaultCol;
                 selected = (int)Mathf.Clamp(selected + 1,1.0f,5.0f);
                 menuImage[selected-1].color = Color.blue;
+                MusicManager.PlaySelectSE();
             }
 
             //** 確定

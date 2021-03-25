@@ -59,11 +59,11 @@ public class CommandManager
                         break;
                     case "enemy" :
                         EnemyInfo enemyInfo = new EnemyInfo();
-                        enemyInfo.enemyObj = MainManager.resourcesLoader.GetObjectHandle(data[2]);
-                        enemyInfo.lifeGage = MainManager.resourcesLoader.GetObjectHandle("enemy_lifegage");
-                        enemyInfo.bulletController = MainManager.resourcesLoader.GetObjectHandle(data[3]);
+                        enemyInfo.enemyObj = BulletMainManager.resourcesLoader.GetObjectHandle(data[2]);
+                        enemyInfo.lifeGage = BulletMainManager.resourcesLoader.GetObjectHandle("enemy_lifegage");
+                        enemyInfo.bulletController = BulletMainManager.resourcesLoader.GetObjectHandle(data[3]);
                         enemyInfo.spellName = data[4];
-                        enemyInfo.defeatEffect = MainManager.resourcesLoader.GetObjectHandle(data[5]);
+                        enemyInfo.defeatEffect = BulletMainManager.resourcesLoader.GetObjectHandle(data[5]);
                         enemyInfo.enemyStatus = 0;
                         enemyInfo.enemyLocation = new Vector3(float.Parse(data[6]),float.Parse(data[7]),0.0f);
                         enemyInfo.life = float.Parse(data[8]);

@@ -12,6 +12,8 @@ TagManager:
   - Life_Item
   - Bomb_Item
   - Power_Item
+  - BGMPlayer
+  - SEPlayer
   layers:
   - Default
   - TransparentFX

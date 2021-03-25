@@ -38,6 +38,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
      <Compile Include="Assets\Scripts\Bullet\BulletController.cs" />
+     <Compile Include="Assets\Scripts\Bullet\BulletMainManager.cs" />
      <Compile Include="Assets\Scripts\Bullet\BulletUtility.cs" />
      <Compile Include="Assets\Scripts\Bullet\Command.cs" />
      <Compile Include="Assets\Scripts\Bullet\CommandManager.cs" />
@@ -48,7 +49,6 @@
      <Compile Include="Assets\Scripts\Bullet\Enemys.cs" />
      <Compile Include="Assets\Scripts\Bullet\InfoController.cs" />
      <Compile Include="Assets\Scripts\Bullet\ItemController.cs" />
-     <Compile Include="Assets\Scripts\Bullet\MainManager.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerBombShot.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerHomingShot.cs" />
@@ -63,17 +63,18 @@
      <Compile Include="Assets\Scripts\FlagManager.cs" />
      <Compile Include="Assets\Scripts\Helper\JsonHelper.cs" />
      <Compile Include="Assets\Scripts\Helper\ResourcesLoader.cs" />
+     <Compile Include="Assets\Scripts\InitialManager.cs" />
      <Compile Include="Assets\Scripts\MapObject\MOConversation.cs" />
      <Compile Include="Assets\Scripts\MapObject\MOTransition.cs" />
      <Compile Include="Assets\Scripts\MapObject\MapObjectBase.cs" />
      <Compile Include="Assets\Scripts\Menu\ItemMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuBase.cs" />
      <Compile Include="Assets\Scripts\Menu\SaveMenu.cs" />
+     <Compile Include="Assets\Scripts\Music\MusicManager.cs" />
      <Compile Include="Assets\Scripts\RoomData.cs" />
      <Compile Include="Assets\Scripts\SaveData.cs" />
      <Compile Include="Assets\Scripts\SpellPracController.cs" />
      <Compile Include="Assets\Scripts\Title\TitleMenu.cs" />
-     <Compile Include="Assets\Scripts\_____UIWindowController.cs" />
      <None Include="Assets\StaticData\bullet\Room_Test.txt" />
      <None Include="Assets\Shaders\PlaneTextrure.shader" />
     <Reference Include="UnityEngine">

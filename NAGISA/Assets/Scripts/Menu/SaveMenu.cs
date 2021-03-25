@@ -59,30 +59,7 @@ public class SaveMenu
         //** 初期表示
         bool execFlg = false;
         selected = 1;
-        string s = "";
-        for(int i=1; i<=slotNum; i++){
-            string f = Application.dataPath + "/StaticData" + "/save/" + "save" + i + ".json";
-            if(File.Exists(f)){
-                Debug.Log("セーブファイルあり");
-                //** セーブ時間を画面表示
-                SaveData data = JsonUtility.FromJson<SaveData>(File.ReadAllText(f));
-                Debug.Log("time = " + data.time);
-                if(i==selected){
-                    s += "* セーブ" + i + ":     データあり\n                   " +　data.time +  "\n";
-                }else{
-                    s += "  セーブ" + i + ":     データあり\n                   " +　data.time +  "\n";
-                }
-                
-            }else{
-                Debug.Log("セーブファイルなし");
-                if(i==selected){
-                    s += "* セーブ" + i + ":     データなし\n                   0000/00/00 00:00:00" + "\n";
-                }else{
-                    s += "  セーブ" + i + ":     データなし\n                   0000/00/00 00:00:00" + "\n";
-                }
-            }
-        }
-        saveListText.text = s;
+        saveListText.text = updateDisp();
         yield return null;
 
         //** セーブスロット選択
@@ -91,11 +68,13 @@ public class SaveMenu
                 saveListText.text = saveListText.text.Replace("* セーブ" + selected,"  セーブ" + selected);
                 selected = (int)Mathf.Clamp(selected - 1,1.0f,(float)slotNum);
                 saveListText.text = saveListText.text.Replace("  セーブ" + selected,"* セーブ" + selected);
+                MusicManager.PlaySelectSE();
             }
             if(Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical")<0.0f && !execFlg){
                 saveListText.text = saveListText.text.Replace("* セーブ" + selected,"  セーブ" + selected);
                 selected = (int)Mathf.Clamp(selected + 1,1.0f,(float)slotNum);
                 saveListText.text = saveListText.text.Replace("  セーブ" + selected,"* セーブ" + selected);
+                MusicManager.PlaySelectSE();
             }
             
             //** セーブ実行
@@ -104,6 +83,7 @@ public class SaveMenu
                 saveConfirmImage.enabled = true;
                 saveConfirmText.enabled = true;
                 yield return OnExec();
+                saveListText.text = updateDisp();
                 execFlg = false;
                 saveConfirmImage.enabled = false;
                 saveConfirmText.enabled = false;
@@ -129,11 +109,13 @@ public class SaveMenu
                 isYes = true;
                 saveConfirmText.text = saveConfirmText.text.Replace("    はい","*   はい");
                 saveConfirmText.text = saveConfirmText.text.Replace("*   いいえ","    いいえ");
+                MusicManager.PlaySelectSE();
             }
             if(Input.GetButtonDown("Vertical") && Input.GetAxis("Vertical")<0.0f && !isOnExec){
                 isYes = false;
                 saveConfirmText.text = saveConfirmText.text.Replace("*   はい","    はい");
                 saveConfirmText.text = saveConfirmText.text.Replace("    いいえ","*   いいえ");
+                MusicManager.PlaySelectSE();
             }
 
             //** セーブ処理実行
@@ -176,6 +158,34 @@ public class SaveMenu
         string f = Application.dataPath + "/StaticData" + "/save/" + "save" + selected + ".json";
         File.WriteAllText(f,json);
 
+    }
+
+    //** 表示更新
+    private string updateDisp(){
+        string s = "";
+        for(int i=1; i<=slotNum; i++){
+            string f = Application.dataPath + "/StaticData" + "/save/" + "save" + i + ".json";
+            if(File.Exists(f)){
+                Debug.Log("セーブファイルあり");
+                //** セーブ時間を画面表示
+                SaveData data = JsonUtility.FromJson<SaveData>(File.ReadAllText(f));
+                Debug.Log("time = " + data.time);
+                if(i==selected){
+                    s += "* セーブ" + i + ":     データあり\n                   " +　data.time +  "\n";
+                }else{
+                    s += "  セーブ" + i + ":     データあり\n                   " +　data.time +  "\n";
+                }
+                
+            }else{
+                Debug.Log("セーブファイルなし");
+                if(i==selected){
+                    s += "* セーブ" + i + ":     データなし\n                   0000/00/00 00:00:00" + "\n";
+                }else{
+                    s += "  セーブ" + i + ":     データなし\n                   0000/00/00 00:00:00" + "\n";
+                }
+            }
+        }
+        return s;
     }
 
 }
