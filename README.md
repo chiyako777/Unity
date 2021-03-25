@@ -1,6 +1,6 @@
 ### 【RPG * 弾幕シューティング：NAGISA】
 
- version.0.02　　_Build\zip\NAGISA_v0.02.zip
+ version.0.03　　_Build\zip\NAGISA_v0.03.zip
  
 #### ★操作説明
  
