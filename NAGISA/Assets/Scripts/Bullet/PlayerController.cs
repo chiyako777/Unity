@@ -29,9 +29,6 @@ public class PlayerController : MonoBehaviour
     private Dictionary<string,int> InputArray;  //各種入力制御
     public GameObject[] shotObjs;   //自機ショット用オブジェクト（Inspectorでプレハブを指定）
 
-    private Vector2 topLeft = new Vector2(-229.0f,175.0f);
-    private Vector2 bottomRight = new Vector2(129.0f,-168.0f);
-    private Vector3 centerPos = new Vector3(-50.0f,3.5f,0.0f);
     private float warpLength = 37.0f;   //ワープ可能領域の大きさ(正方形の辺の半分)
 
     //** caches
@@ -99,25 +96,25 @@ public class PlayerController : MonoBehaviour
             velocity.y *= recepSqrt2;
         }
         if(warpStatus != 2){
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x + velocity.x,topLeft.x,bottomRight.x),
-                                            Mathf.Clamp(transform.position.y + velocity.y,bottomRight.y,topLeft.y),
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x + velocity.x,BulletUtility.screenTopLeftJust.x,BulletUtility.screenBottomRightJust.x),
+                                            Mathf.Clamp(transform.position.y + velocity.y,BulletUtility.screenBottomRightJust.y,BulletUtility.screenTopLeftJust.y),
                                             0.0f);
         }else{
             //ワープ地点選択中
             float warpX = warpArea.transform.position.x;
             float warpY = warpArea.transform.position.y;
-            float limitXLeft = (topLeft.x < (warpX - warpLength)) 
+            float limitXLeft = (BulletUtility.screenTopLeftJust.x < (warpX - warpLength)) 
                                     ? warpX - warpLength
-                                    : topLeft.x;
-            float limitXRight = (bottomRight.x > (warpX + warpLength))
+                                    : BulletUtility.screenTopLeftJust.x;
+            float limitXRight = (BulletUtility.screenBottomRightJust.x > (warpX + warpLength))
                                     ? warpX + warpLength
-                                    : bottomRight.x;
-            float limitYTop = (topLeft.y > (warpY + warpLength))
+                                    : BulletUtility.screenBottomRightJust.x;
+            float limitYTop = (BulletUtility.screenTopLeftJust.y > (warpY + warpLength))
                                     ? warpY + warpLength
-                                    : topLeft.y;
-            float limitYBottom = (bottomRight.y < (warpY - warpLength))
+                                    : BulletUtility.screenTopLeftJust.y;
+            float limitYBottom = (BulletUtility.screenBottomRightJust.y < (warpY - warpLength))
                                     ? warpY - warpLength
-                                    : bottomRight.y;
+                                    : BulletUtility.screenBottomRightJust.y;
 
             transform.position = new Vector3(Mathf.Clamp(transform.position.x + velocity.x , limitXLeft , limitXRight),
                                             Mathf.Clamp(transform.position.y + velocity.y , limitYBottom , limitYTop),
@@ -372,18 +369,18 @@ public class PlayerController : MonoBehaviour
         float y = transform.position.y;
         if(vh == 1){
             //Horizon
-            if(x == centerPos.x){return centerArea;}
-            centerArea.x = (x < centerPos.x)
-                                        ? centerPos.x + Mathf.Abs(centerPos.x - x)
-                                        : centerPos.x - Mathf.Abs(centerPos.x - x);
+            if(x == BulletUtility.centerPos.x){return centerArea;}
+            centerArea.x = (x < BulletUtility.centerPos.x)
+                                        ? BulletUtility.centerPos.x + Mathf.Abs(BulletUtility.centerPos.x - x)
+                                        : BulletUtility.centerPos.x - Mathf.Abs(BulletUtility.centerPos.x - x);
             centerArea.y = y;
         }else if(vh == 2){
             //Vertical
-            if(y == centerPos.y){return centerArea;}
+            if(y == BulletUtility.centerPos.y){return centerArea;}
             centerArea.x = x;
-            centerArea.y = (y < centerPos.y)
-                                        ? centerPos.y + Mathf.Abs(centerPos.y - y)
-                                        : centerPos.y - Mathf.Abs(centerPos.x - y);
+            centerArea.y = (y < BulletUtility.centerPos.y)
+                                        ? BulletUtility.centerPos.y + Mathf.Abs(BulletUtility.centerPos.y - y)
+                                        : BulletUtility.centerPos.y - Mathf.Abs(BulletUtility.centerPos.x - y);
         }
         return centerArea;
     }

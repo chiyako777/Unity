@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Bullet\Spells\TestSpell.cs" />
      <Compile Include="Assets\Scripts\Bullet\Spells\TestSpell2.cs" />
      <Compile Include="Assets\Scripts\Bullet\Spells\TestSpell3.cs" />
+     <Compile Include="Assets\Scripts\Bullet\Spells\TestSpell4.cs" />
      <Compile Include="Assets\Scripts\CharaTipAnimeController.cs" />
      <Compile Include="Assets\Scripts\CharaTipController.cs" />
      <Compile Include="Assets\Scripts\FPSCounter.cs" />
