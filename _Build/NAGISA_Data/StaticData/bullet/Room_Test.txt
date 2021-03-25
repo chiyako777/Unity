@@ -2,5 +2,7 @@ wait,150.0
 enemy,0,tekitou,TestSpell2,テストスペル1,enemy_defeat_effect,-40.0,50.0,700.0
 wait,150.0
 enemy,0,tekitou,TestSpell3,テストスペル2,enemy_defeat_effect,-40.0,50.0,1600.0
+wait,150.0
+enemy,0,tekitou,TestSpell4,テストスペル3,enemy_defeat_effect,-40.0,50.0,1600.0
 wait,300.0
 clear
