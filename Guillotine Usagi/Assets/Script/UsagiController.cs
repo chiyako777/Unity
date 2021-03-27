@@ -5,58 +5,52 @@ using UnityEngine;
 public class UsagiController : MonoBehaviour
 {
 
-    private Rigidbody rigidbody;
-    private Animator animator;
+    private float index = 0.0f;
+    private bool moveFlg = false;
+    private float speed = 25.0f;
+    private Vector3 input = new Vector3(0.0f,0.0f,0.0f);
 
-    private Vector2 inputAxis;
-    private float speed = 100.0f;
+    //** chache
+    private Rigidbody rigidbody;
+
 
     void Start()
     {
-        this.rigidbody = GetComponent<Rigidbody>();
-        this.animator = GetComponent<Animator>();
-        inputAxis = new Vector2(0.0f,0.0f);
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        inputAxis.x = Input.GetAxis("Horizontal");
-        inputAxis.y = Input.GetAxis("Vertical");            
+
+        //** 位置ずれ合わせ
+        if(!moveFlg){
+            transform.position = new Vector3(transform.position.x,transform.position.y,index);
+        }
+
+        //** タップでZ方向に 1 進む + ジャンプ
+        if(Input.GetMouseButtonDown(0) && !moveFlg){
+            index++;
+            moveFlg = true;
+            rigidbody.AddForce(new Vector3(0,5,1) * speed);
+            Debug.Log("タップ or 左クリック : index = " + index);
+        }
+
+        if(transform.position.z >= index && moveFlg){
+            Debug.Log("停止");
+            moveFlg = false;
+        }
 
     }
 
     void FixedUpdate(){
 
-        //** 移動
-        rigidbody.AddForce(new Vector3(inputAxis.x,0.0f,inputAxis.y) * speed,ForceMode.Force);
-
-        //** 回転(瞬時に向き回転、Vertical優先)
-        if(inputAxis.x > 0){
-            rigidbody.rotation = Quaternion.AngleAxis(90.0f,Vector3.up);
-        }else if(inputAxis.x < 0){
-            rigidbody.rotation = Quaternion.AngleAxis(-90.0f,Vector3.up);
-        }
-
-        if(inputAxis.y > 0){
-            rigidbody.rotation = Quaternion.AngleAxis(0.0f,Vector3.up);
-        }else if(inputAxis.y < 0){
-            rigidbody.rotation = Quaternion.AngleAxis(180.0f,Vector3.up);
-        }
-
-        //** アニメーション
-        if(inputAxis.x != 0.0f || inputAxis.y != 0.0f){
-            //Debug.Log("走れ！");
-            this.animator.SetInteger("AnimIndex",1);
-            this.animator.SetTrigger("Next");
+        if(moveFlg){
+            //Debug.Log("力を加える : " + transform.position.z);
+            rigidbody.AddForce(new Vector3(0,-0.2f,1) * speed);
         }else{
-            //Debug.Log("止まれ！");
-            this.animator.SetInteger("AnimIndex",0);
-            this.animator.SetTrigger("Next");
+            rigidbody.velocity = Vector3.zero;
         }
-        
 
     }
 
-    void OnCollisionEnter(Collision collision){
-    }
 }
