@@ -37,8 +37,9 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Rabbits\Demo\Scripts\AnimatorParamatersChange.cs" />
-     <Compile Include="Assets\Script\CameraController.cs" />
      <Compile Include="Assets\Script\FPSCounter.cs" />
+     <Compile Include="Assets\Script\ResourcesLoader.cs" />
+     <Compile Include="Assets\Script\TesstKnife.cs" />
      <Compile Include="Assets\Script\UsagiController.cs" />
      <Compile Include="Assets\Script\old\__UsagiController.cs" />
     <Reference Include="UnityEngine">
