@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Bullet\Enemys.cs" />
      <Compile Include="Assets\Scripts\Bullet\InfoController.cs" />
      <Compile Include="Assets\Scripts\Bullet\ItemController.cs" />
+     <Compile Include="Assets\Scripts\Bullet\Laser.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerBombShot.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Bullet\PlayerHomingShot.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\Scripts\Bullet\Spells\TestSpell2.cs" />
      <Compile Include="Assets\Scripts\Bullet\Spells\TestSpell3.cs" />
      <Compile Include="Assets\Scripts\Bullet\Spells\TestSpell4.cs" />
+     <Compile Include="Assets\Scripts\Bullet\Spells\TestSpell5.cs" />
      <Compile Include="Assets\Scripts\CharaTipAnimeController.cs" />
      <Compile Include="Assets\Scripts\CharaTipController.cs" />
      <Compile Include="Assets\Scripts\FPSCounter.cs" />
