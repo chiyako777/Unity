@@ -8,6 +8,8 @@ using UnityEngine;
 public class TestSpell5 : BulletController
 {
     private bool flg = false;
+    private Laser laser;
+
     void Start()
     {
         base.Start();
@@ -16,15 +18,31 @@ public class TestSpell5 : BulletController
     void Update()
     {
         base.Update();
+
         if(!flg){
             bulletList.Add(Instantiate(prefabs[3],enemyLocation,Quaternion.identity));
             bulletList[bulletList.Count-1].AddComponent<Laser>();
-            Laser laser = bulletList[bulletList.Count-1].GetComponent<Laser>();
+            laser = bulletList[bulletList.Count-1].GetComponent<Laser>();
             laser.angle = -45.0f;
-            laser.length = 100.0f;
-            laser.startPos = new Vector3(enemyLocation.x,enemyLocation.y,0.0f);
+            laser.length = 300.0f;
+            laser.startPos = new Vector3(0.0f,0.0f,0.0f);
             
             flg = true;
         }
+
+        if(frameCount > 400 && laser.status == 1){
+            //Debug.Log("ステータス：拡大へ");
+            laser.status = 2;
+        }
+
+        if(laser.status == 3 && frameCount % 800 == 0){
+            //Debug.Log("ステータス：縮小へ");
+            laser.status = 4;
+        }
+
+        if(flg){
+            frameCount++;
+        }
+
     }
 }

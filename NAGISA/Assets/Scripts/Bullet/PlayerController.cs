@@ -337,8 +337,9 @@ public class PlayerController : MonoBehaviour
     //** 被弾処理
     private void OnTriggerEnter2D(Collider2D collision){
         //Debug.Log("collision.gameObject.tag = " + collision.gameObject.tag + " mutekiTime = " + mutekiTime + " bombTime = " + bombTime);
-        if(collision.gameObject.tag == "Bullet" && mutekiTime==0 && bombTime == 0 && warpStatus == 0){
-            //Debug.Log("自機被弾");
+        if((collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "Laser")
+                && mutekiTime==0 && bombTime == 0 && warpStatus == 0){
+            Debug.Log("自機被弾");
             if(life > 0){
                 //残機マイナス
                 //life = (life == 0) ? 0 : life - 1;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//** レーザー：予告線+直線タイプ
+//** レーザー：Notice_Laser (現在は直線レーザーのみ対応)
 public class Laser : MonoBehaviour
 {
 
@@ -17,18 +17,24 @@ public class Laser : MonoBehaviour
 
     //ラインの頂点配列
     private Vector3[] positions = new Vector3[10];
+    //コライダーの頂点配列
+    private Vector2[] colPoints = new Vector2[2];
 
     //** cache
     [HideInInspector]
     public LineRenderer lineRenderer;
     [HideInInspector]
-    public BoxCollider2D collider;
+    public EdgeCollider2D collider;
 
     void Start()
-    {
-        this.lineRenderer = GetComponent<LineRenderer>();
-        this.collider = GetComponent<BoxCollider2D>();
-        status = 1;     //予告線状態
+    {        
+        //** コンポーネント取得
+        this.lineRenderer = GetComponentInChildren<LineRenderer>();
+        this.collider = GetComponentInChildren<EdgeCollider2D>();
+        
+        //** ステータス = 予告線状態
+        status = 1;     
+        collider.enabled = false;
     }
 
 
@@ -37,32 +43,34 @@ public class Laser : MonoBehaviour
         //** Length,Angleに応じた頂点再定義
         CalcPositions();
 
-        //** コライダー角度合わせ(コライダー単体で回転できないのでオブジェクトそのものを回転)
-        transform.rotation = Quaternion.AngleAxis(angle,Vector3.forward);
-
         //** コライダー設定
         SetCollider();
 
         switch(status){
             case 1 :        //予告線状態
                 lineRenderer.widthMultiplier = 1.0f;
+                collider.enabled = false;
+                //※予告線状態解除は、各スペル側で
                 break;
 
             case 2 :        //拡大状態
                 if(lineRenderer.widthMultiplier <= 4.0f){
-                    lineRenderer.widthMultiplier += 0.2f;
+                    lineRenderer.widthMultiplier += 0.1f;
                 }else{
                     status = 3;
                 }
+                collider.enabled = false;
                 break;
 
             case 3 :        //マックス状態
+                collider.enabled = true;
                 break;
 
             case 4 :        //縮小状態
                 if(lineRenderer.widthMultiplier >= 1.0f){
-                    lineRenderer.widthMultiplier -= 0.2f;
+                    lineRenderer.widthMultiplier -= 0.1f;
                 }
+                collider.enabled = false;
                 break;
 
             default :
@@ -80,15 +88,27 @@ public class Laser : MonoBehaviour
                                 ,positions[i-1].y + ( Mathf.Sin(angle * Mathf.Deg2Rad) * length / 10.0f )
                                 ,0.0f);
         }
-
         lineRenderer.SetPositions(positions);
 
     }
 
     private void SetCollider(){
-        collider.offset = new Vector2(
-            Mathf.Abs(positions[0].x - positions[9].x) / 2.0f,collider.offset.y);
+        colPoints[0] = new Vector2(positions[1].x,positions[1].y);
+        colPoints[1] = new Vector2(positions[8].x,positions[8].y);
+        collider.points = colPoints;
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision){
+        Debug.Log("Laser : Trigger Enter");
+        //** ボム・リフレクによる弾消し
+        if(collision.gameObject.tag == "Bomb_Shot" || collision.gameObject.tag == "Reflec_Shot"){
+            Debug.Log("ボムによるレーザー消し");
+            for(int i=0; i<transform.childCount; i++){
+                Destroy(transform.GetChild(i).gameObject);
+            }
+            Destroy(gameObject);
+            
+        }
     }
 
 }
