@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fbdd0b038312af469a690ab5fe23508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGM: "\u30B9\u30C6\u30E9\u3068\u5854\u306E\u7269\u8A9E"
+  BGM: "10\u2103_2"
 --- !u!1 &757854651
 GameObject:
   m_ObjectHideFlags: 0

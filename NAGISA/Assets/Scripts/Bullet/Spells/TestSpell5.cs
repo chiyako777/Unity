@@ -5,6 +5,7 @@ using UnityEngine;
 //** スペカ実装指針
 //   BulletController継承必須
 
+//** レーザーのテスト（予告線タイプ・据え置き型という言い方でいいのか・・）
 public class TestSpell5 : BulletController
 {
     private bool flg = false;
@@ -23,6 +24,7 @@ public class TestSpell5 : BulletController
             bulletList.Add(Instantiate(prefabs[3],enemyLocation,Quaternion.identity));
             bulletList[bulletList.Count-1].AddComponent<Laser>();
             laser = bulletList[bulletList.Count-1].GetComponent<Laser>();
+            laser.type = "Notice";
             laser.angle = -45.0f;
             laser.length = 300.0f;
             laser.startPos = new Vector3(0.0f,0.0f,0.0f);

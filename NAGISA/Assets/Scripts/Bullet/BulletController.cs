@@ -74,8 +74,14 @@ public class BulletController : MonoBehaviour
         this.stopFlg = true;
         foreach(GameObject bullet in bulletList){
             if(bullet != null){
-                Bullet b = bullet.GetComponent<Bullet>();
-                b.stopFlg = true;
+                if(bullet.tag == "Bullet"){
+                    Bullet b = bullet.GetComponent<Bullet>();
+                    b.stopFlg = true;
+                }else if(bullet.tag == "Laser"){
+                    //Debug.Log("レーザー停止");
+                    Laser l = bullet.GetComponent<Laser>();
+                    l.stopFlg = true;
+                }
             }
         }
     }
@@ -86,8 +92,14 @@ public class BulletController : MonoBehaviour
         this.stopFlg = false;
         foreach(GameObject bullet in bulletList){
             if(bullet != null){
-                Bullet b = bullet.GetComponent<Bullet>();
-                b.stopFlg = false;
+                if(bullet.tag == "Bullet"){
+                    Bullet b = bullet.GetComponent<Bullet>();
+                    b.stopFlg = false;
+                }else if(bullet.tag == "Laser"){
+                    //Debug.Log("レーザーリスタート");
+                    Laser l = bullet.GetComponent<Laser>();
+                    l.stopFlg = false;
+                }
             }
         }
     }

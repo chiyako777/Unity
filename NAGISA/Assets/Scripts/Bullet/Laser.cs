@@ -7,6 +7,8 @@ public class Laser : MonoBehaviour
 {
 
     [HideInInspector]
+    public string type;         //Notice,Radient
+    [HideInInspector]
     public int status = 0;      //予告線状態、拡大状態、マックス状態、縮小状態
     [HideInInspector]
     public float angle;
@@ -14,6 +16,8 @@ public class Laser : MonoBehaviour
     public float length;
     [HideInInspector]
     public Vector3 startPos;
+    [HideInInspector]
+    public bool stopFlg = false;
 
     //ラインの頂点配列
     private Vector3[] positions = new Vector3[10];
@@ -32,14 +36,18 @@ public class Laser : MonoBehaviour
         this.lineRenderer = GetComponentInChildren<LineRenderer>();
         this.collider = GetComponentInChildren<EdgeCollider2D>();
         
-        //** ステータス = 予告線状態
-        status = 1;     
-        collider.enabled = false;
+        if(type == "Notice"){
+            //** ステータス = 予告線状態
+            status = 1;     
+        }
+
     }
 
 
     void Update()
     {
+        if(stopFlg){return;}
+
         //** Length,Angleに応じた頂点再定義
         CalcPositions();
 
@@ -49,7 +57,6 @@ public class Laser : MonoBehaviour
         switch(status){
             case 1 :        //予告線状態
                 lineRenderer.widthMultiplier = 1.0f;
-                collider.enabled = false;
                 //※予告線状態解除は、各スペル側で
                 break;
 
@@ -59,18 +66,15 @@ public class Laser : MonoBehaviour
                 }else{
                     status = 3;
                 }
-                collider.enabled = false;
                 break;
 
             case 3 :        //マックス状態
-                collider.enabled = true;
                 break;
 
             case 4 :        //縮小状態
                 if(lineRenderer.widthMultiplier >= 1.0f){
                     lineRenderer.widthMultiplier -= 0.1f;
                 }
-                collider.enabled = false;
                 break;
 
             default :
@@ -99,10 +103,10 @@ public class Laser : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        Debug.Log("Laser : Trigger Enter");
+        //Debug.Log("Laser : Trigger Enter");
         //** ボム・リフレクによる弾消し
         if(collision.gameObject.tag == "Bomb_Shot" || collision.gameObject.tag == "Reflec_Shot"){
-            Debug.Log("ボムによるレーザー消し");
+            //Debug.Log("ボム・リフレクによるレーザー消し");
             for(int i=0; i<transform.childCount; i++){
                 Destroy(transform.GetChild(i).gameObject);
             }
