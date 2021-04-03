@@ -61,17 +61,6 @@ public class RadientLaser : MonoBehaviour
                             0.0f
                             ));
         }
-
-        //Debug
-        // foreach(Vector3 pos in positions){
-        //     Debug.Log("pos = " + pos);
-        // }
-        // foreach(float a in angles){
-        //     Debug.Log("angle = " + a);
-        // }
-        // foreach(float l in lengths){
-        //     Debug.Log("length = " + l);
-        // }
         
     }
 
@@ -81,25 +70,12 @@ public class RadientLaser : MonoBehaviour
         if(stopFlg){return;}
         CalcLength();
         CalcPositions();
-
-        if(lastTurnPoint != 0){
-            // for(int i=lastTurnPoint + 1; i<=positions.Count - 1; i++){
-            //     Debug.Log("pos = " + positions[i]);
-            // }
-            // for(int i=lastTurnPoint + 1; i<=angles.Count - 1; i++){
-            //     Debug.Log("angle = " + angles[i]);
-            // }
-            // for(int i=lastTurnPoint + 1; i<=lengths.Count - 1; i++){
-            //     Debug.Log("length[" + i + "] = "+ lengths[i]);
-            // }
-        }
-
+        SetCollider();
     }
 
     private void CalcPositions(){
 
         for(int i=lastTurnPoint + 1; i<=lengths.Count - 1; i++){
-            //Debug.Log("CalcPosition : lastTurnPoint = " + lastTurnPoint);
             positions[i] = new Vector3(
                             positions[i-1].x + (Mathf.Cos(angles[i] * Mathf.Deg2Rad) * lengths[i]),
                             positions[i-1].y + (Mathf.Sin(angles[i] * Mathf.Deg2Rad) * lengths[i]),
@@ -113,17 +89,25 @@ public class RadientLaser : MonoBehaviour
 
     private void CalcLength(){
         for(int i=lastTurnPoint + 1; i<=lengths.Count - 1; i++){
-            //Debug.Log("CalcLength : lastTurnPoint = " + lastTurnPoint);
             lengths[i] += speed;
         }
     }
 
+    private void SetCollider(){
+        for(int i=0; i<positions.Count; i++){
+            if(i > colPoints.Count - 1){
+                colPoints.Add(new Vector2(positions[i].x,positions[i].y));
+            }else{
+                colPoints[i] = new Vector2(positions[i].x,positions[i].y);
+            }
+        }
+        collider.points = colPoints.ToArray();
+    }
+
     //turnAngle:ワールド軸に対する角度で指定
     public void ExecTurn(float turnAngle){
-        //Debug.Log("Radient Laser : ExecTurn turnAngle = " + turnAngle);
         //turnPoint ⇒ 曲げる前の先端
         lastTurnPoint = positions.Count - 1;
-        //Debug.Log("lastTurnPoint = " + lastTurnPoint);
 
         //新しい角度で頂点を10個追加
         for(int i=lastTurnPoint + 1; i<=lastTurnPoint + 10; i++){   //lastTurnPointが9なら、positions[10] ~ positions[19]まで追加
@@ -134,6 +118,17 @@ public class RadientLaser : MonoBehaviour
                             positions[i-1].y + (Mathf.Sin(angles[i] * Mathf.Deg2Rad) * lengths[i]),
                             0.0f
                             ));
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        //** ボム・リフレクによる弾消し
+        if(collision.gameObject.tag == "Bomb_Shot" || collision.gameObject.tag == "Reflec_Shot"){
+            //Debug.Log("ボム・リフレクによる弾消し");
+            for(int i=0; i<transform.childCount; i++){
+                Destroy(transform.GetChild(i).gameObject);
+            }
+            Destroy(gameObject);
         }
     }
 

@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class TestSpell6 : BulletController
 {
-    //private bool flg = false;
     private RadientLaser laser;
 
     private int[] statusCount = new int[3];
@@ -21,6 +20,8 @@ public class TestSpell6 : BulletController
     void Update()
     {
         base.Update();
+        if(!activeFlg){ return; }
+        if(stopFlg){return;}
 
         //ステータスカウント（基本、値が入っているインデックスをカウントアップする）
         if(statusCount[0] > 0){
@@ -38,7 +39,7 @@ public class TestSpell6 : BulletController
                 statusCount[0] = 0;
                 statusCount[1]++;
                 for(int i=0; i<12; i++){
-                    bulletList.Add(Instantiate(prefabs[3],enemyLocation,Quaternion.identity));
+                    bulletList.Add(Instantiate(prefabs[4],enemyLocation,Quaternion.identity));
                     bulletList[bulletList.Count-1].AddComponent<RadientLaser>();
                     laser = bulletList[bulletList.Count-1].GetComponent<RadientLaser>();
                     laser.initAng = 360.0f / 12.0f * i;

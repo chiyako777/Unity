@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
         if(InputArray["Bomb"] > 0 && mutekiTime == 0 && bombTime == 0 && bomb >= 1 && warpStatus == 0
             && enemy != null
             && enemy.GetComponent<Enemy>().bulletController.activeFlg){
-            Debug.Log("Bomb");
+            //Debug.Log("Bomb");
             bombTime = 1;
             bomb -= 1;
         }
@@ -340,17 +340,21 @@ public class PlayerController : MonoBehaviour
         if((collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "Laser")
                 && mutekiTime==0 && bombTime == 0 && warpStatus == 0){
 
-            //レーザーはmax時のみ被弾
+            //レーザー NoticeLaser:max時のみ被弾
             if(collision.gameObject.tag == "Laser"){
                 GameObject laserObj = collision.gameObject.transform.parent.gameObject;
-                NoticeLaser laser = laserObj.GetComponent<NoticeLaser>();
-                if(laser.status != 3){
-                    //Debug.Log("レーザー：セーフ");
-                    return;
+
+                if(laserObj.GetComponent<NoticeLaser>()){
+                    NoticeLaser noticeLaser = laserObj.GetComponent<NoticeLaser>();
+                    if(noticeLaser.status != 3){
+                        //Debug.Log("レーザー：セーフ");
+                        return;
+                    }
                 }
+                
             }
 
-            //Debug.Log("自機被弾");
+            Debug.Log("自機被弾");
 
             if(life > 0){
                 //残機マイナス

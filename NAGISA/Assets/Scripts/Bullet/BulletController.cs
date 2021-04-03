@@ -80,7 +80,9 @@ public class BulletController : MonoBehaviour
                 }else if(bullet.tag == "Laser"){
                     //Debug.Log("レーザー停止");
                     NoticeLaser l = bullet.GetComponent<NoticeLaser>();
-                    l.stopFlg = true;
+                    if(l!=null){l.stopFlg = true;}
+                    RadientLaser r = bullet.GetComponent<RadientLaser>();
+                    if(r!=null){r.stopFlg = true;}
                 }
             }
         }
@@ -98,7 +100,9 @@ public class BulletController : MonoBehaviour
                 }else if(bullet.tag == "Laser"){
                     //Debug.Log("レーザーリスタート");
                     NoticeLaser l = bullet.GetComponent<NoticeLaser>();
-                    l.stopFlg = false;
+                    if(l!=null){l.stopFlg = false;}
+                    RadientLaser r = bullet.GetComponent<RadientLaser>();
+                    if(r!=null){r.stopFlg = false;}
                 }
             }
         }
