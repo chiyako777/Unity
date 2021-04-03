@@ -9,7 +9,7 @@ using UnityEngine;
 public class TestSpell5 : BulletController
 {
     private bool flg = false;
-    private Laser laser;
+    private NoticeLaser laser;
 
     void Start()
     {
@@ -22,8 +22,8 @@ public class TestSpell5 : BulletController
 
         if(!flg){
             bulletList.Add(Instantiate(prefabs[3],enemyLocation,Quaternion.identity));
-            bulletList[bulletList.Count-1].AddComponent<Laser>();
-            laser = bulletList[bulletList.Count-1].GetComponent<Laser>();
+            bulletList[bulletList.Count-1].AddComponent<NoticeLaser>();
+            laser = bulletList[bulletList.Count-1].GetComponent<NoticeLaser>();
             laser.type = "Notice";
             laser.angle = -45.0f;
             laser.length = 300.0f;

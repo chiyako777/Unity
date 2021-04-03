@@ -343,7 +343,7 @@ public class PlayerController : MonoBehaviour
             //レーザーはmax時のみ被弾
             if(collision.gameObject.tag == "Laser"){
                 GameObject laserObj = collision.gameObject.transform.parent.gameObject;
-                Laser laser = laserObj.GetComponent<Laser>();
+                NoticeLaser laser = laserObj.GetComponent<NoticeLaser>();
                 if(laser.status != 3){
                     //Debug.Log("レーザー：セーフ");
                     return;

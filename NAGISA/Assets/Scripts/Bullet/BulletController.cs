@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,6 +29,7 @@ public class BulletController : MonoBehaviour
         prefabs.Add(BulletMainManager.resourcesLoader.GetObjectHandle("glossy_bubbles_pink"));
         prefabs.Add(BulletMainManager.resourcesLoader.GetObjectHandle("glossy_bubbles_lemon"));
         prefabs.Add(BulletMainManager.resourcesLoader.GetObjectHandle("Notice_Laser"));
+        prefabs.Add(BulletMainManager.resourcesLoader.GetObjectHandle("Radient_Laser"));
 
     }
 
@@ -79,7 +79,7 @@ public class BulletController : MonoBehaviour
                     b.stopFlg = true;
                 }else if(bullet.tag == "Laser"){
                     //Debug.Log("レーザー停止");
-                    Laser l = bullet.GetComponent<Laser>();
+                    NoticeLaser l = bullet.GetComponent<NoticeLaser>();
                     l.stopFlg = true;
                 }
             }
@@ -97,7 +97,7 @@ public class BulletController : MonoBehaviour
                     b.stopFlg = false;
                 }else if(bullet.tag == "Laser"){
                     //Debug.Log("レーザーリスタート");
-                    Laser l = bullet.GetComponent<Laser>();
+                    NoticeLaser l = bullet.GetComponent<NoticeLaser>();
                     l.stopFlg = false;
                 }
             }
