@@ -3116,6 +3116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1322928922}
   - component: {fileID: 1322928921}
+  - component: {fileID: 1322928923}
   m_Layer: 0
   m_Name: Timeline_test
   m_TagString: Untagged
@@ -3140,8 +3141,13 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 3117503355695548113, guid: 8a3255f90cd3b1443bb01ac9613b37f7, type: 2}
     value: {fileID: 710060033}
+  - key: {fileID: 144367872791508328, guid: 8a3255f90cd3b1443bb01ac9613b37f7, type: 2}
+    value: {fileID: 710060036}
+  - key: {fileID: -2565243544290320380, guid: 8a3255f90cd3b1443bb01ac9613b37f7, type: 2}
+    value: {fileID: 710060036}
   m_ExposedReferences:
     m_References:
+    - 17c0531f848562d4f8552c5ca1b4cb36: {fileID: 710060033}
     - d274ea7db8ecdaa46b00209fdcfe38fe: {fileID: 710060033}
 --- !u!4 &1322928922
 Transform:
@@ -3157,6 +3163,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1322928923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322928920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd830f1ce7393a040be29f182b098172, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1328592073
 GameObject:
   m_ObjectHideFlags: 0
