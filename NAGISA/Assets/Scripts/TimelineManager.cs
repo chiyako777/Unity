@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
+//TimeLineManager プロトタイプ
 //何らかのキーアクションをトリガとして、タイムラインを止めたり再開したりする
+//メッセージを出したりする
 public class TimelineManager : MonoBehaviour
 {
     private PlayableDirector playableDirector;
-    private int frameCount = 0;
 
     void Start()
     {
@@ -21,17 +22,19 @@ public class TimelineManager : MonoBehaviour
 
     void Update()
     {
-        if(frameCount == 0){
+
+        //Debug.Log("time = " + playableDirector.time);
+        
+        //** ある位置まで行ったら一時停止
+        if(playableDirector.state == PlayState.Playing && playableDirector.time > 7){
             Debug.Log("タイムライン一時停止");
             playableDirector.Pause();
         }
 
-        if(frameCount > 60 && Input.GetKeyDown(KeyCode.Y)){
+        if(playableDirector.state == PlayState.Paused && Input.GetKeyDown(KeyCode.Y)){
             Debug.Log("タイムライン起動");
             playableDirector.Resume();
         }
-
-        ++frameCount;
 
     }
 }
