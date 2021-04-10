@@ -64,7 +64,15 @@
      <Compile Include="Assets\Scripts\Bullet\Spells\TestSpell6.cs" />
      <Compile Include="Assets\Scripts\CharaTipAnimeController.cs" />
      <Compile Include="Assets\Scripts\CharaTipController.cs" />
+     <Compile Include="Assets\Scripts\Data\EventConvData.cs" />
+     <Compile Include="Assets\Scripts\Data\EventTransData.cs" />
+     <Compile Include="Assets\Scripts\Data\RoomData.cs" />
+     <Compile Include="Assets\Scripts\Data\SaveData.cs" />
+     <Compile Include="Assets\Scripts\Event\ConversationEvent.cs" />
      <Compile Include="Assets\Scripts\Event\EventManager.cs" />
+     <Compile Include="Assets\Scripts\Event\EventQueue.cs" />
+     <Compile Include="Assets\Scripts\Event\MapObjectTrigger.cs" />
+     <Compile Include="Assets\Scripts\Event\TransitionEvent.cs" />
      <Compile Include="Assets\Scripts\FPSCounter.cs" />
      <Compile Include="Assets\Scripts\FlagManager.cs" />
      <Compile Include="Assets\Scripts\Helper\JsonHelper.cs" />
@@ -77,8 +85,6 @@
      <Compile Include="Assets\Scripts\Menu\MenuBase.cs" />
      <Compile Include="Assets\Scripts\Menu\SaveMenu.cs" />
      <Compile Include="Assets\Scripts\Music\MusicManager.cs" />
-     <Compile Include="Assets\Scripts\RoomData.cs" />
-     <Compile Include="Assets\Scripts\SaveData.cs" />
      <Compile Include="Assets\Scripts\SpellPracController.cs" />
      <Compile Include="Assets\Scripts\TimelineManager.cs" />
      <Compile Include="Assets\Scripts\Title\TitleMenu.cs" />

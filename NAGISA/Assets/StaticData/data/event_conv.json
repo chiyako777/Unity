@@ -1,0 +1,35 @@
+[
+    {"id":1,
+        "messages":[
+            "選択肢",
+            "SELECT:111SELECT:222SELECT:333",
+            "SELECT1:111選んだ",
+            "SELECT1:SELECT:1-1SELECT:1-2SELECT:1-3",
+            "SELECT1:SELECT1:1-1選んだ",
+            "SELECT1:SELECT2:1-2選んだ",
+            "SELECT1:SELECT3:1-3選んだ",
+            "SELECT2:222選んだ",
+            "SELECT2:SELECT:AAASELECT:BBBSELECT:",
+            "SELECT3:L",
+            "SELECT3:H",
+            "SELECT3:I",
+            "SELECT3:B"
+        ],
+        "graphics":[
+            "Textures/CharaTip/nagisa/nagisa_front",
+            "Textures/CharaTip/nagisa/nagisa_back",
+            "Textures/CharaTip/nagisa/nagisa_back",
+            "Textures/CharaTip/nagisa/nagisa_back",
+            "Textures/CharaTip/nagisa/nagisa_back",
+            "Textures/CharaTip/nagisa/nagisa_back",
+            "Textures/CharaTip/nagisa/nagisa_back",
+            "Textures/CharaTip/nagisa/nagisa_back",
+            "Textures/CharaTip/nagisa/nagisa_back",
+            "Textures/CharaTip/nagisa/nagisa_back",
+            "Textures/CharaTip/nagisa/nagisa_back",
+            "Textures/CharaTip/nagisa/nagisa_back",
+            "Textures/CharaTip/nagisa/nagisa_back"
+        ]
+    },
+    {"id":2,"messages":["id = 2 : 選択肢","id = 2 : あああ"],"graphics":["Textures/CharaTip/nagisa/nagisa_back","Textures/CharaTip/nagisa/nagisa_front"]}
+]
