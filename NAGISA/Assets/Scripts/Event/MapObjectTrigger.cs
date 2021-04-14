@@ -7,7 +7,7 @@ public class MapObjectTrigger : MonoBehaviour
 {
     public string eventType;
     public int eventId;
-    public int eventLevel;      //イベントレベル基本方針：会話=1、遷移=1 
+    public int eventLevel;      //イベントレベル基本方針：会話=1、遷移=1 、ストーリーイベント=10
     private bool isContacted = false;
     
 

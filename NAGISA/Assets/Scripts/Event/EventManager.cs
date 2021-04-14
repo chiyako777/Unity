@@ -41,7 +41,7 @@ public class EventManager : MonoBehaviour
 
     //** イベントコルーチン
     private IEnumerator CreateCoroutine(){
-        Debug.Log("EventManager:CreateCoroutine");
+        //Debug.Log("EventManager:CreateCoroutine");
         switch(eventList[0].eventType){
             case "Conv":
                 Debug.Log("EventManager:CreateCoroutine Conv");
@@ -54,6 +54,12 @@ public class EventManager : MonoBehaviour
                 TransitionEvent transEvent = GetComponentInChildren<TransitionEvent>();
                 transEvent.SetTransData(eventList[0].eventId);
                 yield return transEvent.OnAction();
+                break;
+            case "Story":
+                Debug.Log("EventManager:CreateCoroutine Story");
+                StoryEvent storyEvent = GetComponentInChildren<StoryEvent>();
+                storyEvent.SetStoryData(eventList[0].eventId);
+                yield return storyEvent.OnAction();
                 break;
             case "":
                 break;
@@ -81,7 +87,7 @@ public class EventManager : MonoBehaviour
 
     //** イベントリストに追加
     public static void AddEvent(EventQueue ev){
-        Debug.Log("EventManager : AddEvent");
+        //Debug.Log("EventManager : AddEvent");
         eventList.Add(ev);
     }
 

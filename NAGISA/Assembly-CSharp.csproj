@@ -36,6 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\(NotUsed)MapObject\MOConversation.cs" />
+     <Compile Include="Assets\Scripts\(NotUsed)MapObject\MOTransition.cs" />
+     <Compile Include="Assets\Scripts\(NotUsed)MapObject\MapObjectBase.cs" />
      <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
      <Compile Include="Assets\Scripts\Bullet\BulletController.cs" />
      <Compile Include="Assets\Scripts\Bullet\BulletMainManager.cs" />
@@ -65,6 +68,7 @@
      <Compile Include="Assets\Scripts\CharaTipAnimeController.cs" />
      <Compile Include="Assets\Scripts\CharaTipController.cs" />
      <Compile Include="Assets\Scripts\Data\EventConvData.cs" />
+     <Compile Include="Assets\Scripts\Data\EventStoryData.cs" />
      <Compile Include="Assets\Scripts\Data\EventTransData.cs" />
      <Compile Include="Assets\Scripts\Data\RoomData.cs" />
      <Compile Include="Assets\Scripts\Data\SaveData.cs" />
@@ -72,15 +76,13 @@
      <Compile Include="Assets\Scripts\Event\EventManager.cs" />
      <Compile Include="Assets\Scripts\Event\EventQueue.cs" />
      <Compile Include="Assets\Scripts\Event\MapObjectTrigger.cs" />
+     <Compile Include="Assets\Scripts\Event\StoryEvent.cs" />
      <Compile Include="Assets\Scripts\Event\TransitionEvent.cs" />
      <Compile Include="Assets\Scripts\FPSCounter.cs" />
      <Compile Include="Assets\Scripts\FlagManager.cs" />
      <Compile Include="Assets\Scripts\Helper\JsonHelper.cs" />
      <Compile Include="Assets\Scripts\Helper\ResourcesLoader.cs" />
      <Compile Include="Assets\Scripts\InitialManager.cs" />
-     <Compile Include="Assets\Scripts\MapObject\MOConversation.cs" />
-     <Compile Include="Assets\Scripts\MapObject\MOTransition.cs" />
-     <Compile Include="Assets\Scripts\MapObject\MapObjectBase.cs" />
      <Compile Include="Assets\Scripts\Menu\ItemMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuBase.cs" />
      <Compile Include="Assets\Scripts\Menu\SaveMenu.cs" />

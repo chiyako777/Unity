@@ -15,6 +15,7 @@ TagManager:
   - BGMPlayer
   - SEPlayer
   - Laser
+  - Timeline
   layers:
   - Default
   - TransparentFX
