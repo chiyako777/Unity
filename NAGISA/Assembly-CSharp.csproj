@@ -72,12 +72,13 @@
      <Compile Include="Assets\Scripts\Data\EventTransData.cs" />
      <Compile Include="Assets\Scripts\Data\RoomData.cs" />
      <Compile Include="Assets\Scripts\Data\SaveData.cs" />
-     <Compile Include="Assets\Scripts\Event\ConversationEvent.cs" />
+     <Compile Include="Assets\Scripts\Event\EventDef\ConversationEvent.cs" />
+     <Compile Include="Assets\Scripts\Event\EventDef\StoryEvent.cs" />
+     <Compile Include="Assets\Scripts\Event\EventDef\TransitionEvent.cs" />
      <Compile Include="Assets\Scripts\Event\EventManager.cs" />
      <Compile Include="Assets\Scripts\Event\EventQueue.cs" />
-     <Compile Include="Assets\Scripts\Event\MapObjectTrigger.cs" />
-     <Compile Include="Assets\Scripts\Event\StoryEvent.cs" />
-     <Compile Include="Assets\Scripts\Event\TransitionEvent.cs" />
+     <Compile Include="Assets\Scripts\Event\Trigger\MapObjectTrigger.cs" />
+     <Compile Include="Assets\Scripts\Event\Trigger\TimelineTrigger.cs" />
      <Compile Include="Assets\Scripts\FPSCounter.cs" />
      <Compile Include="Assets\Scripts\FlagManager.cs" />
      <Compile Include="Assets\Scripts\Helper\JsonHelper.cs" />

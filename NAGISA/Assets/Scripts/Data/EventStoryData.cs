@@ -8,5 +8,6 @@ public class EventStoryData
 {
     public int id;
     public string timeline;
+    public float finishtime;
 
 }
