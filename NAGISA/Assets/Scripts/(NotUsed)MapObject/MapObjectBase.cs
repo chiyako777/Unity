@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//commit test
 public abstract class MapObjectBase : MonoBehaviour
 {
     public Canvas window;
