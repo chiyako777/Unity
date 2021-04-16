@@ -1,4 +1,18 @@
 [
-    {"id":1,"timeline":"Timeline_test","finishtime":7.0},
-    {"id":2,"timeline":"Opening_UsagiRoom","finishtime":3.0}
+    {
+        "id":1,
+        "timeline":"Timeline_test",
+        "finishtime":7.0,
+        "track":["WalkAnimation","MoveAnimation"],
+        "bindObject":["player","player"],
+        "bindComponent":["Animator","Animator"]
+    },
+    {
+        "id":2,
+        "timeline":"Opening_UsagiRoom",
+        "finishtime":3.0,
+        "track":["WalkAnimation","MoveAnimation"],
+        "bindObject":["player","player"],
+        "bindComponent":["Animator","Animator"]
+    }
 ]

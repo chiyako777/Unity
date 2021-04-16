@@ -14,6 +14,7 @@ public class ResourcesLoader<T> where T : UnityEngine.Object
             return false;
         }
         foreach(T obj in objs){
+            //Debug.Log("リソースロード:" + obj.name);
             if(resourcesHandles.ContainsKey(obj.name)){
                 //Debug.Log("重複:" + obj.name);
             }else{

@@ -90,7 +90,7 @@
      <Compile Include="Assets\Scripts\Mibunrui\FPSCounter.cs" />
      <Compile Include="Assets\Scripts\Mibunrui\FlagManager.cs" />
      <Compile Include="Assets\Scripts\Mibunrui\InitialManager.cs" />
-     <Compile Include="Assets\Scripts\Mibunrui\SceneInitializer.cs" />
+     <Compile Include="Assets\Scripts\Mibunrui\SceneCustomManager.cs" />
      <Compile Include="Assets\Scripts\Mibunrui\TimelineManager.cs" />
      <Compile Include="Assets\Scripts\Music\MusicManager.cs" />
      <Compile Include="Assets\Scripts\SpellPracController.cs" />

@@ -88,6 +88,7 @@ public class EventManager : MonoBehaviour
         //リスト削除
         Debug.Log("イベント終了：eventType = " + eventList[nowIndex].eventType + " nowIndex = " + nowIndex);
         StopCoroutine(eventList[nowIndex].coroutine);
+        //タイムラインの場合、タイムラインオブジェクトの削除処理をそのうち入れる
         eventList[nowIndex].coroutine = null;
         eventList.RemoveAt(nowIndex);
 
