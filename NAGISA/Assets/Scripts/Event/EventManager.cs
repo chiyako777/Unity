@@ -24,7 +24,7 @@ public class EventManager : MonoBehaviour
             return;     //実行指示なし（=未発生か、発生中で更新の必要なし)
         }else{
             nowIndex = index;
-            Debug.Log("Exec:nowIndex = " + nowIndex);
+            //Debug.Log("Exec:nowIndex = " + nowIndex);
         }
 
         FlagManager.flagDictionary["coroutine"] = true;
@@ -62,7 +62,7 @@ public class EventManager : MonoBehaviour
         //Debug.Log("EventManager:CreateCoroutine");
         switch(eventList[nowIndex].eventType){
             case "Conv":
-                Debug.Log("EventManager:CreateCoroutine Conv");
+                //Debug.Log("EventManager:CreateCoroutine Conv");
                 ConversationEvent convEvent = GetComponentInChildren<ConversationEvent>();
                 convEvent.SetConvData(eventList[nowIndex].eventId);
                 yield return convEvent.OnAction();
@@ -74,7 +74,7 @@ public class EventManager : MonoBehaviour
                 yield return transEvent.OnAction();
                 break;
             case "Story":
-                Debug.Log("EventManager:CreateCoroutine Story");
+                //Debug.Log("EventManager:CreateCoroutine Story");
                 StoryEvent storyEvent = GetComponentInChildren<StoryEvent>();
                 storyEvent.SetStoryData(eventList[nowIndex].eventId);
                 yield return storyEvent.OnAction();

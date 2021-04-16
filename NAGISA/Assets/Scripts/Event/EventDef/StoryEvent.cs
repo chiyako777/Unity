@@ -47,6 +47,7 @@ public class StoryEvent : MonoBehaviour
 
     public void SetStoryData(int id){
         //** ファイル読み込み、シリアライズ
+        //Debug.Log("StoryEvent:SetStoryData");
         string f = Application.dataPath + "/StaticData" + "/data/" + "event_story.json";
         EventStoryData[] data = null;
         if(File.Exists(f)){
@@ -56,8 +57,10 @@ public class StoryEvent : MonoBehaviour
         //** メンバにセット
         foreach(EventStoryData ev in data){
             if(ev.id != id){
+                //Debug.Log("Story Event Id 不一致:ev.id = " + ev.id + " id = " + id);
                 continue;
             }
+            //Debug.Log("Story Event Id 一致:ev.id = " + ev.id + " id = " + id);
             GameObject[] obj = GameObject.FindGameObjectsWithTag("Timeline");
             foreach(GameObject ob in obj){
                 if(ob == null) { continue;}
@@ -67,12 +70,14 @@ public class StoryEvent : MonoBehaviour
                 }
             }
             finishTime = ev.finishtime;
-            Debug.Log("finishTime = " + finishTime);
+            //Debug.Log("finishTime = " + finishTime);
         }
 
     }
 
     public void Resume(){
-        playableDirector.Resume();
+        //playableDirector.Resume();
+        //Pause,Resumeだと、直前のフレームの状態が維持できないので、再生速度を変更する形で停止再開する
+        playableDirector.playableGraph.GetRootPlayable(0).SetSpeed(1.0f);
     }
 }

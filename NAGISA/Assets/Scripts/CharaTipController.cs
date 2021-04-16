@@ -20,6 +20,7 @@ public class CharaTipController : MonoBehaviour
     void Update()
     {
         if(!(bool)FlagManager.flagDictionary["coroutine"]){
+            //Debug.Log("歩けるはずだよ");
             inputAxis.x = Input.GetAxis("Horizontal");
             inputAxis.y = Input.GetAxis("Vertical");            
         }else{

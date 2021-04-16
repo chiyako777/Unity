@@ -31,5 +31,14 @@
             "Textures/CharaTip/nagisa/nagisa_back"
         ]
     },
-    {"id":2,"messages":["id = 2 : 選択肢","id = 2 : あああ"],"graphics":["Textures/CharaTip/nagisa/nagisa_back","Textures/CharaTip/nagisa/nagisa_front"]}
+    {"id":2,
+        "messages":[
+            "さて・・・",
+            "ナギサ先生の宿題やろうっと！（ここ一番の笑顔）"
+        ],
+        "graphics":[
+            "Textures/CharaTip/nagisa/nagisa_front",
+            "Textures/CharaTip/nagisa/nagisa_front"
+        ]
+    }
 ]

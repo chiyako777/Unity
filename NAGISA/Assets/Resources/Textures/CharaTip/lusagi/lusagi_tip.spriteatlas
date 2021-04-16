@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: lusagi_tip
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 21300000, guid: 69acc4044f8859341af8d4ffd569cd3d, type: 3}
+    - {fileID: 21300000, guid: 3a53ef7c7baf8db4f8faab6fc31be342, type: 3}
+    - {fileID: 21300000, guid: 0bd1505da75c90a489878ca7e356442c, type: 3}
+    - {fileID: 21300000, guid: 72d1f7db5776b0041942df6c20e984a2, type: 3}
+    - {fileID: 21300000, guid: 1697bc901e20fcc49989098deea0919a, type: 3}
+    - {fileID: 21300000, guid: a7ffd496c2799d14aac2a166491408ae, type: 3}
+    - {fileID: 21300000, guid: d5e39ac4ada0cc4458868d267f67f30b, type: 3}
+    - {fileID: 21300000, guid: 9f848f631fccc9b43a9569f833dde21f, type: 3}
+    - {fileID: 21300000, guid: f1aa9e9aac9703a44bd702eac46d1ade, type: 3}
+    - {fileID: 21300000, guid: 2c0e83efd63685f4a9664c8042976db0, type: 3}
+    - {fileID: 21300000, guid: 44539a42dcd96a54db526c2c7a85731a, type: 3}
+    - {fileID: 21300000, guid: ba44ae027dfb690499181e37736d1d45, type: 3}
+    totalSpriteSurfaceArea: 196608
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 1697bc901e20fcc49989098deea0919a, type: 3}
+  - {fileID: 21300000, guid: ba44ae027dfb690499181e37736d1d45, type: 3}
+  - {fileID: 21300000, guid: 44539a42dcd96a54db526c2c7a85731a, type: 3}
+  - {fileID: 21300000, guid: 9f848f631fccc9b43a9569f833dde21f, type: 3}
+  - {fileID: 21300000, guid: 69acc4044f8859341af8d4ffd569cd3d, type: 3}
+  - {fileID: 21300000, guid: d5e39ac4ada0cc4458868d267f67f30b, type: 3}
+  - {fileID: 21300000, guid: a7ffd496c2799d14aac2a166491408ae, type: 3}
+  - {fileID: 21300000, guid: f1aa9e9aac9703a44bd702eac46d1ade, type: 3}
+  - {fileID: 21300000, guid: 72d1f7db5776b0041942df6c20e984a2, type: 3}
+  - {fileID: 21300000, guid: 3a53ef7c7baf8db4f8faab6fc31be342, type: 3}
+  - {fileID: 21300000, guid: 0bd1505da75c90a489878ca7e356442c, type: 3}
+  - {fileID: 21300000, guid: 2c0e83efd63685f4a9664c8042976db0, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - lusagi_back_walk1
+  - lusagi_right_walk2
+  - lusagi_right_walk1
+  - lusagi_left_walk1
+  - lusagi_front
+  - lusagi_left
+  - lusagi_back_walk2
+  - lusagi_left_walk2
+  - lusagi_back
+  - lusagi_front_walk1
+  - lusagi_front_walk2
+  - lusagi_right
+  m_Tag: lusagi_tip
+  m_IsVariant: 0
