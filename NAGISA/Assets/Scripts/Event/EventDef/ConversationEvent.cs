@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ConversationEvent : MonoBehaviour
 {
-    //** test
+
     //** UI
     public Canvas window;
     public Text targetMessage;

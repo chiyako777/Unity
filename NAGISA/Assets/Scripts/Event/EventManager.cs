@@ -79,6 +79,12 @@ public class EventManager : MonoBehaviour
                 storyEvent.SetStoryData(eventList[nowIndex].eventId);
                 yield return storyEvent.OnAction();
                 break;
+            case "Fade":
+                //Debug.Log("EventManager:CreateCoroutine Fade");
+                FadeEvent fadeEvent = GetComponentInChildren<FadeEvent>();
+                fadeEvent.SetFadeData(eventList[nowIndex].eventId);
+                yield return fadeEvent.OnAction();
+                break;
             case "":
                 break;
         }

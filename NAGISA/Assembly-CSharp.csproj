@@ -68,11 +68,13 @@
      <Compile Include="Assets\Scripts\CharaTipAnimeController.cs" />
      <Compile Include="Assets\Scripts\CharaTipController.cs" />
      <Compile Include="Assets\Scripts\Data\EventConvData.cs" />
+     <Compile Include="Assets\Scripts\Data\EventFadeData.cs" />
      <Compile Include="Assets\Scripts\Data\EventStoryData.cs" />
      <Compile Include="Assets\Scripts\Data\EventTransData.cs" />
      <Compile Include="Assets\Scripts\Data\RoomData.cs" />
      <Compile Include="Assets\Scripts\Data\SaveData.cs" />
      <Compile Include="Assets\Scripts\Event\EventDef\ConversationEvent.cs" />
+     <Compile Include="Assets\Scripts\Event\EventDef\FadeEvent.cs" />
      <Compile Include="Assets\Scripts\Event\EventDef\StoryEvent.cs" />
      <Compile Include="Assets\Scripts\Event\EventDef\TransitionEvent.cs" />
      <Compile Include="Assets\Scripts\Event\EventManager.cs" />

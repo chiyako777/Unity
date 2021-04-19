@@ -73,8 +73,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventType:
   - Conv
-  eventId: 02000000
-  eventLevel: 01000000
+  - Fade
+  eventId: 0200000001000000
+  eventLevel: 0100000001000000
 --- !u!114 &4619951172099925979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,7 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Events:
     m_Signals:
-    - {fileID: 11400000, guid: f5748325fc926d84b89e7609da57ccdf, type: 2}
+    - {fileID: 11400000, guid: 0e2244cc3e59e594b876a06fec108fde, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
