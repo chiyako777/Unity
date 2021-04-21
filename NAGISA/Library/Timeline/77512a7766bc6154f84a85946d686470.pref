@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeInFrames: 1
-  timeAreaShownRange: {x: -0.18028711, y: 9.807618}
+  timeAreaShownRange: {x: -0.31155974, y: 15.79608}
   showAudioWaveform: 1
   trackScale: 1
   playRangeEnabled: 0
@@ -25,6 +25,7 @@ MonoBehaviour:
   - {fileID: 1585260528048191042, guid: 77512a7766bc6154f84a85946d686470, type: 2}
   - {fileID: 2707421317310864066, guid: 77512a7766bc6154f84a85946d686470, type: 2}
   - {fileID: -8113390634701510055, guid: 77512a7766bc6154f84a85946d686470, type: 2}
+  - {fileID: -3998984025186036729, guid: 77512a7766bc6154f84a85946d686470, type: 2}
   m_Vals:
   - collapsed: 0
     showMarkers: 1
@@ -65,7 +66,7 @@ MonoBehaviour:
     showMarkers: 1
     showInlineCurves: 1
     inlineAnimationCurveHeight: 100
-    lastInlineCurveDataID: 15546
+    lastInlineCurveDataID: 14806
     inlineCurvesState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 3d07a1be
@@ -91,9 +92,9 @@ MonoBehaviour:
     inlineCurvesShownAreaInsideMargins:
       serializedVersion: 2
       x: 0
-      y: -2
-      width: 9.807618
-      height: 1.6537986
+      y: 0.000000014901161
+      width: 15.79608
+      height: 1
     m_MarkerTimeStampsKeys: 
     m_MarkerTimeStampsValues: 
   - collapsed: 1
@@ -131,3 +132,38 @@ MonoBehaviour:
       height: 1
     m_MarkerTimeStampsKeys: 1007ffffbe3c00008eeaffff
     m_MarkerTimeStampsValues: 53fb20f69400d9084cfcdebffc02d908d71df8a0fc02d908
+  - collapsed: 0
+    showMarkers: 1
+    showInlineCurves: 0
+    inlineAnimationCurveHeight: 100
+    lastInlineCurveDataID: -1
+    inlineCurvesState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    inlineCurvesShownAreaInsideMargins:
+      serializedVersion: 2
+      x: 1
+      y: 1
+      width: 1
+      height: 1
+    m_MarkerTimeStampsKeys: 
+    m_MarkerTimeStampsValues: 

@@ -3,9 +3,9 @@
         "id":1,
         "timeline":"Timeline_test",
         "finishtime":7.0,
-        "track":["WalkAnimation","MoveAnimation"],
-        "bindObject":["player","player"],
-        "bindComponent":["Animator","Animator"]
+        "track":["WalkAnimation","MoveAnimation","ActivationTrack"],
+        "bindObject":["player","player","player"],
+        "bindComponent":["Animator","Animator","GameObject"]
     },
     {
         "id":2,

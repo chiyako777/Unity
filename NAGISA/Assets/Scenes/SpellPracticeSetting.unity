@@ -1366,6 +1366,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aab95f6540e38545a528d517dc23369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeSelectWindow: {fileID: 61520984}
+  startConfirmWindow: {fileID: 1828804889}
+  stageSelectText: {fileID: 1570231529}
+  typeListText: {fileID: 1614332673}
+  typeDescText: {fileID: 1160002413}
+  typeDescImage: {fileID: 1359325923}
+  confirmText: {fileID: 333265745}
 --- !u!1 &1828804885
 GameObject:
   m_ObjectHideFlags: 0

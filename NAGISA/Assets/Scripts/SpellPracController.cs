@@ -9,14 +9,13 @@ using UnityEngine.SceneManagement;
 public class SpellPracController : MonoBehaviour
 {
 
-
-    private Canvas typeSelectWindow;
-    private Canvas startConfirmWindow;
-    private Text stageSelectText;
-    private Text typeListText;
-    private Text typeDescText;
-    private Image typeDescImage;
-    private Text confirmText;
+    public Canvas typeSelectWindow;
+    public Canvas startConfirmWindow;
+    public Text stageSelectText;
+    public Text typeListText;
+    public Text typeDescText;
+    public Image typeDescImage;
+    public Text confirmText;
 
     private RoomData[] roomData;
     private IEnumerator spellSelectCoroutine;
@@ -33,28 +32,6 @@ public class SpellPracController : MonoBehaviour
 
     void Start()
     {
-        //** コンポーネント取得
-        Text[] text = GameObject.FindObjectsOfType<Text>();
-        foreach(Text t in text){
-            if(t.name == "stageSelect_text"){
-                stageSelectText = t;
-            }
-        }
-        Canvas[] canvas = GameObject.FindObjectsOfType<Canvas>();
-        foreach(Canvas c in canvas){
-            if(c.name == "typeSelect_window"){
-                typeSelectWindow = c;
-            }
-            if(c.name == "practiceStartConfirm_window"){
-                startConfirmWindow = c;
-            }
-        }
-        Image[] image = GameObject.FindObjectsOfType<Image>();
-        foreach(Image i in image){
-            if(i.name == "typedesc_image"){
-                typeDescImage = i;
-            }
-        }
 
         //** ルームデータ読み込み
         string f = Application.dataPath + "/StaticData" + "/data/" + "room.json";
@@ -187,17 +164,6 @@ public class SpellPracController : MonoBehaviour
 
     private IEnumerator OnTypeSelect(){
 
-        //** 自機タイプ選択UIコンポーネント取得
-        Text[] text = GameObject.FindObjectsOfType<Text>();
-        foreach(Text t in text){
-            if(t.name == "typeList_text"){
-                typeListText = t;
-            }
-            if(t.name == "typedesc_text"){
-                typeDescText = t;
-            }
-        }
-
         //** 初期表示
         typeDisp();
         yield return null;
@@ -258,14 +224,6 @@ public class SpellPracController : MonoBehaviour
     }
 
     private IEnumerator OnConfirm(){
-
-        //** コンポーネント取得
-        Text[] text = GameObject.FindObjectsOfType<Text>();
-        foreach(Text t in text){
-            if(t.name == "practiceStartConfirm_text"){
-                confirmText = t;
-            }
-        }
 
         //** 初期表示
         bool isYes = true;

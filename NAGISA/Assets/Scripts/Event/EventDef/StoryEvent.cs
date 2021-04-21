@@ -82,6 +82,9 @@ public class StoryEvent : MonoBehaviour
                         Animator anim = GameObject.Find(ev.bindObject[i]).GetComponent<Animator>();
                         playableDirector.SetGenericBinding(bind[i].sourceObject,anim);
                         break;
+                    case "GameObject":
+                        playableDirector.SetGenericBinding(bind[i].sourceObject,GameObject.Find(ev.bindObject[i]));
+                        break;
                     default:
                         break;
                 }
