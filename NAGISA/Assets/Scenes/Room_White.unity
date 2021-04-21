@@ -1653,7 +1653,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950765117}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f90f87247b4ab634c96408e16e85b219, type: 3}
   m_Name: 
@@ -2612,9 +2612,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1757983767e81a740997ce3288694488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventType: Story
+  eventType: Conv
   eventId: 1
-  eventLevel: 10
+  eventLevel: 1
 --- !u!1 &1322928920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,6 +2951,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bd60fe1913ea843a43d733eddda0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuWindow: {fileID: 1581579581}
+  menuImage:
+  - {fileID: 1161736422}
+  - {fileID: 1637048883}
+  - {fileID: 1970107230}
+  - {fileID: 1004890544}
+  - {fileID: 896433429}
+  itemWindow: {fileID: 375227479}
+  saveWindow: {fileID: 433388206}
 --- !u!4 &1553560453
 Transform:
   m_ObjectHideFlags: 0

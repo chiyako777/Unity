@@ -7,9 +7,12 @@ using UnityEngine.UI;
 public class FadeEvent : MonoBehaviour
 {
     //** UI
-    public Canvas window;
-    public Image fadeImage;
-    public Text fadeText;
+    [SerializeField]
+    private Canvas window;
+    [SerializeField]
+    private Image fadeImage;
+    [SerializeField]
+    private Text fadeText;
 
     //** 暗転データ
     private Color fadeColor;

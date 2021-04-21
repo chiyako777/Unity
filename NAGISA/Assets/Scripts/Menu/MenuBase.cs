@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuBase : MonoBehaviour
 {
+    [SerializeField]
     private Canvas menuWindow;
+    [SerializeField]
     private List<Image> menuImage;
+    [SerializeField]
     private Canvas itemWindow;
+    [SerializeField]
     private Canvas saveWindow;
 
     private IEnumerator menuCoroutine;
@@ -21,35 +25,6 @@ public class MenuBase : MonoBehaviour
         //Debug.Log("★start menu");
         FlagManager.flagDictionary["coroutine"] = false;
         defaultCol = new Color(0.9215f,0.4941f,0.7411f,1.0f);
-
-        Component[] c1 = GetComponentsInChildren(typeof(Canvas),true);
-        foreach(Component c in c1){
-            switch(c.name){
-                case "menu_window":
-                    //Debug.Log("menu_window初期化");
-                    menuWindow = (Canvas)c;
-                    break;
-                case "itemList_window":
-                    itemWindow = (Canvas)c;
-                    break;
-                case "saveList_window":
-                    saveWindow = (Canvas)c;
-                    break;
-                default:
-                    break;
-            }
-        }
-        
-        menuImage = new List<Image>();
-        Component[] c2 = GetComponentsInChildren(typeof(Image),true);
-        string[] menuOrder = new string[]{"item_image","bullet_image","save_image","general_image","quit_image"};
-        foreach(string s in menuOrder){
-            foreach(Component c in c2){
-                if(s.Equals(c.name)){
-                    menuImage.Add((Image)c);
-                }
-            }
-        }
 
         menuWindow.gameObject.SetActive(false);
         itemWindow.gameObject.SetActive(false);

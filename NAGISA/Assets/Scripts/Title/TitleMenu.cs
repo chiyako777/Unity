@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleMenu : MonoBehaviour
 {
+    [SerializeField]
     private Text menuText;
     private int selected;   //1start
 
@@ -13,12 +14,6 @@ public class TitleMenu : MonoBehaviour
     {
         //** タイトルメニュー設定
         selected = 1;
-        Text[] text = GameObject.FindObjectsOfType<Text>();
-        foreach(Text t in text){
-            if(t.name == "TitleMenu_text"){
-                menuText = t;
-            }
-        }
         menuText.text = "  *ニューゲーム   コンティニュー(選択不可)   弾幕プラクティス   ゲーム終了";
 
     }

@@ -8,12 +8,18 @@ public class ConversationEvent : MonoBehaviour
 {
 
     //** UI
-    public Canvas window;
-    public Text targetMessage;
-    public Text selection1;
-    public Text selection2;
-    public Text selection3;
-    public Image charaGraph;
+    [SerializeField]
+    private Canvas window;
+    [SerializeField]
+    private Text targetMessage;
+    [SerializeField]
+    private Text selection1;
+    [SerializeField]
+    private Text selection2;
+    [SerializeField]
+    private Text selection3;
+    [SerializeField]
+    private Image charaGraph;
 
     //** 選択肢制御
     private const string selectEscape = "SELECT:";

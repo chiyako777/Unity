@@ -5,9 +5,12 @@ using UnityEngine;
 //** タイムラインの中から発生するイベントトリガ(タイムラインオブジェクトにアタッチする形)
 public class TimelineTrigger : MonoBehaviour
 {
-    public List<string> eventType = new List<string>();
-    public List<int> eventId = new List<int>();
-    public List<int> eventLevel = new List<int>();      //イベントレベル基本方針：会話=1、遷移=1 、ストーリーイベント=10
+    [SerializeField]
+    private List<string> eventType = new List<string>();
+    [SerializeField]
+    private List<int> eventId = new List<int>();
+    [SerializeField]
+    private List<int> eventLevel = new List<int>();      //イベントレベル基本方針：会話=1、遷移=1 、ストーリーイベント=10
 
     private int progress = 0;
 

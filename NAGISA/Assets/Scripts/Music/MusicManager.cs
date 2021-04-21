@@ -5,7 +5,8 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
 
-    public string BGM;
+    [SerializeField]
+    private string BGM;
 
     void Start()
     {

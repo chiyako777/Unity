@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ItemMenu
 {
+    //** UI
     private Text fravorText;
     private Text itemListText;
 
