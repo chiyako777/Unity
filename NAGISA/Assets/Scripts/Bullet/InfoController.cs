@@ -6,13 +6,19 @@ using UnityEngine.UI;
 public class InfoController : MonoBehaviour
 {
     //** component
+    [SerializeField]
     private Text optionText;
+    [SerializeField]
     private Text roomText;
+    [SerializeField]
     private Text spellText;
+    [SerializeField]
     private Text powerText;
 
-    public GameObject[] lifeCount;
-    public GameObject[] bombCount;
+    [SerializeField]
+    private GameObject[] lifeCount;
+    [SerializeField]
+    private GameObject[] bombCount;
 
     [HideInInspector]
     public string option;
@@ -32,26 +38,6 @@ public class InfoController : MonoBehaviour
 
     void Start()
     {
-        //** コンポーネント取得
-        Text[] text = GameObject.FindObjectsOfType<Text>();
-        foreach(Text t in text){
-            switch(t.name){
-                case "bulletinfo_option_text":
-                    optionText = t;
-                    break;
-                case "bulletinfo_room_text":
-                    roomText = t;
-                    break;
-                case "bulletinfo_spell_text":
-                    spellText = t;
-                    break;
-                case "bulletinfo_powerval_text":
-                    powerText = t;
-                    break;
-                default:
-                    break;
-            }
-        }
 
         //** 各種キャッシュ
         for(int i=0; i<10; i++){

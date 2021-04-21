@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
     
 
     private Dictionary<string,int> InputArray;  //各種入力制御
-    public GameObject[] shotObjs;   //自機ショット用オブジェクト（Inspectorでプレハブを指定）
+    [SerializeField]
+    private GameObject[] shotObjs;   //自機ショット用オブジェクト（Inspectorでプレハブを指定）
 
     private float warpLength = 37.0f;   //ワープ可能領域の大きさ(正方形の辺の半分)
 

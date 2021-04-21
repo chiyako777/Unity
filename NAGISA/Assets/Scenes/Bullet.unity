@@ -3179,6 +3179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a9ab208086d8f40a2831ab59472e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionText: {fileID: 1076450394}
+  roomText: {fileID: 1790002092}
+  spellText: {fileID: 65057742}
+  powerText: {fileID: 1583544684}
   lifeCount:
   - {fileID: 862059753}
   - {fileID: 861427811}

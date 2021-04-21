@@ -8,14 +8,20 @@ using UnityEngine.SceneManagement;
 
 public class SpellPracController : MonoBehaviour
 {
-
-    public Canvas typeSelectWindow;
-    public Canvas startConfirmWindow;
-    public Text stageSelectText;
-    public Text typeListText;
-    public Text typeDescText;
-    public Image typeDescImage;
-    public Text confirmText;
+    [SerializeField]
+    private Canvas typeSelectWindow;
+    [SerializeField]
+    private Canvas startConfirmWindow;
+    [SerializeField]
+    private Text stageSelectText;
+    [SerializeField]
+    private Text typeListText;
+    [SerializeField]
+    private Text typeDescText;
+    [SerializeField]
+    private Image typeDescImage;
+    [SerializeField]
+    private Text confirmText;
 
     private RoomData[] roomData;
     private IEnumerator spellSelectCoroutine;
