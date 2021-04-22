@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     [HideInInspector]
-    public string optionType;   //デバッグ用にインスペクタで自機オプションタイプ設定(Homing,Reflec,Warp)
+    public string optionType;
 
     [HideInInspector]
     public int life = 3;    //残機
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject[] shotObjs;   //自機ショット用オブジェクト（Inspectorでプレハブを指定）
 
-    private float warpLength = 37.0f;   //ワープ可能領域の大きさ(正方形の辺の半分)
+    private const float warpLength = 37.0f;   //ワープ可能領域の大きさ(正方形の辺の半分)
 
     //** caches
     private GameObject enemy;

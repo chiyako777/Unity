@@ -10,8 +10,6 @@ public class PlayerShot : MonoBehaviour
     public int power = 2;
     [HideInInspector]
     public string optionType;
-    //[HideInInspector]
-    //public int bloadIndex;
 
     protected void Start()
     {

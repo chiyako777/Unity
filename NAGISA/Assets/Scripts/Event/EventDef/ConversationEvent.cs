@@ -27,10 +27,8 @@ public class ConversationEvent : MonoBehaviour
     private IEnumerator selectCoroutine;
 
     //** 会話データ
-    [HideInInspector]
-    public List<string> messages;
-    [HideInInspector]
-    public List<Sprite> graphics;
+    private List<string> messages;
+    private List<Sprite> graphics = new List<Sprite>();
 
     void Start(){
         window.gameObject.SetActive(false);

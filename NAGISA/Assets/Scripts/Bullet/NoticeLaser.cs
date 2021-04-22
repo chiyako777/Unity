@@ -7,8 +7,6 @@ public class NoticeLaser : MonoBehaviour
 {
 
     [HideInInspector]
-    public string type;         //Notice,Radient
-    [HideInInspector]
     public int status = 0;      //予告線状態、拡大状態、マックス状態、縮小状態
     [HideInInspector]
     public float angle;
@@ -36,10 +34,8 @@ public class NoticeLaser : MonoBehaviour
         this.lineRenderer = GetComponentInChildren<LineRenderer>();
         this.collider = GetComponentInChildren<EdgeCollider2D>();
         
-        if(type == "Notice"){
-            //** ステータス = 予告線状態
-            status = 1;     
-        }
+        //** ステータス = 予告線状態
+        status = 1;     
 
     }
 

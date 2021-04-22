@@ -28,9 +28,9 @@ public class SpellPracController : MonoBehaviour
     private IEnumerator typeSelectCoroutine;
     private IEnumerator confirmCoroutine;
 
-    int roomSelected;   //1start
-    int spellSelected;  //1start
-    int typeSelected;  //1start
+    private int roomSelected;   //1start
+    private int spellSelected;  //1start
+    private int typeSelected;  //1start
 
     private List<string> typeList;
     private List<string> typeDescList;

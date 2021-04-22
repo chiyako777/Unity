@@ -24,7 +24,6 @@ public class TestSpell5 : BulletController
             bulletList.Add(Instantiate(prefabs[3],enemyLocation,Quaternion.identity));
             bulletList[bulletList.Count-1].AddComponent<NoticeLaser>();
             laser = bulletList[bulletList.Count-1].GetComponent<NoticeLaser>();
-            laser.type = "Notice";
             laser.angle = -45.0f;
             laser.length = 300.0f;
             laser.startPos = new Vector3(0.0f,0.0f,0.0f);
