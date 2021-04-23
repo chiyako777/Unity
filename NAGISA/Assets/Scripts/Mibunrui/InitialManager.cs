@@ -7,7 +7,7 @@ public class InitialManager : MonoBehaviour
 {
     void Awake(){
         //** 全音源ロード
-        SoundPlayer.LoadAllSounds("Audios");
+        //SoundPlayer.LoadAllSounds("Audios");
         //Debug.Log("init 全音源ロード：" + init);
 
     }

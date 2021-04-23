@@ -84,8 +84,6 @@
      <Compile Include="Assets\Scripts\Event\Trigger\MapObjectTrigger.cs" />
      <Compile Include="Assets\Scripts\Event\Trigger\TimeTrigger.cs" />
      <Compile Include="Assets\Scripts\Event\Trigger\TimelineTrigger.cs" />
-     <Compile Include="Assets\Scripts\Helper\JsonHelper.cs" />
-     <Compile Include="Assets\Scripts\Helper\ResourcesLoader.cs" />
      <Compile Include="Assets\Scripts\Menu\ItemMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuBase.cs" />
      <Compile Include="Assets\Scripts\Menu\SaveMenu.cs" />
@@ -97,6 +95,9 @@
      <Compile Include="Assets\Scripts\Music\MusicManager.cs" />
      <Compile Include="Assets\Scripts\SpellPracController.cs" />
      <Compile Include="Assets\Scripts\Title\TitleMenu.cs" />
+     <Compile Include="Assets\Scripts\Util\CoroutineHandler.cs" />
+     <Compile Include="Assets\Scripts\Util\JsonHelper.cs" />
+     <Compile Include="Assets\Scripts\Util\ResourcesLoader.cs" />
      <None Include="Assets\StaticData\bullet\Room_Test.txt" />
      <None Include="Assets\Shaders\PlaneTextrure.shader" />
     <Reference Include="UnityEngine">
@@ -630,17 +631,29 @@
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.CacheServer">
+        <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/UnityEditor.CacheServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+        <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
         <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ResourceManager">
+        <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/Unity.ResourceManager.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables.Editor">
+        <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/Unity.Addressables.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
         <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
@@ -650,6 +663,12 @@
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
         <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+        <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/Unity.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+        <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/Unity.ScriptableBuildPipeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
         <HintPath>C:/Users/a2sdf/Documents/Unity/NAGISA/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

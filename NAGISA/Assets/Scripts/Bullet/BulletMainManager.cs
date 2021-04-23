@@ -15,7 +15,7 @@ public class BulletMainManager : MonoBehaviour
 
     void Start()
     {
-        resourcesLoader.LoadAllObjects("Prefabs/Resource_BulletHell");
+        //resourcesLoader.LoadAllObjects("Prefabs/Resource_BulletHell");
         commandManager.Initialize();
         commandManager.LoadScript(loadFileName);
     }

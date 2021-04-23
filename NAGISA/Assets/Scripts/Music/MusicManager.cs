@@ -24,8 +24,6 @@ public class MusicManager : MonoBehaviour
             //再生
             SoundPlayer.PlayBGM(BGM,0.25f,true);
 
-            //シーン遷移してもプレイヤーを破棄しないようにする
-            DontDestroyOnLoad(SoundPlayer.BGMPlayer);       
         }
     }
 

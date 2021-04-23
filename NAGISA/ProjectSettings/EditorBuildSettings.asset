@@ -26,4 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Bullet.unity
     guid: 9ff53ba29a6ffdf4aba7f30255020b03
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 649547bd7e09d1241b5b17cc546748b1,
+      type: 2}

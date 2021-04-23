@@ -10,7 +10,7 @@ public class SceneCustomManager : MonoBehaviour
     void Start()
     {
         //** リソースロード
-        resourcesLoader.LoadAllObjects("Prefabs/Resources_Other");
+        //resourcesLoader.LoadAllObjects("Prefabs/Resources_Other");
         //** フラグ初期化
         FlagManager.flagDictionary["coroutine"] = false;   
     }
