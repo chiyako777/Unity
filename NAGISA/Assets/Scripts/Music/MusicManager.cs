@@ -37,6 +37,7 @@ public class MusicManager : MonoBehaviour
         GameObject[] oldPlayer = GameObject.FindGameObjectsWithTag("SEPlayer");
         for(int i=0; i<oldPlayer.Length; i++){
             if(!oldPlayer[i].GetComponent<AudioSource>().isPlaying){
+                //Debug.Log("Destroy SE : " + oldPlayer[i]);
                 Destroy(oldPlayer[i]);
             }
         }

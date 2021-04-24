@@ -48,54 +48,55 @@ public class ResourcesLoader<T> where T : UnityEngine.Object
 
 //** 音声用ラッパー
 public class SoundPlayer{
-    private static ResourcesLoader<AudioClip> resourcesLoader = new ResourcesLoader<AudioClip>();
     [HideInInspector]
     public static GameObject BGMPlayer,SEPlayer;
     private static AudioSource BGMAudioSource,SEAudioSource;
 
     public static async Task PlayBGM(string bgmName,float volume,bool loop){
-        
-        //** プレイヤーオブジェクト生成
-        var handle1 = Addressables.LoadAssetAsync<GameObject>("BGMPlayer");
-        await handle1.Task;
-        if (handle1.Status == AsyncOperationStatus.Succeeded){
-            BGMPlayer = GameObject.Instantiate(handle1.Result,new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
-            BGMAudioSource = BGMPlayer.GetComponent<AudioSource>();
-        }
 
-        //** 音源ロード        
+        //** 音源ロード
         var handle = Addressables.LoadAssetAsync<AudioClip>(bgmName);
         await handle.Task;
         if (handle.Status == AsyncOperationStatus.Succeeded){
-            BGMAudioSource.clip = handle.Result;
-            BGMAudioSource.volume = volume;
-            BGMAudioSource.loop = loop;
-            BGMAudioSource.Play();
-            //シーン遷移してもプレイヤーを破棄しないようにする
-            Object.DontDestroyOnLoad(SoundPlayer.BGMPlayer);
+            AudioClip clip = handle.Result;
+            //** プレイヤーオブジェクト生成
+            var handle1 = Addressables.LoadAssetAsync<GameObject>("BGMPlayer");
+            await handle1.Task;
+            if (handle1.Status == AsyncOperationStatus.Succeeded){
+                BGMPlayer = GameObject.Instantiate(handle1.Result,new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
+                BGMAudioSource = BGMPlayer.GetComponent<AudioSource>();
+                BGMAudioSource.clip = clip;
+                BGMAudioSource.volume = volume;
+                BGMAudioSource.loop = loop;
+                BGMAudioSource.Play();
+                //シーン遷移してもプレイヤーを破棄しないようにする
+                Object.DontDestroyOnLoad(SoundPlayer.BGMPlayer);
+            }
         }
+
     }
 
     public static async Task PlaySE(string seName){
-
-        //** プレイヤーオブジェクト生成
-        var handle1 = Addressables.LoadAssetAsync<GameObject>("SEPlayer");
-        await handle1.Task;
-        if (handle1.Status == AsyncOperationStatus.Succeeded){
-            //Debug.Log("SEPlayer生成成功");
-            SEPlayer = GameObject.Instantiate(handle1.Result,new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
-            SEAudioSource = SEPlayer.GetComponent<AudioSource>();
-            //Debug.Log("AudioSource:" + SEAudioSource);
-        }
 
         //** 音源ロード
         var handle = Addressables.LoadAssetAsync<AudioClip>(seName);
         await handle.Task;
         if (handle.Status == AsyncOperationStatus.Succeeded){
+            //Debug.Log("SE音源ロード成功");
             AudioClip clip = handle.Result;
-            SEAudioSource.PlayOneShot(clip);
-        }
 
+            //** プレイヤーオブジェクト生成
+            var handle1 = Addressables.LoadAssetAsync<GameObject>("SEPlayer");
+            await handle1.Task;
+            if (handle1.Status == AsyncOperationStatus.Succeeded){
+                //Debug.Log("SEPlayer生成成功");
+                SEPlayer = GameObject.Instantiate(handle1.Result,new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
+                SEAudioSource = SEPlayer.GetComponent<AudioSource>();
+            }
+
+            SEAudioSource.PlayOneShot(clip);
+
+        }
     }
 
     public static bool StopBGM(){
