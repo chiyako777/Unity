@@ -6,7 +6,8 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using System.Threading.Tasks;
 
 //** 各種リソース読み込み
-public class ResourcesLoader<T> /*: MonoBehaviour */ where T : UnityEngine.Object
+//** ジェネリッククラス：使用時に型を指定（複数型で使いたい場合はその分だけこのクラスのインスタンスを作る）
+public class ResourcesLoader<T> where T : UnityEngine.Object
 {
 
     private Dictionary<string,T> resourcesHandles = new Dictionary<string,T>();
@@ -39,12 +40,13 @@ public class ResourcesLoader<T> /*: MonoBehaviour */ where T : UnityEngine.Objec
 
     public T GetObjectHandle(string name){
         Debug.Log("ResourcesLoader:GetObjectHandle : name = " + name);
-        Debug.Log("resourcesHandles.Count = " + resourcesHandles.Count);        //この時点で0
+        Debug.Log("resourcesHandles.Count = " + resourcesHandles.Count);
         if(resourcesHandles.ContainsKey(name)){
             Debug.Log("返却 : " + resourcesHandles[name]);
             return resourcesHandles[name];
         }else{
             Debug.Log("GetObjectHandle return null");
+            //return default(T);
             return null;
         }    
     }

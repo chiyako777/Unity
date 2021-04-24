@@ -16,19 +16,19 @@
             "SELECT3:B"
         ],
         "graphics":[
-            "Textures/CharaTip/nagisa/nagisa_front",
-            "Textures/CharaTip/nagisa/nagisa_back",
-            "Textures/CharaTip/nagisa/nagisa_back",
-            "Textures/CharaTip/nagisa/nagisa_back",
-            "Textures/CharaTip/nagisa/nagisa_back",
-            "Textures/CharaTip/nagisa/nagisa_back",
-            "Textures/CharaTip/nagisa/nagisa_back",
-            "Textures/CharaTip/nagisa/nagisa_back",
-            "Textures/CharaTip/nagisa/nagisa_back",
-            "Textures/CharaTip/nagisa/nagisa_back",
-            "Textures/CharaTip/nagisa/nagisa_back",
-            "Textures/CharaTip/nagisa/nagisa_back",
-            "Textures/CharaTip/nagisa/nagisa_back"
+            "nagisa/nagisa_front",
+            "nagisa/nagisa_back",
+            "nagisa/nagisa_back",
+            "nagisa/nagisa_back",
+            "nagisa/nagisa_back",
+            "nagisa/nagisa_back",
+            "nagisa/nagisa_back",
+            "nagisa/nagisa_back",
+            "nagisa/nagisa_back",
+            "nagisa/nagisa_back",
+            "nagisa/nagisa_back",
+            "nagisa/nagisa_back",
+            "nagisa/nagisa_back"
         ]
     },
     {"id":2,
@@ -37,8 +37,8 @@
             "ナギサ先生の宿題やろうっと！（ここ一番の笑顔）"
         ],
         "graphics":[
-            "Textures/CharaTip/nagisa/nagisa_front",
-            "Textures/CharaTip/nagisa/nagisa_front"
+            "nagisa_front",
+            "nagisa_front"
         ]
     }
 ]

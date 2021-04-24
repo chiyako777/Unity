@@ -5,18 +5,18 @@ using UnityEngine;
 public class SceneCustomManager : MonoBehaviour
 {
     [HideInInspector]
-    public static ResourcesLoader<GameObject> resourcesLoader = new ResourcesLoader<GameObject>();
+    public static ResourcesLoader<GameObject> gameObjectLoader = new ResourcesLoader<GameObject>();
+    [HideInInspector]
+    public static ResourcesLoader<Sprite> spriteLoader = new ResourcesLoader<Sprite>();
 
     void Start()
     {
         //** リソースロード
-        //resourcesLoader.LoadAllObjects("Prefabs/Resources_Other");
+        gameObjectLoader.LoadAllObjects("Other");
+        spriteLoader.LoadAllObjects("Sprite");
         //** フラグ初期化
         FlagManager.flagDictionary["coroutine"] = false;   
 
-        //** リソース読み込みテスト
-        //resourcesLoader.LoadAllObjects("Bullet");
-        //StartCoroutine(load);
     }
 
     void Update()
@@ -24,7 +24,4 @@ public class SceneCustomManager : MonoBehaviour
         
     }
 
-    // void IEnumerator loadBullet(){
-    //     yield return resourcesLoader.LoadAllObjects("Bullet");
-    // }
 }

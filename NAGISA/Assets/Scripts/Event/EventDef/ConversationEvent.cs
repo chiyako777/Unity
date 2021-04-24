@@ -205,7 +205,7 @@ public class ConversationEvent : MonoBehaviour
             messages = ev.messages;
             //顔グラ（スプライトデータに変換）
             foreach(string graName in ev.graphics){
-                graphics.Add(Resources.Load<Sprite>(graName));
+                graphics.Add(SceneCustomManager.spriteLoader.GetObjectHandle(graName));
             }
         }
     }

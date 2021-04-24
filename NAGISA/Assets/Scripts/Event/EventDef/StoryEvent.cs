@@ -68,7 +68,7 @@ public class StoryEvent : MonoBehaviour
             }
             //** タイムラインオブジェクト生成
             GameObject obj = Instantiate(
-                                SceneCustomManager.resourcesLoader.GetObjectHandle(ev.timeline),
+                                SceneCustomManager.gameObjectLoader.GetObjectHandle(ev.timeline),
                                 new Vector3(0.0f,0.0f,0.0f),
                                 Quaternion.identity);
             playableDirector = obj.GetComponent<PlayableDirector>();
