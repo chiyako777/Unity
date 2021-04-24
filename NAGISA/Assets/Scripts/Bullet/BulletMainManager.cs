@@ -13,15 +13,22 @@ public class BulletMainManager : MonoBehaviour
     [HideInInspector]
     public static string beforeScene;
 
+    private bool initFlg = false;
+
     void Start()
     {
-        //resourcesLoader.LoadAllObjects("Prefabs/Resource_BulletHell");
-        commandManager.Initialize();
-        commandManager.LoadScript(loadFileName);
+        resourcesLoader.LoadAllObjects("Bullet");
     }
 
     void Update()
     {
+        if(!initFlg && resourcesLoader.allLoadCompFlg){
+            Debug.Log("BulletMainManager : init");
+            commandManager.Initialize();
+            commandManager.LoadScript(loadFileName);
+            initFlg = true;
+        }
+
         commandManager.Run();
     }
 }

@@ -218,8 +218,6 @@ MonoBehaviour:
   selection2: {fileID: 1591559684}
   selection3: {fileID: 1591559683}
   charaGraph: {fileID: 1591559682}
-  messages: []
-  graphics: []
 --- !u!1 &404563594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,7 +1462,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771966980}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f90f87247b4ab634c96408e16e85b219, type: 3}
   m_Name: 

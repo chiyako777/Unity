@@ -6,18 +6,47 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using System.Threading.Tasks;
 
 //** 各種リソース読み込み
-public class ResourcesLoader<T> where T : UnityEngine.Object
+public class ResourcesLoader<T> /*: MonoBehaviour */ where T : UnityEngine.Object
 {
 
-    Dictionary<string,T> resourcesHandles = new Dictionary<string,T>();
-    private T tempObj;
+    private Dictionary<string,T> resourcesHandles = new Dictionary<string,T>();
+    [HideInInspector]
+    public bool allLoadCompFlg = false;
+    
+    public async Task LoadAllObjects(string labelName){    
+        //Debug.Log("ResourcesLoader:LoadAllObjects");
+        var handle = Addressables.LoadAssetsAsync<T>(labelName, null);
+        //Debug.Log("handle.Task = " + handle.Task);
+        await handle.Task;
+        if (handle.Status == AsyncOperationStatus.Succeeded){
+            //Debug.Log("リソース読み込みOK");
+            IList<T> resultList = handle.Result;
+            //Debug.Log("resultList.Count = " + resultList.Count);
+            foreach(var result in resultList){
+                //Debug.Log("result = " + result);
+                if(!resourcesHandles.ContainsKey(result.name)){
+                    Debug.Log("追加 key = " + result.name + " value = " + result);
+                    resourcesHandles.Add(result.name,result);
+                }
+            }
+            allLoadCompFlg = true;
+            //Debug.Log("resourcesHandles.Count = " + resourcesHandles.Count);
+        }else{
+            Debug.Log("リソース読み込みNG");
+        }
 
-    //他の所でまだ呼んでるからとりあえず残す
+    }
+
     public T GetObjectHandle(string name){
-        //とりあえずコンパイルとおすため
-        UnityEngine.Object obj = new UnityEngine.Object();
-        T tobj = (T)obj;
-        return tobj;
+        Debug.Log("ResourcesLoader:GetObjectHandle : name = " + name);
+        Debug.Log("resourcesHandles.Count = " + resourcesHandles.Count);        //この時点で0
+        if(resourcesHandles.ContainsKey(name)){
+            Debug.Log("返却 : " + resourcesHandles[name]);
+            return resourcesHandles[name];
+        }else{
+            Debug.Log("GetObjectHandle return null");
+            return null;
+        }    
     }
 
     public async Task LoadObject(string name,T dist){
@@ -28,12 +57,10 @@ public class ResourcesLoader<T> where T : UnityEngine.Object
         if (handle.Status == AsyncOperationStatus.Succeeded){
             Debug.Log("handle.status = succeeded");
             dist = handle.Result;
-            //tempObj = handle.Result;
             //return handle.Result;
         }else{
             Debug.Log("handle.status = none");
             dist = null;
-            //tempObj = null;
             //return null;
         }
         //yield return null;

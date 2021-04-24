@@ -60,6 +60,7 @@ public class CommandManager
                     case "enemy" :
                         EnemyInfo enemyInfo = new EnemyInfo();
                         enemyInfo.enemyObj = BulletMainManager.resourcesLoader.GetObjectHandle(data[2]);
+                        //Debug.Log("CommandManager.LoadScript:enemyInfo.enemyObj =  " + enemyInfo.enemyObj);
                         enemyInfo.lifeGage = BulletMainManager.resourcesLoader.GetObjectHandle("enemy_lifegage");
                         enemyInfo.bulletController = BulletMainManager.resourcesLoader.GetObjectHandle(data[3]);
                         enemyInfo.spellName = data[4];

@@ -13,10 +13,18 @@ public class SceneCustomManager : MonoBehaviour
         //resourcesLoader.LoadAllObjects("Prefabs/Resources_Other");
         //** フラグ初期化
         FlagManager.flagDictionary["coroutine"] = false;   
+
+        //** リソース読み込みテスト
+        //resourcesLoader.LoadAllObjects("Bullet");
+        //StartCoroutine(load);
     }
 
     void Update()
     {
         
     }
+
+    // void IEnumerator loadBullet(){
+    //     yield return resourcesLoader.LoadAllObjects("Bullet");
+    // }
 }
