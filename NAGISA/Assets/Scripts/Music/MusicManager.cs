@@ -14,7 +14,8 @@ public class MusicManager : MonoBehaviour
 
     void Update()
     {
-        if(FlagManager.flagDictionary.ContainsKey("loadAudio") && (bool)FlagManager.flagDictionary["loadAudio"]){
+        if(FlagManager.flagDictionary.ContainsKey("loadAudio") && (bool)FlagManager.flagDictionary["loadAudio"] 
+            && FlagManager.flagDictionary.ContainsKey("loadAudioPlayer") && (bool)FlagManager.flagDictionary["loadAudioPlayer"]){
             PlayBGM();
             ClearSE();
         }

@@ -11,26 +11,22 @@ public class ResourcesLoader<T> where T : UnityEngine.Object
 {
 
     private Dictionary<string,T> resourcesHandles = new Dictionary<string,T>();
-    [HideInInspector]
-    public bool allLoadCompFlg = false;
     
-    public async Task LoadAllObjects(string labelName){    
+    public async Task LoadAllObjects(string labelName,string flgName){    
         //Debug.Log("ResourcesLoader:LoadAllObjects");
+        FlagManager.flagDictionary[flgName] = false;
+        
         var handle = Addressables.LoadAssetsAsync<T>(labelName, null);
-        //Debug.Log("handle.Task = " + handle.Task);
         await handle.Task;
         if (handle.Status == AsyncOperationStatus.Succeeded){
             //Debug.Log("リソース読み込みOK");
             IList<T> resultList = handle.Result;
-            //Debug.Log("resultList.Count = " + resultList.Count);
             foreach(var result in resultList){
-                //Debug.Log("result = " + result);
                 if(!resourcesHandles.ContainsKey(result.name)){
-                    //Debug.Log("追加 key = " + result.name + " value = " + result);
                     resourcesHandles.Add(result.name,result);
                 }
             }
-            allLoadCompFlg = true;
+            FlagManager.flagDictionary[flgName] = true;
             //Debug.Log("resourcesHandles.Count = " + resourcesHandles.Count);
         }else{
             //Debug.Log("リソース読み込みNG");
@@ -83,10 +79,8 @@ public class SoundPlayer{
     private static AudioSource BGMAudioSource,SEAudioSource;
 
     public static void LoadAllSounds(){
-        FlagManager.flagDictionary["loadAudio"] = false;
-        audioLoader.LoadAllObjects("Audio");
-        playerLoader.LoadAllObjects("AudioPlayer");
-        FlagManager.flagDictionary["loadAudio"] = true;
+        audioLoader.LoadAllObjects("Audio","loadAudio");
+        playerLoader.LoadAllObjects("AudioPlayer","loadAudioPlayer");
     }
 
     public static bool PlayBGM(string bgmName,float volume,bool loop){

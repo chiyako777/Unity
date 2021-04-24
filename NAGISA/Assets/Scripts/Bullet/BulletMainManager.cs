@@ -17,12 +17,12 @@ public class BulletMainManager : MonoBehaviour
 
     void Start()
     {
-        resourcesLoader.LoadAllObjects("Bullet");
+        resourcesLoader.LoadAllObjects("Bullet","loadBullet");
     }
 
     void Update()
     {
-        if(!initFlg && resourcesLoader.allLoadCompFlg){
+        if(!initFlg && FlagManager.flagDictionary.ContainsKey("loadBullet") && (bool)FlagManager.flagDictionary["loadBullet"]){
             Debug.Log("BulletMainManager : init");
             commandManager.Initialize();
             commandManager.LoadScript(loadFileName);

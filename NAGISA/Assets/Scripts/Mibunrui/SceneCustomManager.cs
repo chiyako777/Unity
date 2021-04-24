@@ -12,8 +12,8 @@ public class SceneCustomManager : MonoBehaviour
     void Start()
     {
         //** リソースロード
-        gameObjectLoader.LoadAllObjects("Other");
-        spriteLoader.LoadAllObjects("Sprite");
+        gameObjectLoader.LoadAllObjects("Other","loadSceneObject");
+        spriteLoader.LoadAllObjects("Sprite","loadSceneSprite");
         //** フラグ初期化
         FlagManager.flagDictionary["coroutine"] = false;   
 
