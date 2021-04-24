@@ -9,4 +9,7 @@ public static class FlagManager
     //** 各フラグ初期化
     //flagDictionary["coroutine"] = false;
 
+    //** memo:Flg種類
+    //coroutine
+    //loadAudio:音源データの初期読み込み完了フラグ(bool)
 }

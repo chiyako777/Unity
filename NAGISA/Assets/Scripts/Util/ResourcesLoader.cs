@@ -26,14 +26,14 @@ public class ResourcesLoader<T> where T : UnityEngine.Object
             foreach(var result in resultList){
                 //Debug.Log("result = " + result);
                 if(!resourcesHandles.ContainsKey(result.name)){
-                    Debug.Log("追加 key = " + result.name + " value = " + result);
+                    //Debug.Log("追加 key = " + result.name + " value = " + result);
                     resourcesHandles.Add(result.name,result);
                 }
             }
             allLoadCompFlg = true;
             //Debug.Log("resourcesHandles.Count = " + resourcesHandles.Count);
         }else{
-            Debug.Log("リソース読み込みNG");
+            //Debug.Log("リソース読み込みNG");
         }
 
     }
@@ -42,31 +42,30 @@ public class ResourcesLoader<T> where T : UnityEngine.Object
         Debug.Log("ResourcesLoader:GetObjectHandle : name = " + name);
         Debug.Log("resourcesHandles.Count = " + resourcesHandles.Count);
         if(resourcesHandles.ContainsKey(name)){
-            Debug.Log("返却 : " + resourcesHandles[name]);
+            //Debug.Log("返却 : " + resourcesHandles[name]);
             return resourcesHandles[name];
         }else{
-            Debug.Log("GetObjectHandle return null");
-            //return default(T);
+            //Debug.Log("GetObjectHandle return null");
             return null;
         }    
     }
 
-    public async Task LoadObject(string name,T dist){
-        Debug.Log("loadObject");
-        var handle = Addressables.LoadAssetAsync<T>(name);
-        //yield return handle;    //ロード結果が出るまでreturnしない
-        await handle.Task;
-        if (handle.Status == AsyncOperationStatus.Succeeded){
-            Debug.Log("handle.status = succeeded");
-            dist = handle.Result;
-            //return handle.Result;
-        }else{
-            Debug.Log("handle.status = none");
-            dist = null;
-            //return null;
-        }
-        //yield return null;
-    }
+    // public async Task LoadObject(string name,T dist){
+    //     Debug.Log("loadObject");
+    //     var handle = Addressables.LoadAssetAsync<T>(name);
+    //     //yield return handle;    //ロード結果が出るまでreturnしない
+    //     await handle.Task;
+    //     if (handle.Status == AsyncOperationStatus.Succeeded){
+    //         Debug.Log("handle.status = succeeded");
+    //         dist = handle.Result;
+    //         //return handle.Result;
+    //     }else{
+    //         Debug.Log("handle.status = none");
+    //         dist = null;
+    //         //return null;
+    //     }
+    //     //yield return null;
+    // }
 
 	public bool ContainsKey(string key_name)
 	{
@@ -77,55 +76,48 @@ public class ResourcesLoader<T> where T : UnityEngine.Object
 
 //** 音声用ラッパー
 public class SoundPlayer{
+    private static ResourcesLoader<AudioClip> audioLoader = new ResourcesLoader<AudioClip>();
+    private static ResourcesLoader<GameObject> playerLoader = new ResourcesLoader<GameObject>();
     [HideInInspector]
     public static GameObject BGMPlayer,SEPlayer;
     private static AudioSource BGMAudioSource,SEAudioSource;
 
-    public static async Task PlayBGM(string bgmName,float volume,bool loop){
+    public static void LoadAllSounds(){
+        FlagManager.flagDictionary["loadAudio"] = false;
+        audioLoader.LoadAllObjects("Audio");
+        playerLoader.LoadAllObjects("AudioPlayer");
+        FlagManager.flagDictionary["loadAudio"] = true;
+    }
 
-        //** 音源ロード
-        var handle = Addressables.LoadAssetAsync<AudioClip>(bgmName);
-        await handle.Task;
-        if (handle.Status == AsyncOperationStatus.Succeeded){
-            AudioClip clip = handle.Result;
-            //** プレイヤーオブジェクト生成
-            var handle1 = Addressables.LoadAssetAsync<GameObject>("BGMPlayer");
-            await handle1.Task;
-            if (handle1.Status == AsyncOperationStatus.Succeeded){
-                BGMPlayer = GameObject.Instantiate(handle1.Result,new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
-                BGMAudioSource = BGMPlayer.GetComponent<AudioSource>();
-                BGMAudioSource.clip = clip;
-                BGMAudioSource.volume = volume;
-                BGMAudioSource.loop = loop;
-                BGMAudioSource.Play();
-                //シーン遷移してもプレイヤーを破棄しないようにする
-                Object.DontDestroyOnLoad(SoundPlayer.BGMPlayer);
-            }
+    public static bool PlayBGM(string bgmName,float volume,bool loop){
+
+        if(!audioLoader.ContainsKey(bgmName)){
+            return false;
         }
+
+        BGMPlayer = GameObject.Instantiate(playerLoader.GetObjectHandle("BGMPlayer"),new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
+        BGMAudioSource = BGMPlayer.GetComponent<AudioSource>();
+        BGMAudioSource.clip = audioLoader.GetObjectHandle(bgmName);
+        BGMAudioSource.volume = volume;
+        BGMAudioSource.loop = loop;
+        BGMAudioSource.Play();
+
+        Object.DontDestroyOnLoad(BGMPlayer);
+        return true;
 
     }
 
-    public static async Task PlaySE(string seName){
-
-        //** 音源ロード
-        var handle = Addressables.LoadAssetAsync<AudioClip>(seName);
-        await handle.Task;
-        if (handle.Status == AsyncOperationStatus.Succeeded){
-            //Debug.Log("SE音源ロード成功");
-            AudioClip clip = handle.Result;
-
-            //** プレイヤーオブジェクト生成
-            var handle1 = Addressables.LoadAssetAsync<GameObject>("SEPlayer");
-            await handle1.Task;
-            if (handle1.Status == AsyncOperationStatus.Succeeded){
-                //Debug.Log("SEPlayer生成成功");
-                SEPlayer = GameObject.Instantiate(handle1.Result,new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
-                SEAudioSource = SEPlayer.GetComponent<AudioSource>();
-            }
-
-            SEAudioSource.PlayOneShot(clip);
-
+    public static bool PlaySE(string seName){
+        if(!audioLoader.ContainsKey(seName)){
+            return false;
         }
+
+        SEPlayer = GameObject.Instantiate(playerLoader.GetObjectHandle("SEPlayer"),new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
+        SEAudioSource = SEPlayer.GetComponent<AudioSource>();
+        SEAudioSource.PlayOneShot(audioLoader.GetObjectHandle(seName));
+        
+        return true;
+
     }
 
     public static bool StopBGM(){

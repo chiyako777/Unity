@@ -97,6 +97,7 @@
      <Compile Include="Assets\Scripts\Title\TitleMenu.cs" />
      <Compile Include="Assets\Scripts\Util\CoroutineHandler.cs" />
      <Compile Include="Assets\Scripts\Util\JsonHelper.cs" />
+     <Compile Include="Assets\Scripts\Util\LoadingManager.cs" />
      <Compile Include="Assets\Scripts\Util\ResourcesLoader.cs" />
      <None Include="Assets\StaticData\bullet\Room_Test.txt" />
      <None Include="Assets\Shaders\PlaneTextrure.shader" />

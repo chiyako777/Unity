@@ -69,6 +69,8 @@ MonoBehaviour:
     - Bullet
     - Other
     - Sprite
+    - Audio
+    - AudioPlayer
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 34ea42089330b2d4b9d724e8f7db7451, type: 2}

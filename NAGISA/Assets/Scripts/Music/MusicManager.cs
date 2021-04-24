@@ -10,7 +10,18 @@ public class MusicManager : MonoBehaviour
 
     void Start()
     {
-        //** シーンBGM
+    }
+
+    void Update()
+    {
+        if(FlagManager.flagDictionary.ContainsKey("loadAudio") && (bool)FlagManager.flagDictionary["loadAudio"]){
+            PlayBGM();
+            ClearSE();
+        }
+    }
+
+    //** BGM再生
+    private void PlayBGM(){
         if(!SoundPlayer.IsPlayingBGM(BGM)) {
             //Debug.Log("Music Manager : " + BGM);
             
@@ -27,13 +38,8 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        ClearSE();
-    }
-
     //** 再生終わったSEを消す
-    private static void ClearSE(){
+    private void ClearSE(){
         GameObject[] oldPlayer = GameObject.FindGameObjectsWithTag("SEPlayer");
         for(int i=0; i<oldPlayer.Length; i++){
             if(!oldPlayer[i].GetComponent<AudioSource>().isPlaying){

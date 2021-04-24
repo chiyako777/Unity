@@ -35,19 +35,20 @@ MonoBehaviour:
     m_Address: bnagisa_back_walk1
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: 022682fc9756a5647aafead84a441129, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 022682fc9756a5647aafead84a441129, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 038f9d4fdcadc4d42a0ef5ae6609b9b6
     m_Address: sayaka_back_walk2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 038f9d4fdcadc4d42a0ef5ae6609b9b6, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 038f9d4fdcadc4d42a0ef5ae6609b9b6, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 063956547e9d3e1489366b598505ffdf
     m_Address: "\u91CE\u826F\u732B\u306F\u5B87\u5B99\u3092\u76EE\u6307\u3057\u305F_2"
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Audio
     m_MainAsset: {fileID: 8300000, guid: 063956547e9d3e1489366b598505ffdf, type: 3}
     m_TargetAsset: {fileID: 8300000, guid: 063956547e9d3e1489366b598505ffdf, type: 3}
   - m_GUID: 0bd1505da75c90a489878ca7e356442c
@@ -55,21 +56,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 0bd1505da75c90a489878ca7e356442c, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 0bd1505da75c90a489878ca7e356442c, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 112d746126a28624c85c1cc41322fe0b
     m_Address: obj_bullet
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 112d746126a28624c85c1cc41322fe0b, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 112d746126a28624c85c1cc41322fe0b, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 13272a5ed45f7b741bcdad23626a024b
     m_Address: homing_desc
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: 13272a5ed45f7b741bcdad23626a024b, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 13272a5ed45f7b741bcdad23626a024b, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 147a46c7e5bc60146a63dea2eab5c86a
     m_Address: glossy_bubbles_pink
     m_ReadOnly: 0
@@ -82,91 +83,91 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 14f700939d0606345a2671e1fbb9b990, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 14f700939d0606345a2671e1fbb9b990, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 150bcb4a0f5e8f14798835ec41cb0424
     m_Address: sayaka_front_walk1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 150bcb4a0f5e8f14798835ec41cb0424, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 150bcb4a0f5e8f14798835ec41cb0424, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 1697bc901e20fcc49989098deea0919a
     m_Address: lusagi_back_walk1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 1697bc901e20fcc49989098deea0919a, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 1697bc901e20fcc49989098deea0919a, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 1c8819afa1bca89459f387e6ccd19a1e
     m_Address: reflec_weapon
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: 1c8819afa1bca89459f387e6ccd19a1e, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 1c8819afa1bca89459f387e6ccd19a1e, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 1e2a544bf76c3e54b84e8624cbc2cbdb
     m_Address: walk_left
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: 1e2a544bf76c3e54b84e8624cbc2cbdb, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: 1e2a544bf76c3e54b84e8624cbc2cbdb, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 2106481f7542d3e40bc342f4107baaa8
     m_Address: background_test
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 2106481f7542d3e40bc342f4107baaa8, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 2106481f7542d3e40bc342f4107baaa8, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 21224a20cd62c91479374abb5378424a
     m_Address: test_bitem
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: 21224a20cd62c91479374abb5378424a, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 21224a20cd62c91479374abb5378424a, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 2246a18667444424298f663ced0cd800
     m_Address: stop_front
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: 2246a18667444424298f663ced0cd800, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: 2246a18667444424298f663ced0cd800, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 22ba44b53cff9d742b6dfeb53adc91b0
     m_Address: test_nagisa
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: 22ba44b53cff9d742b6dfeb53adc91b0, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: 22ba44b53cff9d742b6dfeb53adc91b0, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 279e20e91b58fae468d0ec760ed5b8fd
     m_Address: sayaka_right_walk1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 279e20e91b58fae468d0ec760ed5b8fd, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 279e20e91b58fae468d0ec760ed5b8fd, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 2b6012410cec3914290499d673ba9d3f
     m_Address: walk_back
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: 2b6012410cec3914290499d673ba9d3f, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: 2b6012410cec3914290499d673ba9d3f, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 2c0e83efd63685f4a9664c8042976db0
     m_Address: lusagi_right
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 2c0e83efd63685f4a9664c8042976db0, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 2c0e83efd63685f4a9664c8042976db0, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 2d23172af0b864441a67b8ad27058d8e
     m_Address: walk_front
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: 2d23172af0b864441a67b8ad27058d8e, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: 2d23172af0b864441a67b8ad27058d8e, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 2d2e23a580a3ad1449da93afa1f50b38
     m_Address: nagisa_left_walk1
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: 2d2e23a580a3ad1449da93afa1f50b38, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: 2d2e23a580a3ad1449da93afa1f50b38, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 348e318725a562f42896d8f888364e59
     m_Address: glossy_bubbles_marine
     m_ReadOnly: 0
@@ -179,15 +180,15 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 36ff79a56b6580948b9b033870116b4a, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 36ff79a56b6580948b9b033870116b4a, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 3a53ef7c7baf8db4f8faab6fc31be342
     m_Address: lusagi_front_walk1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 3a53ef7c7baf8db4f8faab6fc31be342, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 3a53ef7c7baf8db4f8faab6fc31be342, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 3cb841a0341de334f8b72d90c240b02e
     m_Address: glossy_bubbles_lemon
     m_ReadOnly: 0
@@ -212,7 +213,8 @@ MonoBehaviour:
   - m_GUID: 409051c89385d62418f44c00973386d7
     m_Address: "\u30B9\u30C6\u30E9\u3068\u5854\u306E\u7269\u8A9E"
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Audio
     m_MainAsset: {fileID: 8300000, guid: 409051c89385d62418f44c00973386d7, type: 3}
     m_TargetAsset: {fileID: 8300000, guid: 409051c89385d62418f44c00973386d7, type: 3}
   - m_GUID: 428e281b73262834eb83f62056d18870
@@ -227,50 +229,51 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 44539a42dcd96a54db526c2c7a85731a, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 44539a42dcd96a54db526c2c7a85731a, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 463302df51f6c92438c8671393d06145
     m_Address: sayaka_right_walk2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 463302df51f6c92438c8671393d06145, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 463302df51f6c92438c8671393d06145, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 465b3c5a1f4e2f547bef31234a48d3f6
     m_Address: enemy_life
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: 465b3c5a1f4e2f547bef31234a48d3f6, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 465b3c5a1f4e2f547bef31234a48d3f6, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 4b74de4badbb7cd449d6a391e96f0bdb
     m_Address: stop_back
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: 4b74de4badbb7cd449d6a391e96f0bdb, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: 4b74de4badbb7cd449d6a391e96f0bdb, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 53b0c63ae2d26404f9163915d99ace2d
     m_Address: test_bullet2
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: 53b0c63ae2d26404f9163915d99ace2d, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 53b0c63ae2d26404f9163915d99ace2d, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 542375cb6a651b741920fedb32f83cf7
     m_Address: nagisa_back
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 542375cb6a651b741920fedb32f83cf7, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 542375cb6a651b741920fedb32f83cf7, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 5540697fadad77d4d8b009dbed2fe31d
     m_Address: 1024768
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: 5540697fadad77d4d8b009dbed2fe31d, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 5540697fadad77d4d8b009dbed2fe31d, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 558c5f982d67e374d9b78a38669e8f44
     m_Address: se_maoudamashii_system21
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Audio
     m_MainAsset: {fileID: 8300000, guid: 558c5f982d67e374d9b78a38669e8f44, type: 3}
     m_TargetAsset: {fileID: 8300000, guid: 558c5f982d67e374d9b78a38669e8f44, type: 3}
   - m_GUID: 56791356b0d52ef4db91a66ad2461f7c
@@ -278,8 +281,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 56791356b0d52ef4db91a66ad2461f7c, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 56791356b0d52ef4db91a66ad2461f7c, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 57e0f5a5b0939c242a34a3230c2a4a1d
     m_Address: test_bullet
     m_ReadOnly: 0
@@ -292,20 +295,20 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 5943436a0b9576647837bff3bb6c550f, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 5943436a0b9576647837bff3bb6c550f, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 5b54d7f0b2b6b394b9caf8df0ced28f6
     m_Address: lusagi
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 9100000, guid: 5b54d7f0b2b6b394b9caf8df0ced28f6, type: 2}
-    m_TargetAsset: {fileID: 9100000, guid: 5b54d7f0b2b6b394b9caf8df0ced28f6, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 5fe120c517259fa4ea05f7bcc4870dee
     m_Address: walk_right
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: 5fe120c517259fa4ea05f7bcc4870dee, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: 5fe120c517259fa4ea05f7bcc4870dee, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 610bf835d1bfa2747b3fe419bf431793
     m_Address: bullet_controller
     m_ReadOnly: 0
@@ -317,15 +320,15 @@ MonoBehaviour:
     m_Address: stop_front
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: 634aa7654169c80499ce5bc171e9e346, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: 634aa7654169c80499ce5bc171e9e346, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 6378cbe9920c6cd438cb3f1c964de98e
     m_Address: sayaka_left_walk2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 6378cbe9920c6cd438cb3f1c964de98e, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 6378cbe9920c6cd438cb3f1c964de98e, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 67ae1eacb4e31c1499dfb2575d488565
     m_Address: TestSpell2
     m_ReadOnly: 0
@@ -338,15 +341,15 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 681958ad730e3504899fd280dca7edd8, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 681958ad730e3504899fd280dca7edd8, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 683caf1b6701e8649a1ac0fcd20ba25d
     m_Address: sayaka_back_walk1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 683caf1b6701e8649a1ac0fcd20ba25d, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 683caf1b6701e8649a1ac0fcd20ba25d, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 6951b74de956715459d88114d195b289
     m_Address: player_shot
     m_ReadOnly: 0
@@ -358,57 +361,54 @@ MonoBehaviour:
     m_Address: TilePalette
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 8348163824759316206, guid: 6960572f3e7a7c5458ca3ad70f211a98,
-      type: 3}
-    m_TargetAsset: {fileID: 8348163824759316206, guid: 6960572f3e7a7c5458ca3ad70f211a98,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 6993dc7ff3f415544a9098d851d4a1d4
     m_Address: bnagisa_back_walk2
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: 6993dc7ff3f415544a9098d851d4a1d4, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 6993dc7ff3f415544a9098d851d4a1d4, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 69acc4044f8859341af8d4ffd569cd3d
     m_Address: lusagi_front
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 69acc4044f8859341af8d4ffd569cd3d, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 69acc4044f8859341af8d4ffd569cd3d, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 7168ab80b52b3de4f85969575877e9e3
     m_Address: stop_right
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: 7168ab80b52b3de4f85969575877e9e3, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: 7168ab80b52b3de4f85969575877e9e3, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 72926c67b13637b48bae76af28d2b1e9
     m_Address: nagisa_front
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 72926c67b13637b48bae76af28d2b1e9, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 72926c67b13637b48bae76af28d2b1e9, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 72d1f7db5776b0041942df6c20e984a2
     m_Address: lusagi_back
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 72d1f7db5776b0041942df6c20e984a2, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 72d1f7db5776b0041942df6c20e984a2, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 78cbc92d018fa4242bc42e713a68f31a
     m_Address: SEPlayer
     m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 8464778327930841198, guid: 78cbc92d018fa4242bc42e713a68f31a,
-      type: 3}
-    m_TargetAsset: {fileID: 8464778327930841198, guid: 78cbc92d018fa4242bc42e713a68f31a,
-      type: 3}
+    m_SerializedLabels:
+    - AudioPlayer
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 7992b05be00575f4dad9a584f53e3b51
     m_Address: test_bomb
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: 7992b05be00575f4dad9a584f53e3b51, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 7992b05be00575f4dad9a584f53e3b51, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 7b721b4ca1889b94eb8963339eea3f2b
     m_Address: homing_shot
     m_ReadOnly: 0
@@ -421,8 +421,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 7cfac29271711964fbe4bca16e288881, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 7cfac29271711964fbe4bca16e288881, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 84c34412fa8bcf24b96262b60a1b4596
     m_Address: player_move_right
     m_ReadOnly: 0
@@ -434,21 +434,21 @@ MonoBehaviour:
     m_Address: test_bullet_bomb
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: 8b34ddaad03ab784f8a2046dd8a352c7, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 8b34ddaad03ab784f8a2046dd8a352c7, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 8bd96d8a376f9e84aa6c33f94276344b
     m_Address: "512\u30B9\u30D7\u30E9\u30A4\u30C8"
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: 8bd96d8a376f9e84aa6c33f94276344b, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 8bd96d8a376f9e84aa6c33f94276344b, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 900767fdb8607c544b1497da79b02fd2
     m_Address: obj_conv
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 900767fdb8607c544b1497da79b02fd2, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 900767fdb8607c544b1497da79b02fd2, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 90f37082fe9ba4145baac2135d241f28
     m_Address: TestSpell
     m_ReadOnly: 0
@@ -461,12 +461,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 934fdafc11928694db9fdebbce61ecc0, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 934fdafc11928694db9fdebbce61ecc0, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 96835d5dda6fc1543b0d78ba80ac72b5
     m_Address: "10\u2103_2"
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Audio
     m_MainAsset: {fileID: 8300000, guid: 96835d5dda6fc1543b0d78ba80ac72b5, type: 3}
     m_TargetAsset: {fileID: 8300000, guid: 96835d5dda6fc1543b0d78ba80ac72b5, type: 3}
   - m_GUID: 9738ef726f244244db3af6ae7664f594
@@ -474,39 +475,35 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Other
-    m_MainAsset: {fileID: 1170025705829076077, guid: 9738ef726f244244db3af6ae7664f594,
-      type: 3}
-    m_TargetAsset: {fileID: 1170025705829076077, guid: 9738ef726f244244db3af6ae7664f594,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 974ba70507df0954c8fd6b27695c896b
     m_Address: nagisa_right_walk2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 974ba70507df0954c8fd6b27695c896b, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 974ba70507df0954c8fd6b27695c896b, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 9eae51e6b3840084f8e8606aeeb7e4f7
     m_Address: nagisa_left_walk2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 9eae51e6b3840084f8e8606aeeb7e4f7, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 9eae51e6b3840084f8e8606aeeb7e4f7, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 9f848f631fccc9b43a9569f833dde21f
     m_Address: lusagi_left_walk1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: 9f848f631fccc9b43a9569f833dde21f, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: 9f848f631fccc9b43a9569f833dde21f, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 9f9994c6749cc1146b72107a782bb203
     m_Address: nagisa_tip
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 4343727234628468602, guid: 9f9994c6749cc1146b72107a782bb203,
-      type: 2}
-    m_TargetAsset: {fileID: 4343727234628468602, guid: 9f9994c6749cc1146b72107a782bb203,
-      type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: a00d482a544d26e479189dcbfc5f4c60
     m_Address: test_bullet2
     m_ReadOnly: 0
@@ -518,8 +515,8 @@ MonoBehaviour:
     m_Address: bnagisa_back
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: a03dc070d5165e44b9304e45b8b0d2c2, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: a03dc070d5165e44b9304e45b8b0d2c2, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: a061d08947881c040972c1e1bab14744
     m_Address: Radient_Laser
     m_ReadOnly: 0
@@ -531,30 +528,28 @@ MonoBehaviour:
     m_Address: walk_right
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: a26dce31801c03c4da8c2d73b5305a5a, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: a26dce31801c03c4da8c2d73b5305a5a, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: a3940009090148f419d49c9bebc33136
     m_Address: lusagi_tip
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 4343727234628468602, guid: a3940009090148f419d49c9bebc33136,
-      type: 2}
-    m_TargetAsset: {fileID: 4343727234628468602, guid: a3940009090148f419d49c9bebc33136,
-      type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: a7ffd496c2799d14aac2a166491408ae
     m_Address: lusagi_back_walk2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: a7ffd496c2799d14aac2a166491408ae, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: a7ffd496c2799d14aac2a166491408ae, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: a94e999096e2816499b17efad6f19064
     m_Address: nagisa_right_walk1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: a94e999096e2816499b17efad6f19064, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: a94e999096e2816499b17efad6f19064, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: a9c890eeb3281d94c8f3fbac61497c19
     m_Address: life_item
     m_ReadOnly: 0
@@ -566,53 +561,53 @@ MonoBehaviour:
     m_Address: stop_left
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: aa78cd3471b626249bc1fc0856a4523c, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: aa78cd3471b626249bc1fc0856a4523c, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: aa930da2fe4a6674f9e5402ca115e574
     m_Address: test_life
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: aa930da2fe4a6674f9e5402ca115e574, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: aa930da2fe4a6674f9e5402ca115e574, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: aad508077d2cecb4cb89d5eadfac8bea
     m_Address: test_litem
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: aad508077d2cecb4cb89d5eadfac8bea, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: aad508077d2cecb4cb89d5eadfac8bea, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: aec312f6037e04d4ca2c0b34c3dccf15
     m_Address: walk_left
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: aec312f6037e04d4ca2c0b34c3dccf15, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: aec312f6037e04d4ca2c0b34c3dccf15, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: afc1c91ec5dd52941a9274e736b7b3a6
     m_Address: usagi_chabudai
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: afc1c91ec5dd52941a9274e736b7b3a6, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: afc1c91ec5dd52941a9274e736b7b3a6, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: b13ac4b238c42f6439cefa6f7eb28495
     m_Address: walk_front
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: b13ac4b238c42f6439cefa6f7eb28495, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: b13ac4b238c42f6439cefa6f7eb28495, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: b26df00d545a9f245a1dc14f1d0a9025
     m_Address: logo_title
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: b26df00d545a9f245a1dc14f1d0a9025, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: b26df00d545a9f245a1dc14f1d0a9025, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: b6ab05869d5c52641a9a1dfd7ada3aad
     m_Address: nagisa_left_walk1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: b6ab05869d5c52641a9a1dfd7ada3aad, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: b6ab05869d5c52641a9a1dfd7ada3aad, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: b77abadc4a9e0534e9145f29842b8cc9
     m_Address: power_item
     m_ReadOnly: 0
@@ -624,34 +619,34 @@ MonoBehaviour:
     m_Address: "\u7814\u7A76\u5BA4\u80CC\u666F"
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: b9a843adb2575504294f47e13f232bb9, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: b9a843adb2575504294f47e13f232bb9, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: ba4226f6e0c7aea45835eb9b0887797d
     m_Address: nagisa_front_walk1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: ba4226f6e0c7aea45835eb9b0887797d, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: ba4226f6e0c7aea45835eb9b0887797d, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: ba44ae027dfb690499181e37736d1d45
     m_Address: lusagi_right_walk2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: ba44ae027dfb690499181e37736d1d45, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: ba44ae027dfb690499181e37736d1d45, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: baa09d6d82b780346ba720c3da7fd840
     m_Address: test_warpArea
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: baa09d6d82b780346ba720c3da7fd840, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: baa09d6d82b780346ba720c3da7fd840, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: bbbd29b869e93df439d7c09af99bb252
     m_Address: walk_back
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: bbbd29b869e93df439d7c09af99bb252, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: bbbd29b869e93df439d7c09af99bb252, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: bd8909c43887b744d90c2cf1df069747
     m_Address: enemy_defeat_effect
     m_ReadOnly: 0
@@ -664,8 +659,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: c4b411de40f550a498b387241a67d6ec, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: c4b411de40f550a498b387241a67d6ec, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: c92a3a2823d92eb40a146f0a6f029dda
     m_Address: TestSpell6
     m_ReadOnly: 0
@@ -677,14 +672,14 @@ MonoBehaviour:
     m_Address: test_pitem
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: cdf70462c5eeeaa4c86ec238b7e7865a, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: cdf70462c5eeeaa4c86ec238b7e7865a, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: d09754291fd221a4eaedd1bf04b440e5
     m_Address: tekitou
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: d09754291fd221a4eaedd1bf04b440e5, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: d09754291fd221a4eaedd1bf04b440e5, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: d1092e4e23be75341826a7fad07a4262
     m_Address: bomb_item
     m_ReadOnly: 0
@@ -697,23 +692,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: d17610adb43329a45be2077c69d228c3, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: d17610adb43329a45be2077c69d228c3, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: d1aff6f5a359a94418f4f9964c5b7846
     m_Address: tekitou
     m_ReadOnly: 0
     m_SerializedLabels:
     - Bullet
-    m_MainAsset: {fileID: 1116586240359975181, guid: d1aff6f5a359a94418f4f9964c5b7846,
-      type: 3}
-    m_TargetAsset: {fileID: 1116586240359975181, guid: d1aff6f5a359a94418f4f9964c5b7846,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: d2cf75909bbf77f4fabd7c84c0991052
     m_Address: test_bullet
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: d2cf75909bbf77f4fabd7c84c0991052, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: d2cf75909bbf77f4fabd7c84c0991052, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: d3838d247443fe24db6e7c7844daa6d0
     m_Address: player_move_center
     m_ReadOnly: 0
@@ -726,20 +719,20 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: d5e39ac4ada0cc4458868d267f67f30b, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: d5e39ac4ada0cc4458868d267f67f30b, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: d62b57c148a29164294d7fa62143c63a
     m_Address: homing_shot
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: d62b57c148a29164294d7fa62143c63a, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: d62b57c148a29164294d7fa62143c63a, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: db50a8904455d5b459dde88eec78e728
     m_Address: light_orb
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: db50a8904455d5b459dde88eec78e728, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: db50a8904455d5b459dde88eec78e728, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: dcedc135721b41b4b9d7dbf13479aefe
     m_Address: reflec_shot
     m_ReadOnly: 0
@@ -759,34 +752,34 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: e589dcf98eb29884190c96e5be9c83ae, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: e589dcf98eb29884190c96e5be9c83ae, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: e8e4a5cfbac34ae4ea2b8c799ed05e67
     m_Address: stop_right
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: e8e4a5cfbac34ae4ea2b8c799ed05e67, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: e8e4a5cfbac34ae4ea2b8c799ed05e67, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: e90179db6a70747408722d482309228a
     m_Address: sayaka_right
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: e90179db6a70747408722d482309228a, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: e90179db6a70747408722d482309228a, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: e9cc754106e95154799dccc8f6ea9f35
     m_Address: nagisa
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 9100000, guid: e9cc754106e95154799dccc8f6ea9f35, type: 2}
-    m_TargetAsset: {fileID: 9100000, guid: e9cc754106e95154799dccc8f6ea9f35, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: eb09960bbc702d643a8f1e042759aa49
     m_Address: "usagi_room_background(\u9014\u4E2D)"
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: eb09960bbc702d643a8f1e042759aa49, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: eb09960bbc702d643a8f1e042759aa49, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: eb38a30357a9fa04d9212b4da7bf8e9f
     m_Address: Notice_Laser
     m_ReadOnly: 0
@@ -797,25 +790,24 @@ MonoBehaviour:
   - m_GUID: ebf322c078ba56e488efc41f0bd94b0f
     m_Address: BGMPlayer
     m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 1111094282397802954, guid: ebf322c078ba56e488efc41f0bd94b0f,
-      type: 3}
-    m_TargetAsset: {fileID: 1111094282397802954, guid: ebf322c078ba56e488efc41f0bd94b0f,
-      type: 3}
+    m_SerializedLabels:
+    - AudioPlayer
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: ed0718d93644b514f8b387e87a6c0fee
     m_Address: tekitou
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: ed0718d93644b514f8b387e87a6c0fee, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: ed0718d93644b514f8b387e87a6c0fee, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: efbeb63b9c3dceb468483a67addfa73c
     m_Address: nagisa_back_walk1
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: efbeb63b9c3dceb468483a67addfa73c, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: efbeb63b9c3dceb468483a67addfa73c, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: f10d943c9ceb03447944aedfd7214c8a
     m_Address: TestSpell5
     m_ReadOnly: 0
@@ -828,8 +820,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: f1aa9e9aac9703a44bd702eac46d1ade, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: f1aa9e9aac9703a44bd702eac46d1ade, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: f2881d92513e0534eaced7c01497a589
     m_Address: test_warpArea
     m_ReadOnly: 0
@@ -842,26 +834,26 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Sprite
-    m_MainAsset: {fileID: 2800000, guid: f2fbd8a3e359c9441863b52a514f27aa, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: f2fbd8a3e359c9441863b52a514f27aa, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: fa9406f82edcbea47bb7733fc845f79c
     m_Address: negishi001
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 2800000, guid: fa9406f82edcbea47bb7733fc845f79c, type: 3}
-    m_TargetAsset: {fileID: 2800000, guid: fa9406f82edcbea47bb7733fc845f79c, type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: ff06b23604b5fc34cabba119b51a41b9
     m_Address: stop_back
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: ff06b23604b5fc34cabba119b51a41b9, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: ff06b23604b5fc34cabba119b51a41b9, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: fffe6a16ec237b442bfb5b4b3b6f1ba6
     m_Address: stop_left
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 7400000, guid: fffe6a16ec237b442bfb5b4b3b6f1ba6, type: 2}
-    m_TargetAsset: {fileID: 7400000, guid: fffe6a16ec237b442bfb5b4b3b6f1ba6, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 7157b9b7470e86d4c80b30586f382d13, type: 2}
   m_SchemaSet:
