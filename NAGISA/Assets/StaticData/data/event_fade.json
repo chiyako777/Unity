@@ -1,4 +1,26 @@
 [
-    {"id":1,"color":[0.0,0.0,0.0,1.0],"text":"～ウサギ宿題中～","pattern":1,"time":2.0},
-    {"id":2,"color":[0.0,0.0,0.0,1.0],"text":"～少女祈祷中～","pattern":1,"time":2.0}
+    {
+        "id":1,
+        "color":[0.0,0.0,0.0,1.0],
+        "text":"～ウサギ宿題中～",
+        "pattern":1,
+        "time":2.0,
+        "windowUI":"fade_window"
+    },
+    {
+        "id":2,
+        "color":[0.0,0.0,0.0,1.0],
+        "text":"～少女祈祷中～",
+        "pattern":1,
+        "time":2.0,
+        "windowUI":"fade_window"
+    },
+    {
+        "id":3,
+        "color":[1.0,1.0,1.0,1.0],
+        "text":"Loading・・・",
+        "pattern":1,
+        "time":1.0,
+        "windowUI":"Loading_window"
+    }
 ]

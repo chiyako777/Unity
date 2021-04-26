@@ -11,4 +11,5 @@ public class EventFadeData
     public string text;
     public int pattern;
     public float time;
+    public string windowUI;
 }

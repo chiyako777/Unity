@@ -35,8 +35,8 @@ public class ResourcesLoader<T> where T : UnityEngine.Object
     }
 
     public T GetObjectHandle(string name){
-        Debug.Log("ResourcesLoader:GetObjectHandle : name = " + name);
-        Debug.Log("resourcesHandles.Count = " + resourcesHandles.Count);
+        //Debug.Log("ResourcesLoader:GetObjectHandle : name = " + name);
+        //Debug.Log("resourcesHandles.Count = " + resourcesHandles.Count);
         if(resourcesHandles.ContainsKey(name)){
             //Debug.Log("返却 : " + resourcesHandles[name]);
             return resourcesHandles[name];

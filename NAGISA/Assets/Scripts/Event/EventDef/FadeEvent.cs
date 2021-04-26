@@ -7,11 +7,8 @@ using UnityEngine.UI;
 public class FadeEvent : MonoBehaviour
 {
     //** UI
-    [SerializeField]
     private Canvas window;
-    [SerializeField]
     private Image fadeImage;
-    [SerializeField]
     private Text fadeText;
 
     //** 暗転データ
@@ -22,12 +19,11 @@ public class FadeEvent : MonoBehaviour
 
     private int status;     //1:フェードイン 2:暗転中 3:フェードアウト
 
-    //private const int 
     private const float lerpStep = 0.016f;
 
     void Start()
     {
-        window.gameObject.SetActive(false);
+        //window.gameObject.SetActive(false);
     }
 
     public IEnumerator OnAction(){
@@ -37,7 +33,7 @@ public class FadeEvent : MonoBehaviour
         status = 1;
         yield return null;
 
-        //** 暗転処理(Pattern = 1)
+        //** 暗転処理(Pattern = 1):透明度変化による演出
         if(fadePattern == 1){
 
             if(status == 1){
@@ -67,9 +63,15 @@ public class FadeEvent : MonoBehaviour
             }
 
         }
+        
+        //** 暗転処理(Pattern = 2):画面端からのフェードイン・アウト演出
+        if(fadePattern == 2){
+
+        }
 
         //** 終了処理
         window.gameObject.SetActive(false);
+        Destroy(window.gameObject);
         yield break;
         
     }
@@ -93,6 +95,10 @@ public class FadeEvent : MonoBehaviour
             fadeMessage = ev.text;
             fadePattern = ev.pattern;
             fadeTime = ev.time;
+            GameObject fadeUI = Instantiate(SceneCustomManager.gameObjectLoader.GetObjectHandle(ev.windowUI),new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
+            window = fadeUI.GetComponent<Canvas>();
+            fadeImage = fadeUI.GetComponentInChildren<Image>();
+            fadeText = fadeUI.GetComponentInChildren<Text>();
         }
 
     }
@@ -107,3 +113,4 @@ public class FadeEvent : MonoBehaviour
 
 
 }
+

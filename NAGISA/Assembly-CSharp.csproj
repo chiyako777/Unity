@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Fade\Scripts\FadeImage.cs" />
      <Compile Include="Assets\Scripts\(NotUsed)MapObject\MOConversation.cs" />
      <Compile Include="Assets\Scripts\(NotUsed)MapObject\MOTransition.cs" />
      <Compile Include="Assets\Scripts\(NotUsed)MapObject\MapObjectBase.cs" />
@@ -73,6 +74,9 @@
      <Compile Include="Assets\Scripts\Data\EventTransData.cs" />
      <Compile Include="Assets\Scripts\Data\RoomData.cs" />
      <Compile Include="Assets\Scripts\Data\SaveData.cs" />
+     <Compile Include="Assets\Scripts\Effect\Fade\Fade.cs" />
+     <Compile Include="Assets\Scripts\Effect\Fade\FadeUI.cs" />
+     <Compile Include="Assets\Scripts\Effect\Fade\IFade.cs" />
      <Compile Include="Assets\Scripts\Event\EventDef\ConversationEvent.cs" />
      <Compile Include="Assets\Scripts\Event\EventDef\FadeEvent.cs" />
      <Compile Include="Assets\Scripts\Event\EventDef\StoryEvent.cs" />
@@ -87,6 +91,7 @@
      <Compile Include="Assets\Scripts\Menu\ItemMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\MenuBase.cs" />
      <Compile Include="Assets\Scripts\Menu\SaveMenu.cs" />
+     <Compile Include="Assets\Scripts\Menu\TitleMenu.cs" />
      <Compile Include="Assets\Scripts\Mibunrui\FPSCounter.cs" />
      <Compile Include="Assets\Scripts\Mibunrui\FlagManager.cs" />
      <Compile Include="Assets\Scripts\Mibunrui\InitialManager.cs" />
@@ -94,13 +99,14 @@
      <Compile Include="Assets\Scripts\Mibunrui\TimelineManager.cs" />
      <Compile Include="Assets\Scripts\Music\MusicManager.cs" />
      <Compile Include="Assets\Scripts\SpellPracController.cs" />
-     <Compile Include="Assets\Scripts\Title\TitleMenu.cs" />
      <Compile Include="Assets\Scripts\Util\CoroutineHandler.cs" />
      <Compile Include="Assets\Scripts\Util\JsonHelper.cs" />
      <Compile Include="Assets\Scripts\Util\LoadingManager.cs" />
      <Compile Include="Assets\Scripts\Util\ResourcesLoader.cs" />
      <None Include="Assets\StaticData\bullet\Room_Test.txt" />
-     <None Include="Assets\Shaders\PlaneTextrure.shader" />
+     <None Include="Assets\Fade\Materials\UI-Fade-Cutout.shader" />
+     <None Include="Assets\Shaders\UI-Mask.shader" />
+     <None Include="Assets\Fade\Materials\UI-Fade-Alpha.shader" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.12f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

@@ -15,7 +15,9 @@ public class SceneCustomManager : MonoBehaviour
         gameObjectLoader.LoadAllObjects("Other","loadSceneObject");
         spriteLoader.LoadAllObjects("Sprite","loadSceneSprite");
         //** フラグ初期化
-        FlagManager.flagDictionary["coroutine"] = false;   
+        FlagManager.flagDictionary["coroutine"] = false;
+
+        //** ローディング演出開始
 
     }
 
