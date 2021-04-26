@@ -19,8 +19,8 @@
         "id":3,
         "color":[1.0,1.0,1.0,1.0],
         "text":"Loading・・・",
-        "pattern":1,
-        "time":1.0,
+        "pattern":2,
+        "time":1.5,
         "windowUI":"Loading_window"
     }
 ]

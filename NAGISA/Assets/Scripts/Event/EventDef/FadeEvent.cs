@@ -64,9 +64,12 @@ public class FadeEvent : MonoBehaviour
 
         }
         
-        //** 暗転処理(Pattern = 2):画面端からのフェードイン・アウト演出
+        //** 暗転処理(Pattern = 2):ルール画像によるフェード演出
         if(fadePattern == 2){
-
+            Fade fade = window.gameObject.GetComponentInChildren<Fade>();
+            yield return fade.FadeOut(fadeTime,null);   //UIがだんだんかぶさる
+            yield return fade.FadeIn(fadeTime,null);    //UIがだんだん掃ける
+            Debug.Log("Fade終了");
         }
 
         //** 終了処理
@@ -99,6 +102,7 @@ public class FadeEvent : MonoBehaviour
             window = fadeUI.GetComponent<Canvas>();
             fadeImage = fadeUI.GetComponentInChildren<Image>();
             fadeText = fadeUI.GetComponentInChildren<Text>();
+            //Debug.Log("window = " + window + " fadeImage = " + fadeImage + " fadeText = " + fadeText);
         }
 
     }

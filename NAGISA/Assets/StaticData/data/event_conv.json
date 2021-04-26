@@ -40,5 +40,16 @@
             "nagisa_front",
             "nagisa_front"
         ]
+    },
+    {"id":3,
+        "messages":[
+            "Test",
+            "Test_"
+        ],
+        "graphics":[
+            "nagisa_front",
+            "nagisa_front"
+        ]
     }
+
 ]

@@ -47,8 +47,12 @@ public class Fade : MonoBehaviour
 		fade.Range = cutoutRange;
 	}
 
+	//** マスクがだんだんかぶさっていく(cutoutRangeは1⇒0に遷移)
 	IEnumerator FadeoutCoroutine (float time, System.Action action)
 	{
+		cutoutRange = 1;	//Added:単発で動かせるよう、初期値セット
+
+		Debug.Log("FadeOutCoroutine cutoutRange = " + cutoutRange);
 		float endTime = Time.timeSinceLevelLoad + time * (cutoutRange);
 
 		var endFrame = new WaitForEndOfFrame ();
@@ -56,6 +60,7 @@ public class Fade : MonoBehaviour
 		while (Time.timeSinceLevelLoad <= endTime) {
 			cutoutRange = (endTime - Time.timeSinceLevelLoad) / time;
 			fade.Range = cutoutRange;
+			//Debug.Log("Time.timeSinceLevelLoad = " + Time.timeSinceLevelLoad + " endTime = " + endTime + " cutoutRange = " + cutoutRange);
 			yield return endFrame;
 		}
 		cutoutRange = 0;
@@ -66,8 +71,12 @@ public class Fade : MonoBehaviour
 		}
 	}
 
+	//** マスクがだんだん掃けていく(cutoutRangeは0⇒1に遷移)
 	IEnumerator FadeinCoroutine (float time, System.Action action)
 	{
+		cutoutRange = 0;	//Added:単発で動かせるよう、初期値セット
+
+		Debug.Log("FadeInCoroutine");
 		float endTime = Time.timeSinceLevelLoad + time * (1 - cutoutRange);
 		
 		var endFrame = new WaitForEndOfFrame ();
@@ -75,12 +84,15 @@ public class Fade : MonoBehaviour
 		while (Time.timeSinceLevelLoad <= endTime) {
 			cutoutRange = 1 - ((endTime - Time.timeSinceLevelLoad) / time);
 			fade.Range = cutoutRange;
+			//Debug.Log("Time.timeSinceLevelLoad = " + Time.timeSinceLevelLoad + " endTime = " + endTime + " cutoutRange = " + cutoutRange);
 			yield return endFrame;
 		}
 		cutoutRange = 1;
 		fade.Range = cutoutRange;
 
 		if (action != null) {
+			Debug.Log("FadeInCoroutine : NextAction!");
+			//action ();
 			action ();
 		}
 	}
