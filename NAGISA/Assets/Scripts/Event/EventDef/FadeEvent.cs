@@ -17,24 +17,23 @@ public class FadeEvent : MonoBehaviour
     private int fadePattern;
     private float fadeTime;
 
-    private int status;     //1:フェードイン 2:暗転中 3:フェードアウト
-
-    private const float lerpStep = 0.016f;
+    //** const
+    private const float lerpStep = 0.016f;      //pattern=1:透明度変化係数
 
     void Start()
     {
-        //window.gameObject.SetActive(false);
     }
 
     public IEnumerator OnAction(){
 
         //** 初期化
         window.gameObject.SetActive(true);
-        status = 1;
         yield return null;
 
         //** 暗転処理(Pattern = 1):透明度変化による演出
         if(fadePattern == 1){
+
+            int status = 1;
 
             if(status == 1){
                 float lerpValue = 0.0f;
