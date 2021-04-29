@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Playables;
 
 // A behaviour that is attached to a playable
+//※せめてNAGISACutIn内で共通Playableにできるように修正（キャプションだけ外部から渡すようにする）
 public class NagisaCutIn1PB : PlayableBehaviour
 {
     private Text messageText;

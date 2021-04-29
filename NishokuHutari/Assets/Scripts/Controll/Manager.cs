@@ -17,7 +17,7 @@ public class Manager : MonoBehaviour
 
     public static bool initFlg = false;
     public static bool returnFlg = false;
-    public static int nowTransitionId;
+    public static int nowTransitionId;      //現在のマップに遷移してきたときのトランザクションID
 
     void Awake(){
         DontDestroyOnLoad(this);
@@ -49,10 +49,21 @@ public class Manager : MonoBehaviour
             //** Userデータ設定
             userData = new UserData();
 
+            //** EventManager生成
+            EventManager eventManager = Instantiate(gameObjectLoader.GetObjectHandle("Event_Manager"),new Vector3(0.0f,0.0f,0.0f),Quaternion.identity).GetComponent<EventManager>();
+            eventManager.BindObject();
+
             //** 初期マップ読み込み
-            EventQueue ev = new EventQueue("Trans",9999,20);
+            EventQueue ev = new EventQueue("Trans",0,20);
+            //EventQueue ev = new EventQueue("Trans",18,20);
             if(EventManager.IsAdd(ev.level)){
                 EventManager.AddEvent(ev);
+            }
+
+            //** オープニングムービー再生
+            EventQueue opening = new EventQueue("Story",1,21);
+            if(EventManager.IsAdd(opening.level)){
+                EventManager.AddEvent(opening);
             }
 
             initFlg = true;
@@ -60,8 +71,10 @@ public class Manager : MonoBehaviour
 
         //** 他シーンからの復帰時
         if(returnFlg && !(bool)FlagManager.flagDictionary["coroutine"]){
-            //Debug.Log("Manager:マップ復帰時処理開始");
-            nowTransitionId = 9999;     //test
+            Debug.Log("Manager:マップ復帰時処理開始:nowTransitionId = " + nowTransitionId);
+            //Debug.Log("EventManager = " + GameObject.Find("Event_Manager(Clone)"));
+            EventManager eventManager = GameObject.FindWithTag("EventManager").GetComponent<EventManager>();
+            eventManager.BindObject();
             EventQueue ev = new EventQueue("TransReturn",nowTransitionId,20);
             if(EventManager.IsAdd(ev.level)){
                 EventManager.AddEvent(ev);

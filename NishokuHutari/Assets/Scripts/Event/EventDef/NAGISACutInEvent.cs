@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
 
+//** シーンの遷移を伴うストーリーイベント：こっち
 public class NAGISACutInEvent : MonoBehaviour
 {
     private int eventId;
@@ -46,7 +47,7 @@ public class NAGISACutInEvent : MonoBehaviour
 
         //** タイムライン再生
         if(playableDirector.state != PlayState.Playing && !isPlaying){
-            //Debug.Log("タイムライン再生 playableDirector = " + playableDirector);
+            Debug.Log("タイムライン再生 playableDirector = " + playableDirector);
             playableDirector.Play();
             isPlaying = true;
             yield return null;
@@ -54,7 +55,7 @@ public class NAGISACutInEvent : MonoBehaviour
 
         //** タイムライン実行中
         while(isPlaying){
-            //Debug.Log("タイムライン再生中 playableDirector.state = " + playableDirector.state);
+            Debug.Log("タイムライン再生中 playableDirector.state = " + playableDirector.state);
             if(playableDirector.state != PlayState.Playing){
                 isPlaying = false;
             }
@@ -64,9 +65,12 @@ public class NAGISACutInEvent : MonoBehaviour
         //** 終了処理
         foreach(NAGISACutInData n in Manager.generalData.nagisaCutInData){
             if(eventId == n.nagisaCutInId){
+                Debug.Log("NAGISA:Compフラグ立てる");
                 n.compFlg = true;
             }
         }
+
+        Debug.Log("タイムライン終了");
 
         //** シーン戻る
         SceneManager.sceneLoaded += OnMapLoaded;
@@ -81,7 +85,7 @@ public class NAGISACutInEvent : MonoBehaviour
 
         eventId = id;
         foreach(NAGISACutInData nagisa in Manager.generalData.nagisaCutInData){
-            if(eventId == nagisa.nagisaCutInId){
+            if(id == nagisa.nagisaCutInId){
                 timeline = nagisa.timeline;
             }
         }

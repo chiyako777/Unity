@@ -13,6 +13,11 @@ public class CharaTipAnimeController : MonoBehaviour
 
     void Update()
     {
+
+        if((bool)FlagManager.flagDictionary["coroutine"]){
+            return;
+        }
+
         //方向キー入力があった最初のフレームは向き変更
         if(Input.anyKeyDown){
             Vector2? action = this.ActionKeyDown();
@@ -34,6 +39,7 @@ public class CharaTipAnimeController : MonoBehaviour
         SetStateToAnimator(vector : vector != Vector2.zero ? vector : (Vector2?)null);              
 
     }
+
 
     //** 各方向の単位ベクトル返却
     private Vector2? ActionKeyDown(){

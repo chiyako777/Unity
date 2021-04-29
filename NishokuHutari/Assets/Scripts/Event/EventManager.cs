@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
 {
@@ -94,12 +95,12 @@ public class EventManager : MonoBehaviour
                 nagisaEvent.SetNAGISAData(eventList[nowIndex].eventId);
                 yield return nagisaEvent.OnAction();
                 break;
-            // case "Story":
-            //     //Debug.Log("EventManager:CreateCoroutine Story");
-            //     StoryEvent storyEvent = GetComponentInChildren<StoryEvent>();
-            //     storyEvent.SetStoryData(eventList[nowIndex].eventId);
-            //     yield return storyEvent.OnAction();
-            //     break;
+            case "Story":
+                //Debug.Log("EventManager:CreateCoroutine Story");
+                StoryEvent storyEvent = GetComponentInChildren<StoryEvent>();
+                storyEvent.SetStoryData(eventList[nowIndex].eventId);
+                yield return storyEvent.OnAction();
+                break;
             // case "Fade":
             //     //Debug.Log("EventManager:CreateCoroutine Fade");
             //     FadeEvent fadeEvent = GetComponentInChildren<FadeEvent>();
@@ -160,6 +161,17 @@ public class EventManager : MonoBehaviour
     public static void AddEvent(EventQueue ev){
         //Debug.Log("EventManager : AddEvent");
         eventList.Add(ev);
+    }
+
+    //** UI系コンポーネントバインド
+    public void BindObject(){
+        TransEvent tr = GetComponentInChildren<TransEvent>();
+        tr.mistakeFilterImage = GameObject.Find("MistakeFilter_Image").GetComponent<Image>();
+        SelectEvent se = GetComponentInChildren<SelectEvent>();
+        se.whiteImage = GameObject.Find("Selection_White_Image").GetComponent<Image>();
+        se.blackImage = GameObject.Find("Selection_Black_Image").GetComponent<Image>();
+        se.whiteImage.gameObject.SetActive(false);
+        se.blackImage.gameObject.SetActive(false);
     }
 
 }

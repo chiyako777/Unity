@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7228656181565982756}
   - component: {fileID: 7228656181565982757}
-  - component: {fileID: 9134401901242934290}
   m_Layer: 0
   m_Name: Map_Sprite
   m_TagString: Untagged
@@ -26,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7228656181565982755}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.10774446, y: -1.0910442, z: 0.13824989}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7228656183638716362}
@@ -82,45 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &9134401901242934290
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7228656181565982755}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.24, y: 7.68}
-    newSize: {x: 10.24, y: 7.68}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 3.23, y: 3.84}
-      - {x: 3.1953444, y: -0.034632683}
-      - {x: 0.22, y: -0.049999997}
-      - {x: 0.26862693, y: -3.1221137}
-      - {x: -5.12, y: -3.1}
-      - {x: -5.12, y: -3.84}
-      - {x: 5.12, y: -3.84}
-      - {x: 5.12, y: 3.84}
-    - - {x: -5.12, y: 3.84}
-      - {x: -5.12, y: -1.65}
-      - {x: -1.1999999, y: -1.65}
-      - {x: -1.2455951, y: 1.3592653}
-      - {x: 1.78, y: 1.38}
-      - {x: 1.78, y: 3.84}
 --- !u!1 &7228656182231320944
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7228656182231320944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.26, y: 1.98, z: 0.13824989}
+  m_LocalPosition: {x: 3.21, y: 2.15, z: 0.13824989}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7228656183638716362}
@@ -216,7 +176,7 @@ GameObject:
   - component: {fileID: 7228656183454264507}
   m_Layer: 0
   m_Name: Warp_Point
-  m_TagString: Untagged
+  m_TagString: WarpPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7228656183454264487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18, y: -1.25, z: 0.13824989}
+  m_LocalPosition: {x: -0.01, y: -0.13, z: 0.13824989}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7228656183638716362}
@@ -325,7 +285,7 @@ GameObject:
   - component: {fileID: 7228656183638716362}
   m_Layer: 0
   m_Name: Map_29
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,7 +298,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7228656183638716361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.10774446, y: 1.0910442, z: -0.13824989}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7228656181565982756}

@@ -12,10 +12,10 @@ public class SelectEvent : MonoBehaviour
     private string answer;
 
     //** UI
-    [SerializeField]
-    private Image whiteImage;
-    [SerializeField]
-    private Image blackImage;
+    [HideInInspector]
+    public Image whiteImage;
+    [HideInInspector]
+    public Image blackImage;
 
     private int selected = 0;   //0:white 1:black
 
@@ -25,15 +25,6 @@ public class SelectEvent : MonoBehaviour
     }
 
     void Update(){
-        //** UIへの紐づけが外れていたら設定しなおす（EventManagerがDontDestroyのため、シーン遷移を挟むと外れる）
-        if(whiteImage == null && SceneManager.GetActiveScene().name == "Map"){
-            GameObject ui = GameObject.Find("Map_UI");
-            whiteImage = ui.transform.Find("Selection/Selection_White_Image").gameObject.GetComponent<Image>();
-        }
-        if(blackImage == null && SceneManager.GetActiveScene().name == "Map"){
-            GameObject ui = GameObject.Find("Map_UI");
-            blackImage = ui.transform.Find("Selection/Selection_Black_Image").gameObject.GetComponent<Image>();
-        }
     }
 
     public IEnumerator OnAction(){

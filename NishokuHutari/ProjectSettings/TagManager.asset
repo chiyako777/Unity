@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Map
   - WarpPoint
+  - EventManager
   layers:
   - Default
   - TransparentFX
@@ -54,4 +55,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2960150353
+    locked: 0
+  - name: Item
+    uniqueID: 1775899603
     locked: 0
