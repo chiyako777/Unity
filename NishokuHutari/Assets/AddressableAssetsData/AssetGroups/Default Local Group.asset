@@ -73,6 +73,22 @@ MonoBehaviour:
     - Map
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: 3b41a1e9eee04f24a8571c3359436b5d
+    m_Address: Ending_True_Event
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Map
+    m_MainAsset: {fileID: 4305460290317860123, guid: 3b41a1e9eee04f24a8571c3359436b5d,
+      type: 3}
+    m_TargetAsset: {fileID: 4305460290317860123, guid: 3b41a1e9eee04f24a8571c3359436b5d,
+      type: 3}
+  - m_GUID: 3cc46a6cf5ccdc142b9492d9701cdd26
+    m_Address: KatawareHeart1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Map
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 473ce129716a83d459df83a791ad21f0
     m_Address: Map_18
     m_ReadOnly: 0
@@ -148,10 +164,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Map
-    m_MainAsset: {fileID: 8476551531512733973, guid: 6eb142c8dd084714ab9015f3a6df1d07,
-      type: 3}
-    m_TargetAsset: {fileID: 8476551531512733973, guid: 6eb142c8dd084714ab9015f3a6df1d07,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 7ab2ab99a5d177b4ba0ab92be2e95e01
     m_Address: Map_23
     m_ReadOnly: 0
@@ -215,6 +229,13 @@ MonoBehaviour:
     - Sprite
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
+  - m_GUID: a776039a5e5076c409233c09ab3c78ca
+    m_Address: Ending_Bad_Event
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Map
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: ad0ce40bd5b35174cacab938210d74b0
     m_Address: Player
     m_ReadOnly: 0
@@ -224,6 +245,13 @@ MonoBehaviour:
     m_TargetAsset: {fileID: 0}
   - m_GUID: b30dba8bf74614f4a81e55d3a2519eee
     m_Address: Map_5
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Map
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: c10edef69504a39478c9c34caa9ec65e
+    m_Address: KatawareHeart2
     m_ReadOnly: 0
     m_SerializedLabels:
     - Map
@@ -276,6 +304,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Map
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: fbd2120fe2bf63f47822ad330090ce64
+    m_Address: test_itemget
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Sprite
     m_MainAsset: {fileID: 0}
     m_TargetAsset: {fileID: 0}
   - m_GUID: fc8e490ee0096064c9c7ca0e892dfd6f

@@ -50,6 +50,7 @@ public class StoryPB : PlayableBehaviour
 
         ++frame;
         
+        //(備忘：len更新処理が多分抜けてる)
     }
 
     // Called when the owning graph stops playing

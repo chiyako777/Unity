@@ -43,8 +43,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4858851815708114809}
   - component: {fileID: 4858851815708114808}
-  - component: {fileID: 3585368215719780575}
   - component: {fileID: 4858851815708114810}
+  - component: {fileID: 816974350770820394}
   m_Layer: 0
   m_Name: Warp_Point
   m_TagString: WarpPoint
@@ -116,19 +116,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3585368215719780575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4858851815708114790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab996148628d601409db4f00e121b99c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transitionId: 19
 --- !u!58 &4858851815708114810
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -145,6 +132,18 @@ CircleCollider2D:
   m_Offset: {x: 0.0112941265, y: -0.07185364}
   serializedVersion: 2
   m_Radius: 0.2775259
+--- !u!114 &816974350770820394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4858851815708114790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e589fda68782f42a0e52f643389a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4858851816456051682
 GameObject:
   m_ObjectHideFlags: 0

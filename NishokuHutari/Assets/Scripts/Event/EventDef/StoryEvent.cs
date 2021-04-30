@@ -15,7 +15,7 @@ public class StoryEvent : MonoBehaviour
 
         //** タイムライン実行
         if(playableDirector.state != PlayState.Playing && !isPlaying){
-            //Debug.Log("タイムライン実行");
+            Debug.Log("タイムライン実行");
             playableDirector.Play();
             isPlaying = true;
             yield return null;
@@ -30,17 +30,19 @@ public class StoryEvent : MonoBehaviour
             yield return null;
         }
 
-        //Debug.Log("TImeline Destroy 直前");
+        Debug.Log("TImeline Destroy 直前");
         Destroy(playableDirector.gameObject);
         yield break;
 
     }
 
     public void SetStoryData(int id){
+        
         foreach(StoryData story in Manager.generalData.storyData){
             if(id != story.storyId){
                 continue;
             }
+            Debug.Log("SetStoryData : タイムライン準備");
             //** タイムラインオブジェクト生成
             GameObject obj = Instantiate(story.timeline,new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
             playableDirector = obj.GetComponent<PlayableDirector>();
@@ -57,6 +59,8 @@ public class StoryEvent : MonoBehaviour
                 }
             }
         }
+
+        Debug.Log(" タイムラインオブジェクト = " + playableDirector.gameObject + " playableDirector = " + playableDirector);
     }
 
 }

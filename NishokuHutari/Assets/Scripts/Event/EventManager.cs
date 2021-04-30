@@ -101,6 +101,16 @@ public class EventManager : MonoBehaviour
                 storyEvent.SetStoryData(eventList[nowIndex].eventId);
                 yield return storyEvent.OnAction();
                 break;
+            case "Item":
+                //Debug.Log("EventManager:CreateCoroutine Item");
+                ItemEvent itemEvent = GetComponentInChildren<ItemEvent>();
+                itemEvent.SetItemData(eventList[nowIndex].eventId);
+                yield return itemEvent.OnAction();
+                break;
+            case "Finish":
+                FinishEvent finishEvent = GetComponentInChildren<FinishEvent>();
+                yield return finishEvent.OnAction();
+                break;
             // case "Fade":
             //     //Debug.Log("EventManager:CreateCoroutine Fade");
             //     FadeEvent fadeEvent = GetComponentInChildren<FadeEvent>();
@@ -144,14 +154,14 @@ public class EventManager : MonoBehaviour
     }
 
     //** イベントリストに追加するか判定
-    public static bool IsAdd(int level){
+    public static bool IsAdd(int level,bool enqueue = false){
         if(eventList.Count == 0){
-            //キューが空なら無条件で追加
+            //リストが空なら無条件で追加
             return true;
         }
 
-        if(eventList[0].coroutine != null && eventList[0].level <= level){
-            //イベント中、かつ実行中イベントの方がレベルが上位か同じ
+        if(eventList[0].coroutine != null && eventList[0].level <= level  && !enqueue){
+            //イベント中、かつ実行中イベントの方がレベルが上位か同じ（キュー追加フラグtrueなら例外）
             return false;
         }
         return true;
@@ -172,6 +182,10 @@ public class EventManager : MonoBehaviour
         se.blackImage = GameObject.Find("Selection_Black_Image").GetComponent<Image>();
         se.whiteImage.gameObject.SetActive(false);
         se.blackImage.gameObject.SetActive(false);
+        ItemEvent ie = GetComponentInChildren<ItemEvent>();
+        ie.itemGetImage = GameObject.Find("ItemGet_Image").GetComponent<Image>();
+        ie.messageText = GameObject.Find("Message_Text").GetComponent<Text>();
+        ie.messageText.text = "";
     }
 
 }

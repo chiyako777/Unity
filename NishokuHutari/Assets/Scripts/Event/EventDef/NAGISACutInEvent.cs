@@ -96,5 +96,6 @@ public class NAGISACutInEvent : MonoBehaviour
     private void OnMapLoaded(Scene nextScene,LoadSceneMode mode){
         //Debug.Log("OnMapLoaded:マップ復帰時処理");
         Manager.returnFlg = true;
+        SceneManager.sceneLoaded -= OnMapLoaded;
     }
 }

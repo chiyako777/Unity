@@ -50,17 +50,31 @@ public class SelectEvent : MonoBehaviour
             yield return null;
         }
 
-        //** 確定⇒transイベント起こす
+        //** 終了処理
         whiteImage.gameObject.SetActive(false);
         blackImage.gameObject.SetActive(false);
-        EventQueue ev = null;
-        if(selected == 0){
-            ev = new EventQueue("Trans",whiteTransidionId,20);
-        }else{
-            ev = new EventQueue("Trans",blackTransidionId,20);
+
+        //** Itemイベント(あれば)
+        foreach(ItemData itemData in Manager.generalData.itemData){
+            EventQueue itemEv = null;
+            if((whiteTransidionId == itemData.transactionId && selected == 0 && !itemData.compFlg) ||
+                (blackTransidionId == itemData.transactionId && selected == 1 && !itemData.compFlg)){
+                itemEv = new EventQueue("Item",itemData.itemId,5);
+                if(EventManager.IsAdd(itemEv.level)){
+                    EventManager.AddEvent(itemEv);
+                }
+            }
         }
-        if(EventManager.IsAdd(20)){
-            EventManager.AddEvent(ev);
+
+        //** Transイベント
+        EventQueue transEv = null;
+        if(selected == 0){
+            transEv = new EventQueue("Trans",whiteTransidionId,20);
+        }else{
+            transEv = new EventQueue("Trans",blackTransidionId,20);
+        }
+        if(EventManager.IsAdd(transEv.level)){
+            EventManager.AddEvent(transEv);
         }
 
         yield break;

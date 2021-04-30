@@ -38,9 +38,11 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Controll\CharaTipAnimeController.cs" />
      <Compile Include="Assets\Scripts\Controll\CharaTipController.cs" />
+     <Compile Include="Assets\Scripts\Controll\Ending.cs" />
      <Compile Include="Assets\Scripts\Controll\InformationController.cs" />
      <Compile Include="Assets\Scripts\Controll\Manager.cs" />
      <Compile Include="Assets\Scripts\Controll\Title.cs" />
+     <Compile Include="Assets\Scripts\Controll\ToEnding.cs" />
      <Compile Include="Assets\Scripts\Controll\Warp.cs" />
      <Compile Include="Assets\Scripts\Controll\WarpSelect.cs" />
      <Compile Include="Assets\Scripts\Controll\WarpSimple.cs" />
@@ -51,16 +53,23 @@
      <Compile Include="Assets\Scripts\Data\SelectData.cs" />
      <Compile Include="Assets\Scripts\Data\StoryData.cs" />
      <Compile Include="Assets\Scripts\Data\UserData.cs" />
+     <Compile Include="Assets\Scripts\Event\EventDef\FinishEvent.cs" />
+     <Compile Include="Assets\Scripts\Event\EventDef\ItemEvent.cs" />
      <Compile Include="Assets\Scripts\Event\EventDef\NAGISACutInEvent.cs" />
      <Compile Include="Assets\Scripts\Event\EventDef\SelectEvent.cs" />
      <Compile Include="Assets\Scripts\Event\EventDef\StoryEvent.cs" />
      <Compile Include="Assets\Scripts\Event\EventDef\TransEvent.cs" />
      <Compile Include="Assets\Scripts\Event\EventManager.cs" />
      <Compile Include="Assets\Scripts\Event\EventQueue.cs" />
+     <Compile Include="Assets\Scripts\Event\Playables\EndingBadPB1.cs" />
+     <Compile Include="Assets\Scripts\Event\Playables\EndingPA1.cs" />
+     <Compile Include="Assets\Scripts\Event\Playables\FadePA.cs" />
+     <Compile Include="Assets\Scripts\Event\Playables\FadePB.cs" />
      <Compile Include="Assets\Scripts\Event\Playables\NagisaCutIn1PA.cs" />
      <Compile Include="Assets\Scripts\Event\Playables\NagisaCutIn1PB.cs" />
      <Compile Include="Assets\Scripts\Event\Playables\StoryPA.cs" />
      <Compile Include="Assets\Scripts\Event\Playables\StoryPB.cs" />
+     <Compile Include="Assets\Scripts\Event\Trigger\ItemTrigger.cs" />
      <Compile Include="Assets\Scripts\Util\FlagManager.cs" />
      <Compile Include="Assets\Scripts\Util\ResourcesLoader.cs" />
      <Compile Include="Assets\Scripts\aaa.cs" />

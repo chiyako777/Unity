@@ -31,7 +31,7 @@ public class TransEvent : MonoBehaviour
         }
 
         //** 次のマップデータをロードして構築する（プレイヤー・マップデータ・アイテムなど）
-        Instantiate(player,playerPosition,Quaternion.identity);        
+        Instantiate(player,playerPosition,Quaternion.identity);
         Instantiate(mapDetail,new Vector3(0.0f,0.0f,0.0f),Quaternion.identity);
         foreach(ItemData item in Manager.generalData.itemData){
             if(transactionId == item.transactionId && !item.compFlg){

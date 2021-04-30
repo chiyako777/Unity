@@ -17,7 +17,6 @@ public class GeneralData
         //** 固定データの設定
 
         //** MapData
-        //(メモ：transactionId,playerPosition,to(飛び先マッププレハブ)):from情報結局持たない事にしたから、普通に部屋番と一致させればよかった・・
         mapData = new List<MapData>();
         mapData.Add(new MapData(9999,new Vector3(0.0f,0.0f,0.0f),Manager.gameObjectLoader.GetObjectHandle("Map_9999")));
         mapData.Add(new MapData(0,new Vector3(1.71f,0.03f,0.0f),Manager.gameObjectLoader.GetObjectHandle("Map_1")));
@@ -94,20 +93,80 @@ public class GeneralData
 
         //** StoryData
         storyData = new List<StoryData>();
+        //オープニング
         storyData.Add(new StoryData(
                             1,
                             Manager.gameObjectLoader.GetObjectHandle("OpeningStory"),
                             new List<string>{"Ohana Anime","Usagi Anime","Usagi Walk"},
                             new List<string>{"FallenOhana","Player(Clone)","Player(Clone)"},
                             new List<string>{"Animator","Animator","Animator"}));
+        //bad end
+        storyData.Add(new StoryData(
+                            2,
+                            Manager.gameObjectLoader.GetObjectHandle("Ending_Bad_Event"),
+                            new List<string>{"Red Usagi Anime","Red Usagi Move","Nagisa Anime","Ohana Anime"},
+                            new List<string>{"Player_Mistake","Player_Mistake","Nagisa","FallenOhana"},
+                            new List<string>{"Animator","Animator","Animator","Animator"}));
+        //true end
+        storyData.Add(new StoryData(
+                            3,
+                            Manager.gameObjectLoader.GetObjectHandle("Ending_True_Event"),
+                            new List<string>{"Usagi Anime","Usagi Move","Nagisa Anime"},
+                            new List<string>{"Player","Player","Nagisa"},
+                            new List<string>{"Animator","Animator","Animator"}));
+
 
         //** ItemData
         itemData = new List<ItemData>();
+        //しおれた花：道端アイテム
         itemData.Add(new ItemData(
                             1,
                             Manager.gameObjectLoader.GetObjectHandle("ShioretaHana"),
                             4,
-                            new Vector3(0.0f,0.0f,0.0f)));
+                            new Vector3(0.0f,-2.0f,0.0f),
+                            "test_itemget",
+                            new List<string>{"そうだった。彼女はもう、","死んでしまった。"}));
+        //片割れハート：道端アイテム（正解√でしか入手不可）
+        //15マップは2通りから遷移できるので、とりあえず二つ定義（でもCompFlg周りが遷移元が違うと別になっちゃうからちゃんと対応必要）
+        itemData.Add(new ItemData(
+                            2,
+                            Manager.gameObjectLoader.GetObjectHandle("KatawareHeart1"),
+                            17,
+                            new Vector3(0.0f,0.0f,0.0f),
+                            "test_itemget",
+                            new List<string>{"片割れハートの","キャプションテストだよ"}));
+        itemData.Add(new ItemData(
+                            3,
+                            Manager.gameObjectLoader.GetObjectHandle("KatawareHeart2"),
+                            35,
+                            new Vector3(0.0f,0.0f,0.0f),
+                            "test_itemget",
+                            new List<string>{"片割れハートの","キャプションテストだよ"}));
+        //銃：選択肢アイテム
+        itemData.Add(new ItemData(
+                            4,
+                            null,
+                            6,
+                            new Vector3(0.0f,0.0f,0.0f),
+                            "test_itemget",
+                            new List<string>{"ジオメトリックガンの","キャプションテストだよ"}));
+        //論文：選択肢アイテム
+        itemData.Add(new ItemData(
+                            5,
+                            null,
+                            22,
+                            new Vector3(0.0f,0.0f,0.0f),
+                            "test_itemget",
+                            new List<string>{"論文の","キャプションテストだよ"}));
+        itemData.Add(new ItemData(
+                            6,
+                            null,
+                            26,
+                            new Vector3(0.0f,0.0f,0.0f),
+                            "test_itemget",
+                            new List<string>{"論文の","キャプションテストだよ"}));
+
+
     }
 }
 
